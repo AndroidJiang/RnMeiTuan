@@ -12,24 +12,23 @@ import {
     View,
     Image,
     TextInput,
-    TouchableHighlight
+    TouchableHighlight,
+    Dimensions
 } from 'react-native';
-
-const instructions = Platform.select({
-    android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-var Dimensions = require('Dimensions');
 var width = Dimensions.get('window').width;
 export default class Login extends Component<{}> {
+
+    static navigationOptions = {
+        header: null,
+    };
+
     render() {
         return (
             <View style={styles.container}>
-                <Image source={require('./app/img/about_logo.png')} style={styles.img}/>
+                <Image source={require('../../app/img/about_logo.png')} style={styles.img}/>
                 <TextInput style={styles.nameInput}
                            underlineColorAndroid={'transparent'}
                            placeholder="请输入用户名">
-
 
                 </TextInput>
                 <TextInput style={styles.pwInput}
@@ -38,7 +37,8 @@ export default class Login extends Component<{}> {
 
                 </TextInput>
                 <View style={styles.login}>
-                    <TouchableHighlight activeOpacity={0.5} onPress={() => {console.log('戳我')
+                    <TouchableHighlight activeOpacity={0.5} onPress={() => {
+                        console.log('戳我')
                     }}>
                         <Text style={styles.textLogin}>
                             登录
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-        marginTop: 100,
+        backgroundColor: 'white',
+        justifyContent: 'center'
     },
     img: {
         width: 70,
@@ -65,24 +65,24 @@ const styles = StyleSheet.create({
     },
     nameInput: {
         width: width - 20,
-        borderWidth:1,
-        height:40,
-        borderRadius:5,
-        borderColor:'gray'
+        borderWidth: 1,
+        height: 40,
+        borderRadius: 5,
+        borderColor: 'gray'
 
     },
     pwInput: {
         width: width - 20,
         marginBottom: 1,
-        borderWidth:1,
-        height:40,
-        marginTop:5,
-        borderRadius:5,
-        borderColor:'gray'
+        borderWidth: 1,
+        height: 40,
+        marginTop: 5,
+        borderRadius: 5,
+        borderColor: 'gray'
 
     },
     login: {
-      marginTop:20,
+        marginTop: 20,
     },
     textLogin: {
         fontSize: 20,
