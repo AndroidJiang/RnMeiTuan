@@ -3,11 +3,10 @@
  */
 import React, {Component} from 'react';
 import {
-    View, Image, Animated, StyleSheet, StatusBar, Easing
+    View, Image, Animated, StyleSheet, StatusBar, Easing, AsyncStorage
 } from 'react-native';
 
 import NavigationDispatchUtil from '../navigation/NavigationDispatchUtil';
-
 export default class Splash extends Component {
 
 
@@ -24,7 +23,41 @@ export default class Splash extends Component {
     }
 
     componentDidMount() {
-        this.timer = setTimeout(() => NavigationDispatchUtil.reset(this.props.navigation, 'Guide'), 3000);
+        this.timer = setTimeout(() => {
+            AsyncStorage.multiGet(['isFirst', 'hasChoose'])
+                .then((result) => {
+                    if (null === result[0][1] || "0" === result[0][1]) {
+                        NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
+                    } else {
+                        if (null === result[1][1]) {
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
+                        } else {
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+                        }
+                    }
+                })
+                .catch((error) => {
+                    NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
+                });
+
+
+            // AsyncStorage.getItem("isFirst")
+            //     .then((result) => {
+            //         if ("1" === result) {
+            //             AsyncStorage.getItem("hasChoose", (error, result) => {
+            //                 if ("1" === result) {
+            //                     NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+            //                 } else {
+            //                     NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
+            //                 }
+            //             });
+            //         } else {
+            //             NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
+            //         }
+            //     }).catch((error) => {
+            //     NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
+            // });
+        }, 3000);
 
         this.startAnimation();
     }

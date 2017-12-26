@@ -12,7 +12,8 @@ import {
     ViewPagerAndroid,
     Button,
     Alert,
-    TouchableOpacity, StatusBar
+    ImageBackground,
+    TouchableOpacity, StatusBar, AsyncStorage
 } from 'react-native';
 import Swiper from '../widget/swiper';
 import NavigationDispatchUtil from '../navigation/NavigationDispatchUtil';
@@ -37,7 +38,10 @@ export default class Guide extends Component {
 
     onButtonPress = () => {
         // this.props.navigation.navigate('Login');
-        NavigationDispatchUtil.reset(this.props.navigation, 'Login');
+        AsyncStorage.setItem("isFirst", "1")
+            .then(() => {
+                NavigationDispatchUtil.reset(this.props.navigation, 'Tab');
+            });
     }
 
 
@@ -72,35 +76,50 @@ export default class Guide extends Component {
                                           }
 
                                       }}>
-                        <View style={{justifyContent: 'center', alignItems: 'center', backgroundColor: 'blue'}}>
-                            <Text>One</Text>
+                        <View >
+                            <Image
+                                style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
+                                source={require('../../app/img/icon_guide1.jpg')}
+                                resizeMode={Image.resizeMode.cover}/>
                         </View>
-                        <View style={{justifyContent: 'center', alignItems: 'center', backgroundColor: 'red'}}>
-                            <Text>Second</Text>
+                        <View >
+                            <Image
+                                style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
+                                source={require('../../app/img/icon_guide2.png')}
+                                resizeMode={Image.resizeMode.cover}/>
                         </View>
-                        <View style={{justifyContent: 'center', alignItems: 'center', backgroundColor: 'yellow'}}>
-                            <Text>Third</Text>
-                            <TouchableOpacity onPress={this.onButtonPress} activeOpacity={0.6}>
-                                <Text style={{
-                                    width: 120,
-                                    height: 36,
-                                    borderRadius: 5,
-                                    borderWidth: 1,
-                                    marginTop: 30,
-                                    textAlign: 'center',
-                                    textAlignVertical:'center',
-                                    borderColor: "deepskyblue",
-                                    fontSize: 20,
-                                    color: "deepskyblue",
-                                }}>立即体验</Text>
-                            </TouchableOpacity>
+                        <View>
+                            <ImageBackground
+                                style={{
+                                    width: Dimensions.get('window').width,
+                                    height: Dimensions.get('window').height,
+                                    justifyContent: 'flex-end',
+                                    alignItems: 'center',
+                                    paddingBottom: 50,
+                                }}
+                                source={require('../../app/img/icon_guide3.jpg')}
+                                resizeMode={Image.resizeMode.cover}>
+                                <TouchableOpacity onPress={this.onButtonPress} activeOpacity={0.6}>
+                                    <Text style={{
+                                        width: 120,
+                                        height: 36,
+                                        borderRadius: 5,
+                                        borderWidth: 1,
+                                        textAlign: 'center',
+                                        textAlignVertical: 'center',
+                                        borderColor: "deepskyblue",
+                                        fontSize: 20,
+                                        color: "deepskyblue",
+                                    }}>立即体验</Text>
+                                </TouchableOpacity>
+                            </ImageBackground>
                         </View>
                     </ViewPagerAndroid>
                 </View>
 
                 <View style={{
                     width: Dimensions.get('window').width,
-                    height: 40,
+                    height: 24,
                     flexDirection: 'row',
                     justifyContent: 'center',
                     alignItems: 'center',
