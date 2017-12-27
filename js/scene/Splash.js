@@ -40,23 +40,6 @@ export default class Splash extends Component {
                     NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
                 });
 
-
-            // AsyncStorage.getItem("isFirst")
-            //     .then((result) => {
-            //         if ("1" === result) {
-            //             AsyncStorage.getItem("hasChoose", (error, result) => {
-            //                 if ("1" === result) {
-            //                     NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
-            //                 } else {
-            //                     NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
-            //                 }
-            //             });
-            //         } else {
-            //             NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
-            //         }
-            //     }).catch((error) => {
-            //     NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
-            // });
         }, 3000);
 
         this.startAnimation();
