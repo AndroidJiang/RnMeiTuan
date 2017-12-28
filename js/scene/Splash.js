@@ -23,16 +23,17 @@ export default class Splash extends Component {
     }
 
     componentDidMount() {
+
         this.timer = setTimeout(() => {
             AsyncStorage.multiGet(['isFirst', 'hasChoose'])
                 .then((result) => {
                     if (null === result[0][1] || "0" === result[0][1]) {
                         NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
                     } else {
-                        if (null === result[1][1]) {
-                            NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
-                        } else {
+                        if ("1" === result[1][1]) {
                             NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+                        } else {
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
                         }
                     }
                 })

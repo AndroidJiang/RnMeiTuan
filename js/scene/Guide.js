@@ -40,7 +40,18 @@ export default class Guide extends Component {
         // this.props.navigation.navigate('Login');
         AsyncStorage.setItem("isFirst", "1")
             .then(() => {
-                NavigationDispatchUtil.reset(this.props.navigation, 'Tab');
+                AsyncStorage.multiGet(['isFirst', 'hasChoose'])
+                    .then((result) => {
+                        if ("1" === result[1][1]) {
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+                        } else {
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
+                        }
+
+                    })
+                    .catch((error) => {
+                        NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
+                    });
             });
     }
 
