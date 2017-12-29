@@ -9,6 +9,8 @@ import Login from '../scene/Login';
 import Guide from  '../scene/Guide';
 import Tab from '../navigation/MainNavigator';
 
+import Web from '../scene/WebPage';
+
 import ChooseType from '../scene/ChooseType';
 
 const AppLaunch = StackNavigator({
@@ -18,6 +20,7 @@ const AppLaunch = StackNavigator({
         Guide: {screen: Guide},
         Tab: {screen: Tab},
         Choose: {screen: ChooseType},
+        Web: {screen: Web},
     },
     {
         initialRouteName: 'Splash',
