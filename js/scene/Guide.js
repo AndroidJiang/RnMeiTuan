@@ -47,7 +47,6 @@ export default class Guide extends Component {
                         } else {
                             NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
                         }
-
                     })
                     .catch((error) => {
                         NavigationDispatchUtil.reset(this.props.navigation, 'Choose')

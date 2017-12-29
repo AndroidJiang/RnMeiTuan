@@ -11,68 +11,39 @@ import {Image, View} from "react-native";
 
 const App = TabNavigator({
     Home: {
-        screen: HomeView, navigationOptions: {
-            tabBarLabel: '首页',
-            tabBarIcon: ({tintColor, focused}) => (
-                <Image resizeMode='contain'
-                       style={{width: 20, height: 20}}
-                       source={focused ? require('../../app/img/icon_home_selected.png') : require('../../app/img/icon_home.png')}
-                />
-            )
-        }
+        screen: HomeView,
     },
 
     Type: {
-        screen: TypeView, navigationOptions: {
-            tabBarLabel: '分类',
-            tabBarIcon: ({tintColor, focused}) => (
-                <Image resizeMode='contain'
-                       style={{width: 20, height: 20}}
-                       source={focused ? require('../../app/img/icon_type_selected.png') : require('../../app/img/icon_type.png')}/>
-            )
-        }
+        screen: TypeView,
     },
 
     About: {
-        screen: AboutView, navigationOptions: {
-            tabBarLabel: '关于',
-            tabBarIcon: ({tintColor, focused}) => (
-                <Image resizeMode='contain'
-                       style={{width: 20, height: 20}}
-                       source={focused ? require('../../app/img/icon_about_selected.png') : require('../../app/img/icon_about.png')}/>
-            )
-        }
+        screen: AboutView,
     },
-
 }, {
     tabBarPosition: 'bottom',
-    swipeEnabled: true,
-    animationEnabled: true,
     lazy: true,
     initialRouteName: 'Home',
-    backBehavior: 'none',
+    swipeEnabled: false,
+    animationEnabled: false,
     tabBarOptions: {
         activeTintColor: '#00aaf6', // 文字和图片选中颜色
         inactiveTintColor: '#888888',
-        showIcon: true,
-        pressOpacity: 0.8,
+        showLabel:true,
+        showIcon:true,
         style: {
-            height: 48,
+            height: 55,
             backgroundColor: '#ffffff',
         },
         labelStyle: {
-            fontSize: 10,
+            fontSize: 12,
             marginTop: 2
         }
         ,
-        iconStyle: {
-            marginTop: -2
-        }
-        ,
         tabStyle: {
-            backgroundColor: '#ffffff',
+            backgroundColor: 'white'
         }
-        ,
     }
 
 });

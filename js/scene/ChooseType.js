@@ -31,18 +31,17 @@ export  default class ChooseType extends Component {
     }
 
     componentDidMount() {
-
         this._getRequestData();
     }
 
 
-    _getRequestData() {
-
+    _getRequestData = () => {
         this.setState({isRefreshing: true}, () => {
             return fetch('http://route.showapi.com/582-1?showapi_appid=29400&showapi_sign=e7977541307547beab3e4aa033adb78f')
                 .then(res => res.json())
                 .then(res => {
                     let typeList = res.showapi_res_body.typeList;
+                    console.log(JSON.stringify(typeList));
                     this.setState({dataSource: typeList, isRefreshing: false});
                 })
                 .catch(e => console.log(e.message))
@@ -72,6 +71,8 @@ export  default class ChooseType extends Component {
                               ItemSeparatorComponent={this._renderSeparator}
                               extraData={this.state}//为了能更新 需要指定这个
                               ListHeaderComponent={this._renderHeader}
+                              onRefresh={this._getRequestData}
+                              refreshing={this.state.isRefreshing}
                               numColumns={3}/>
 
                 </View>
@@ -124,12 +125,8 @@ export  default class ChooseType extends Component {
                 ]
             )
         } else {
-            // let str = TypeIds.join('-');
-            // let strName = typeNames.join('-');
-            AsyncStorage.setItem("hasChoose", "1", (error) => {
-                AsyncStorage.multiSet([["data", JSON.stringify(TypeIds)], ["name", JSON.stringify(typeNames)]], (error) => {
-                    NavigationDispatchUtil.reset(this.props.navigation, 'Tab');
-                });
+            AsyncStorage.multiSet([["data", JSON.stringify(TypeIds)], ["name", JSON.stringify(typeNames)], ['hasChoose', '1']], (error) => {
+                NavigationDispatchUtil.reset(this.props.navigation, 'Tab');
             });
         }
     };
