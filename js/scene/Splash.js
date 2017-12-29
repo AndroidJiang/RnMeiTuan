@@ -23,7 +23,7 @@ export default class Splash extends Component {
     }
 
     componentDidMount() {
-
+        /*app进入逻辑见https://www.processon.com/diagraming/5a44a9a7e4b078cf1ed100d0*/
         this.timer = setTimeout(() => {
             AsyncStorage.multiGet(['isFirst', 'hasChoose'])
                 .then((result) => {
