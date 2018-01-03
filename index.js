@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import Root from "./js/navigation/root";
+import AppLaunch from "./src/navigation/AppLaunch";
 
-AppRegistry.registerComponent('RnDemo', () => Root);
+AppRegistry.registerComponent('RnDemo', () => AppLaunch);
