@@ -25,6 +25,9 @@ const AppLaunch = StackNavigator({
     {
         initialRouteName: 'Splash',
         mode: 'card',
+        lazy: true,
+        swipeEnabled: true,
+        animationEnabled: true,
         headerMode: 'screen'
     });
 
