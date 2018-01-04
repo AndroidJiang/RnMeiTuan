@@ -7,9 +7,10 @@ import {TabNavigator} from 'react-navigation';
 import NewsScene from "../scene/News/NewsScene";
 import FoodScene from "../scene/Food/FoodScene";
 import TabBarItem from "../widget/TabBarItem";
+import {FoodNewScene} from "../scene/FoodNew/FoodNewScene";
 const Main = TabNavigator({
     Food: {
-        screen: FoodScene,
+        screen: FoodNewScene,
         navigationOptions: ({navigation, screenProps}) => ({
             tabBarLabel: '美食',
             tabBarIcon: ({tintColor, focused}) => (

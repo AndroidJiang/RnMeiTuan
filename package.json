@@ -11,8 +11,10 @@
     "react-native": "0.51.0",
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-storage": "^0.2.2",
+    "react-native-swiper": "^1.5.13",
     "react-native-vector-icons": "^4.4.3",
-    "react-navigation": "^1.0.0-beta.22"
+    "react-navigation": "^1.0.0-beta.22",
+    "react-timer-mixin": "^0.13.3"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",

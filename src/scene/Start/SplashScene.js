@@ -41,7 +41,7 @@ export default class Splash extends Component {
                     NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
                 });
 
-        }, 3000);
+        }, 0);
 
         this.startAnimation();
     }
