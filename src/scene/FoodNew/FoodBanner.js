@@ -2,59 +2,100 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from "react-native";
+import {Text, View, StyleSheet, Image} from "react-native";
 
 import Swiper from 'react-native-swiper';
+import api from '../../common/api'
+/*
+ * 首页banner有个bug  解决方案详见https://github.com/leecade/react-native-swiper/issues/389
+ * */
 export default class FoodBanner extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSource: [],
+            swiperShow: false,
+        }
+    }
+
     render() {
-        debugger;
-        return (
-            <View>
-                <Swiper style={styles.wrap} height={200}>
-                    <View style={styles.slide1}>
-                        <Text style={styles.text}>Hello Swiper</Text>
-                    </View>
-                    <View style={styles.slide2}>
-                        <Text style={styles.text}>Beautiful</Text>
-                    </View>
-                    <View style={styles.slide3}>
-                        <Text style={styles.text}>And simple</Text>
-                    </View>
-                </Swiper>
-            </View>
-        )
+        if (this.state.swiperShow) {
+            return (
+                <View style={styles.container}>
+                    <Swiper style={styles.wrap}
+                            autoplay={true}
+                            autoplayTimeout={4}
+                            paginationStyle={{
+                                bottom: 5,
+                            }}
+                            dot={<View style={styles.dot}/>}
+                            activeDot={<View style={styles.activeDot}/>}>
+                        {this.state.dataSource.map((item, key) => {
+                            return (
+                                <Image key={key} style={styles.img} source={{uri: item.imgUrl}}
+                                       resizeMode={Image.resizeMode.stretch}/>
+                            )
+                        })}
+                    </Swiper>
+                </View>
+            )
+        } else {
+            return <View/>
+        }
+
+    }
+
+    getBanner = () => {
+        return fetch(api.banner)
+            .then(res => res.json())
+            .then((res) => {
+                this.setState({
+                    dataSource: res.data,
+                    swiperShow: true,
+                });
+            })
+            .catch(e => {
+            })
+            .done();
+    }
+
+    componentDidMount() {
+        this.getBanner();
     }
 }
+
 // define your styles
 const styles = StyleSheet.create({
 
+    container: {
+        height: 100,
+    },
+    wrap: {},
 
-    wrap: {
-       height:200,
-    },
-
-    slide1: {
+    img: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#9DD6EB'
     },
-    slide2: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#97CAE5'
+    dot: {
+        backgroundColor: 'rgba(3,3,3,.5)',
+        width: 5,
+        height: 5,
+        borderRadius: 4,
+        marginLeft: 3,
+        marginRight: 3,
+        marginTop: 3,
+        marginBottom: 0
     },
-    slide3: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'blue'
-    },
-    text: {
-        color: '#fff',
-        fontSize: 30,
-        fontWeight: 'bold'
+    activeDot: {
+        backgroundColor: '#fff',
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        marginLeft: 3,
+        marginRight: 3,
+        marginTop: 3,
+        marginBottom: 0
     }
 
 });

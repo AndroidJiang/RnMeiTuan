@@ -18,12 +18,12 @@ const AppLaunch = StackNavigator({
         Splash: {screen: Splash},
         Login: {screen: Login},
         Guide: {screen: Guide},
-        Tab: {screen: Main},
+        Main: {screen: Main},
         Choose: {screen: ChooseType},
         Web: {screen: WebScene},
     },
     {
-        initialRouteName: 'Splash',
+        initialRouteName: 'Main',
         mode: 'card',
         headerMode: 'screen'
     });

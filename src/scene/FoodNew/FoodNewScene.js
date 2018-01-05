@@ -9,12 +9,13 @@ import color from "../../common/color";
 import {screen, system} from '../../common/common'
 import FoodBanner from './FoodBanner'
 import FoodMenu from './FoodMenu'
+import FoodWeather from "./FoodWeather";
 export class FoodNewScene extends Component {
     static navigationOptions = ({navigation}) => ({
         headerTitle: (
             <TouchableOpacity style={styles.searchBar}>
                 <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
-                <Paragraph></Paragraph>
+                <Text style={styles.searchInput}>美食搜索</Text>
             </TouchableOpacity>
         ),
         headerRight: (
@@ -26,13 +27,7 @@ export class FoodNewScene extends Component {
             />
         ),
         headerLeft: (
-            <NavigationItem
-                title='北京'
-                titleStyle={{color: 'white'}}
-                onPress={() => {
-
-                }}
-            />
+            <FoodWeather/>
         ),
         headerStyle: {backgroundColor: color.theme},
     })
@@ -43,7 +38,7 @@ export class FoodNewScene extends Component {
                 <View style={styles.container}>
                     <FoodBanner />
 
-                    {/*<FoodMenu />*/}
+                    <FoodMenu />
                 </View>
         )
     }
@@ -69,18 +64,26 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     searchBar: {
-        width: screen.width * 0.7,
+        flexDirection:'row',
+        width: screen.width * 0.6,
         height: 30,
         borderRadius: 19,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: 'white',
-        alignSelf: 'center',
+        position:'absolute',
+        left:0,
+        alignItems:'center',
+        marginLeft:30,
     },
     searchIcon: {
         width: 20,
         height: 20,
         margin: 5,
-    }
+    },
+    searchInput: {
+        width: screen.width * 0.6,
+
+        height: 40,
+
+
+    },
 });

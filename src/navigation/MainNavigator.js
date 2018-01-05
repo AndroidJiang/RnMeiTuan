@@ -5,7 +5,6 @@ import React from 'react';
 import {TabNavigator} from 'react-navigation';
 
 import NewsScene from "../scene/News/NewsScene";
-import FoodScene from "../scene/Food/FoodScene";
 import TabBarItem from "../widget/TabBarItem";
 import {FoodNewScene} from "../scene/FoodNew/FoodNewScene";
 const Main = TabNavigator({
@@ -38,12 +37,13 @@ const Main = TabNavigator({
         }),
     },
 
+
 }, {
     tabBarPosition: 'bottom',
-    lazy: true,
     initialRouteName: 'Food',
-    swipeEnabled: true,
     animationEnabled: true,
+    swipeEnabled:false,
+    lazy: true,
     tabBarOptions: {
         activeTintColor: '#00aaf6', // 文字和图片选中颜色
         inactiveTintColor: '#888888',
