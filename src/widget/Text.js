@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
         color: '#222222',
     },
     p: {
-        fontSize: 13,
-        color: '#777777',
+        fontSize: 12,
+        color: '#222222',
     },
     tip: {
         fontSize: 13,

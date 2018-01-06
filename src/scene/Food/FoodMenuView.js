@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView, } from 'react-native'
 
 import { screen, system, tool } from '../../common/common'
 import { color, PageControl } from '../../common/index'
-import HomeMenuItem from './FoodMenuItem'
+import HomeMenuItem from '../FoodNew/FoodMenuItem'
 
 /*
 * 美食头部

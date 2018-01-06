@@ -9,6 +9,6 @@
 /*定义颜色常量*/
 export default {
     theme: '#06C1AE',
-    border: '#e0e0e0',
+    border: '#f0f0f0',
     background: '#000000'
 }

@@ -21,7 +21,7 @@ export default class FoodWeather extends Component {
                     <Image source={require('../../img/Food/weather.png')} style={styles.weatherIcon}/>
                     <Text>{this.state.weather + '°'}</Text>
                 </View>
-                <Text>北京</Text>
+                <Text style={{marginLeft:-10,fontSize:12,}}>北京</Text>
             </View>
         )
     }
@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     weatherIcon: {
-        width: 20,
-        height: 20,
-        margin: 2,
+        width: 15,
+        height: 15,
+        margin: 1,
     },
 
 

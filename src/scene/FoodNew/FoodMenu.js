@@ -2,15 +2,47 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {Image, Text, TouchableOpacity, View,StyleSheet} from "react-native";
+import {Image, Text, TouchableOpacity, View, StyleSheet} from "react-native";
 
-import color from "../../common/color";
-import { screen, system } from '../../common/common'
+import FoodMenuItem from "./FoodMenuItem";
+import FoodMenuItemSmall from "./FoodMenuItemSmall";
+import {color} from "../../common";
+import {screen} from "../../common/common";
+
 export default class FoodMenu extends Component {
-    render(){
+    render() {
+        let {menuInfos} = this.props;
+        let menuViews = [];
+        let menuViewsSmall = [];
+        for (let i = 0; i < menuInfos.length; i++) {
+            if (i < 5) {
+                var info = menuInfos[i];
+                var item = (
+                    <FoodMenuItem key={info.title}
+                                  title={info.title}
+                                  icon={info.icon}
+                    />
+                )
+                menuViews.push(item);
+            }else{
+                var info = menuInfos[i];
+                var item = (
+                    <FoodMenuItemSmall key={info.title}
+                                  title={info.title}
+                                  icon={info.icon}
+                    />
+                )
+                menuViewsSmall.push(item);
+            }
+        }
         return (
             <View style={styles.container}>
-                <Text>menu</Text>
+                <View style={styles.menu}>
+                    {menuViews}
+                </View>
+                <View style={styles.menuSmall}>
+                    {menuViewsSmall}
+                </View>
             </View>
         )
     }
@@ -21,30 +53,18 @@ export default class FoodMenu extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
     },
-    recommendHeader: {
-        height: 35,
-        justifyContent: 'center',
-        borderWidth: screen.onePixel,
-        borderColor: color.border,
-        paddingVertical: 8,
-        paddingLeft: 20,
-        backgroundColor: 'white'
-    },
-    searchBar: {
-        width: screen.width * 0.7,
-        height: 30,
-        borderRadius: 19,
+    menu: {
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        alignSelf: 'center',
+        flexWrap:'wrap',
+        borderBottomWidth: screen.onePixel,
+        borderColor: color.border,
+        paddingBottom:3,
     },
-    searchIcon: {
-        width: 20,
-        height: 20,
-        margin: 5,
-    }
+    menuSmall: {
+        flexDirection: 'row',
+        flexWrap:'wrap',
+        borderBottomWidth: 10,
+        borderColor: color.border
+    },
 });

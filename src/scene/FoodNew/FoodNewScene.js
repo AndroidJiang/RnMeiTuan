@@ -2,56 +2,68 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {Image, Text, TouchableOpacity, View, StyleSheet, ScrollView} from "react-native";
-import NavigationItem from "../../widget/NavigationItem";
-import {Paragraph} from "../../widget/Text";
+import {Image, Text, TouchableOpacity, View, StyleSheet, ScrollView, FlatList} from "react-native";
+
 import color from "../../common/color";
 import {screen, system} from '../../common/common'
-import FoodBanner from './FoodBanner'
-import FoodMenu from './FoodMenu'
-import FoodWeather from "./FoodWeather";
-export class FoodNewScene extends Component {
-    static navigationOptions = ({navigation}) => ({
-        headerTitle: (
-            <TouchableOpacity style={styles.searchBar}>
-                <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
-                <Text style={styles.searchInput}>美食搜索</Text>
-            </TouchableOpacity>
-        ),
-        headerRight: (
-            <NavigationItem
-                icon={require('../../img/Food/icon_navigationItem_message_white.png')}
-                onPress={() => {
+import {FoodHeader} from "./FoodHeader";
+import api from "../../common/api";
+import FoodBanner from "./FoodBanner";
 
-                }}
-            />
-        ),
-        headerLeft: (
-            <FoodWeather/>
-        ),
-        headerStyle: {backgroundColor: color.theme},
+export class FoodNewScene extends Component {
+    /*隐藏默认导航头，自定义*/
+    static navigationOptions = ({navigation}) => ({
+        header: null,
     })
 
+    constructor(props: Object) {
+        super(props)
+
+        this.state = {
+            discounts: [],
+            dataList: ['1', '1', '1', '1', '1', '1', '1'],
+            refreshing: true,
+        }
+    }
 
     render() {
         return (
-                <View style={styles.container}>
-                    <FoodBanner />
-
-                    <FoodMenu />
-                </View>
+            <View style={styles.container}>
+                <FlatList
+                    data={this.state.dataList}
+                    keyExtractor={this.keyExtractor}
+                    // onRefresh={this.requestData}
+                    refreshing={this.state.refreshing}
+                    ListHeaderComponent={this.renderHeader}
+                    renderItem={this.renderCell}
+                />
+            </View>
         )
     }
 
+    renderHeader() {
+        return (
+            <View>
+                <FoodHeader/>
+            </View>
+        )
+    }
 
+    renderCell(info: Object) {
+        return (<View>
+                <FoodBanner/>
+            </View>
+        )
+    }
 }
+
 // define your styles
 const styles = StyleSheet.create({
     contentContainer: {
         paddingVertical: 20
     },
     container: {
-       flex:1,
+        flex: 1, backgroundColor: 'white',
     },
 
     recommendHeader: {
@@ -63,27 +75,5 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         backgroundColor: 'white'
     },
-    searchBar: {
-        flexDirection:'row',
-        width: screen.width * 0.6,
-        height: 30,
-        borderRadius: 19,
-        backgroundColor: 'white',
-        position:'absolute',
-        left:0,
-        alignItems:'center',
-        marginLeft:30,
-    },
-    searchIcon: {
-        width: 20,
-        height: 20,
-        margin: 5,
-    },
-    searchInput: {
-        width: screen.width * 0.6,
 
-        height: 40,
-
-
-    },
 });
