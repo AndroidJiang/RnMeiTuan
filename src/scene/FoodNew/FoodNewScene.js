@@ -51,7 +51,7 @@ export class FoodNewScene extends Component {
 
     renderCell(info: Object) {
         return (<View>
-                <FoodBanner/>
+                {/*<FoodBanner/>*/}
             </View>
         )
     }
