@@ -3392,6 +3392,12 @@ react-native-storage@^0.2.2:
   version "0.2.2"
   resolved "https://registry.npmjs.org/react-native-storage/-/react-native-storage-0.2.2.tgz#4449197f122b2da0650e3704e1f050260ed58d9f"
 
+react-native-swiper@^1.5.13:
+  version "1.5.13"
+  resolved "https://registry.npmjs.org/react-native-swiper/-/react-native-swiper-1.5.13.tgz#fa695cd4ab77b9a9df2d2bfee38ea7274dd07a2e"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-tab-view@^0.0.70:
   version "0.0.70"
   resolved "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-0.0.70.tgz#1dd2ded32acd0cb6bfef38d26e53675db733b37b"
@@ -3959,6 +3965,10 @@ stream-counter@~0.2.0:
   resolved "https://registry.npmjs.org/stream-counter/-/stream-counter-0.2.0.tgz#ded266556319c8b0e222812b9cf3b26fa7d947de"
   dependencies:
     readable-stream "~1.1.8"
+
+string-format@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/string-format/-/string-format-0.5.0.tgz#bfc4a69a250f17f273d97336797daf5dca6ecf30"
 
 string-length@^2.0.0:
   version "2.0.0"

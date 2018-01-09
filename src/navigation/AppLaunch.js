@@ -23,7 +23,7 @@ const AppLaunch = StackNavigator({
         Web: {screen: WebScene},
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Splash',
         mode: 'card',
         headerMode: 'screen'
     });

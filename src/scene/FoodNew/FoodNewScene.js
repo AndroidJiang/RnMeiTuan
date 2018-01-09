@@ -21,7 +21,7 @@ export class FoodNewScene extends Component {
 
         this.state = {
             discounts: [],
-            dataList: ['1', '1', '1', '1', '1', '1', '1'],
+            dataList: ['1', '2', '3', '4', '5', '6', '7'],
             refreshing: true,
         }
     }
@@ -40,6 +40,8 @@ export class FoodNewScene extends Component {
             </View>
         )
     }
+
+    keyExtractor = (item) => item;
 
     renderHeader() {
         return (

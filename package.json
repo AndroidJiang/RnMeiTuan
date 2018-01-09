@@ -14,7 +14,8 @@
     "react-native-swiper": "^1.5.13",
     "react-native-vector-icons": "^4.4.3",
     "react-navigation": "^1.0.0-beta.22",
-    "react-timer-mixin": "^0.13.3"
+    "react-timer-mixin": "^0.13.3",
+    "string-format": "^0.5.0"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",

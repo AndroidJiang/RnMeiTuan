@@ -44,7 +44,6 @@ export default class FoodBanner extends Component {
         } else {
             return <View/>
         }
-
     }
     _itemClick(item) {
         let url = item.url;
