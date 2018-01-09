@@ -12,6 +12,7 @@ import FoodMenu from './FoodMenu'
 import FoodWeather from "./FoodWeather";
 import FoodSearch from "./FoodSearch";
 import api from "../../common/api";
+import FoodDiscount from "./FoodDiscount";
 export class FoodHeader extends Component {
     /*隐藏默认导航头，自定义*/
     static navigationOptions = ({navigation}) => ({
@@ -21,8 +22,8 @@ export class FoodHeader extends Component {
     render() {
         return (
                 <View style={styles.container}>
-                    <FoodSearch/>
                     <FoodBanner  navigation={this.props.navigation}/>
+                    <FoodDiscount/>
                     <FoodMenu menuInfos={api.menuInfo}/>
                 </View>
         )

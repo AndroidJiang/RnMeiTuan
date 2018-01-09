@@ -24,7 +24,6 @@ export default class FoodListItem extends PureComponent {
         return (
             <TouchableOpacity style={styles.container} onPress={() => this.props.onPress(info)}>
                 <Image source={{uri: imageUrl}} style={styles.icon}/>
-
                 <View style={styles.rightContainer}>
                     <Heading1>{info.name}</Heading1>
                     <View>
@@ -32,8 +31,16 @@ export default class FoodListItem extends PureComponent {
                     <Paragraph numberOfLines={1} style={{marginTop: 8}}>{info.featureMenus}</Paragraph>
                     <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                         <Heading1 style={styles.price}>￥{info.avgPrice}</Heading1>
-                        <Paragraph style={styles.discount}>{info.discount}</Paragraph>
-                        <Paragraph style={styles.count}>已售{info.historyCouponCount}</Paragraph>
+                        <Text style={{
+                            marginLeft:5,
+                            paddingLeft: info.discount==""?0:5,
+                            paddingRight: info.discount==""?0:5,
+                            borderColor: 'green',
+                            borderWidth: info.discount==""?0:1,
+                            borderRadius: 5,
+                            fontSize:12,
+                            color: 'green',}}>{info.discount}</Text>
+                        <Text style={styles.count}>已售{info.historyCouponCount}</Text>
                     </View>
 
                 </View>
@@ -65,17 +72,12 @@ const styles = StyleSheet.create({
         color: color.theme
     },
     discount: {
-        marginLeft: 5,
-        borderColor: 'green',
-        borderWidth: 1,
-        borderRadius: 5,
-        paddingLeft: 3,
-        paddingRight: 3,
-        color: 'green',
+
     },
     count: {
         position: 'absolute',
         right: 5,
+        fontSize:12,
         color:'gray',
     }
 });

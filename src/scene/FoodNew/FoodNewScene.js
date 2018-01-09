@@ -20,6 +20,7 @@ import {FoodHeader} from "./FoodHeader";
 import api, {recommendUrl}from "../../common/api";
 import FoodBanner from "./FoodBanner";
 import FoodListItem from "./FoodListItem";
+import FoodSearch from "./FoodSearch";
 
 export class FoodNewScene extends Component {
     /*隐藏默认导航头，自定义*/
@@ -54,6 +55,7 @@ export class FoodNewScene extends Component {
         } else {
             return (
                 <View style={styles.container}>
+                    <FoodSearch/>
                     <FlatList
                         data={this.state.dataList}
                         keyExtractor={this.keyExtractor}
