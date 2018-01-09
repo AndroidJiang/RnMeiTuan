@@ -8,32 +8,34 @@
 
 //import liraries
 import React, {PureComponent} from 'react'
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
+import {Heading1, Heading2, Paragraph} from '../../widget/Text'
+import {screen, system} from '../../common/common'
+import color from "../../common/color";
 
-import {Heading1, Heading2} from '../../widget/Text'
-import {screen, system, tool} from '../../common/common'
 
+let count = 0;
 // create a component
-export  default class FoodListItem extends PureComponent {
+export default class FoodListItem extends PureComponent {
 
     render() {
-        var info=this.props.info;
-        var img=info.frontImg.replace('w.h','300.300');
-        img.substring()
+        var info = this.props.info;
+        let imageUrl = info.frontImg.replace('w.h', '160.0')
         return (
-            <TouchableOpacity style={styles.container}
-                              onPress={this.props.onPress}>
-                <Image source={{uri:img}}  resizeMode={Image.resizeMode.stretch} style={styles.icon}/>
-                <View style={styles.right}>
-                    <Heading1>
-                        {info.name}
-                    </Heading1>
-                    <Heading2>
-                        {info.name}
-                    </Heading2>
-                    <Heading2>
-                        {info.name}
-                    </Heading2>
+            <TouchableOpacity style={styles.container} onPress={() => this.props.onPress(info)}>
+                <Image source={{uri: imageUrl}} style={styles.icon}/>
+
+                <View style={styles.rightContainer}>
+                    <Heading1>{info.name}</Heading1>
+                    <View>
+                    </View>
+                    <Paragraph numberOfLines={1} style={{marginTop: 8}}>{info.featureMenus}</Paragraph>
+                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+                        <Heading1 style={styles.price}>￥{info.avgPrice}</Heading1>
+                        <Paragraph style={styles.discount}>{info.discount}</Paragraph>
+                        <Paragraph style={styles.count}>已售{info.historyCouponCount}</Paragraph>
+                    </View>
+
                 </View>
             </TouchableOpacity>
         );
@@ -43,18 +45,38 @@ export  default class FoodListItem extends PureComponent {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex:1,
         flexDirection: 'row',
-        alignItems: 'center',
-
-    },
-    right: {
-
+        padding: 10,
+        borderBottomWidth: screen.onePixel,
+        borderColor: color.border,
+        backgroundColor: 'white',
     },
     icon: {
-        width: screen.width / 4,
-        height: screen.width / 4,
-        margin: 5,
+        width: 80,
+        height: 80,
+        borderRadius: 5,
+    },
+    rightContainer: {
+        flex: 1,
+        paddingLeft: 20,
+        paddingRight: 10,
+    },
+    price: {
+        color: color.theme
+    },
+    discount: {
+        marginLeft: 5,
+        borderColor: 'green',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingLeft: 3,
+        paddingRight: 3,
+        color: 'green',
+    },
+    count: {
+        position: 'absolute',
+        right: 5,
+        color:'gray',
     }
 });
 
