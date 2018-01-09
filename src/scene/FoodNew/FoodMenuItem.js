@@ -14,7 +14,7 @@ import { Heading2 } from '../../widget/Text'
 import { screen, system, tool } from '../../common/common'
 
 // create a component
-class FoodMenuItem extends PureComponent {
+export default class FoodMenuItem extends PureComponent {
     render() {
         return (
             <TouchableOpacity style={styles.container}
@@ -43,5 +43,3 @@ const styles = StyleSheet.create({
     }
 });
 
-//make this component available to the app
-export default FoodMenuItem;

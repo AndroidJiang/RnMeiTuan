@@ -31,7 +31,7 @@ export default class Splash extends Component {
                         NavigationDispatchUtil.reset(this.props.navigation, 'Guide')
                     } else {
                         if ("1" === result[1][1]) {
-                            NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Main')
                         } else {
                             NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
                         }
