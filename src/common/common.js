@@ -8,5 +8,6 @@
 
 import screen from './screen'
 import system from './system'
+import api from './api';
 
-export {screen, system}
+export {screen, system,api}

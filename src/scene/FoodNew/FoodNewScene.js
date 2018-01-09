@@ -75,6 +75,8 @@ export class FoodNewScene extends Component {
 
     }
 
+    keyExtractor = (item) => item;
+
     renderHeader() {
         return (
             <View>
