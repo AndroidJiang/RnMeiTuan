@@ -32,7 +32,7 @@ export default class FoodBanner extends Component {
                             activeDot={<View style={styles.activeDot}/>}>
                         {this.state.dataSource.map((item, key) => {
                             return (
-                                <TouchableOpacity key={key} style={styles.container} onPress={this._itemClick.bind(this, item)}>
+                                <TouchableOpacity key={key} style={styles.container} onPress={this._itemClick}>
                                     <Image  style={styles.img} source={{uri: item.imgUrl}}
                                            resizeMode={Image.resizeMode.stretch}/>
                                 </TouchableOpacity>
@@ -45,7 +45,7 @@ export default class FoodBanner extends Component {
             return <View/>
         }
     }
-    _itemClick(item) {
+    _itemClick=(item) =>{
         let url = item.url;
         let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
         this.props.navigation.navigate('Web', {'url': urlStr,'userName': ''});

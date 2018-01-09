@@ -2,12 +2,22 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {Image, Text, TouchableOpacity, View, StyleSheet, ScrollView, FlatList, ActivityIndicator,Dimensions} from "react-native";
+import {
+    Image,
+    Text,
+    TouchableOpacity,
+    View,
+    StyleSheet,
+    ScrollView,
+    FlatList,
+    ActivityIndicator,
+    Dimensions
+} from "react-native";
 
 import color from "../../common/color";
 import {screen, system} from '../../common/common'
 import {FoodHeader} from "./FoodHeader";
-import api ,{recommendUrl}from "../../common/api";
+import api, {recommendUrl}from "../../common/api";
 import FoodBanner from "./FoodBanner";
 import FoodListItem from "./FoodListItem";
 
@@ -18,35 +28,49 @@ export class FoodNewScene extends Component {
     })
 
     constructor(props: Object) {
-        super(props)
+        super(props);
 
         this.state = {
             discounts: [],
-            dataList: ['1', '2', '3', '4', '5', '6', '7'],
-            refreshing: true,
+            dataList: [],
+            isRefreshing: true,
             offset: 0,
             isLoadingMore: false,
             isEnd: false,
         }
     }
 
+    componentDidMount() {
+        this.requestRecommend();
+    }
+
     render() {
-        return (
-            <View style={styles.container}>
-                <FlatList
-                    data={this.state.dataList}
-                    keyExtractor={this.keyExtractor}
-                    onRefresh={this.requestRecommend()}
-                    refreshing={this.state.refreshing}
-                    ListHeaderComponent={this.renderHeader}
-                    renderItem={this.renderCell}
-                    onEndReachedThreshold={1}
-                    // onEndReached={this.getMoreData()}
-                    ListEmptyComponent={this._renderEmpty}
-                    ListFooterComponent={this._renderFooter}
-                />
-            </View>
-        )
+        if (this.state.isRefreshing && !this.state.isLoadingMore) {
+            return (
+                <View style={{flex: 1, justifyContent: 'center'}}>
+                    <ActivityIndicator color='blue' size='large'/>
+                </View>
+            );
+        } else {
+            return (
+                <View style={styles.container}>
+                    <FlatList
+                        data={this.state.dataList}
+                        keyExtractor={this.keyExtractor}
+                        ItemSeparatorComponent={this.renderSeparator}
+                        onRefresh={this.requestRecommend}
+                        refreshing={this.state.isRefreshing}
+                        ListHeaderComponent={this.renderHeader}
+                        extraData={this.state}
+                        renderItem={this.renderCell}
+                        onEndReachedThreshold={1}
+                        onEndReached={this.getMoreData}
+                        ListEmptyComponent={this.renderEmpty}
+                        ListFooterComponent={this.renderFooter}
+                    />
+                </View> )
+        }
+
     }
 
     keyExtractor = (item) => item;
@@ -58,14 +82,19 @@ export class FoodNewScene extends Component {
             </View>
         )
     }
-
+    renderSeparator = () => {
+        return (
+            <View style={{height: 1, backgroundColor: '#cccccc', width: Dimensions.get('window').width}}></View>
+        );
+    };
     renderCell(info: Object) {
         return (<View>
                 <FoodListItem info={info.item}/>
             </View>
         )
     }
-    _renderEmpty = () => {
+
+    renderEmpty = () => {
 
         return (<View style={{
             flex: 1, height: 500, alignItems: 'center',
@@ -75,7 +104,7 @@ export class FoodNewScene extends Component {
         </View>)
 
     };
-    _renderFooter = () => {
+    renderFooter = () => {
         if (this.state.isLoadingMore) {
             return (
                 <View style={{
@@ -92,76 +121,80 @@ export class FoodNewScene extends Component {
         }
         return (<View />);
     };
-    requestRecommend() {
-        debugger;
-        let url=recommendUrl(0);
-        return fetch(url)
-            .then(res => res.json())
-            .then((res) => {
-                let list = res.data;
-                if (list.length < 20 && list.length > 0) {
-                    this.setState({
-                        dataList: list,
-                        refreshing: false,
-                        isLoadingMore: false,
-                        isEnd: true,
-                        offset:0,
-                    });
-                } else {
-                    this.setState({
-                        dataList: list,
-                        refreshing: false,
-                        isLoadingMore: false,
-                        isEnd: false,
-                        offset:0,
-                    });
-                }
 
-            })
-            .catch(e => {
-            })
-            .done();
+    requestRecommend = () => {
+        let url = recommendUrl(1,0);
+        this.setState({isRefreshing: true}, () => {
+            return fetch(url)
+                .then(res => res.json())
+                .then((res) => {
+                    let list = res.data;
+
+                    if (list.length < 20 && list.length > 0) {
+                        this.setState({
+                            dataList: list,
+                            isRefreshing: false,
+                            isLoadingMore: false,
+                            isEnd: true,
+                            offset: 0,
+                        });
+                    } else {
+                        this.setState({
+                            dataList: list,
+                            isRefreshing: false,
+                            isLoadingMore: false,
+                            isEnd: false,
+                            offset: 0,
+                        });
+                    }
+
+                })
+                .catch(e => {
+                })
+                .done();
+        })
     }
 
-    getMoreData() {
+    getMoreData = () => {
         if (this.state.isRefreshing || this.state.isLoadingMore || this.state.isEnd) {
             return;
         }
-        let index = ++this.state.offset;
-        let url=recommendUrl(index);
-        return fetch(url)
-            .then(res => res.json())
-            .then((res) => {
-                let list = res.data;
-                if (list.length < 20 && list.length > 0) {
-                    this.setState({
-                        dataList: list,
-                        refreshing: false,
-                        isLoadingMore: false,
-                        isEnd: true,
-                        offset:index,
-                    });
-                } else {
-                    this.setState({
-                        dataList: list,
-                        refreshing: false,
-                        isLoadingMore: false,
-                        isEnd: false,
-                        offset:index,
-                    });
-                }
-            })
-            .catch(e => {
-            })
-            .done();
-    }
+        var index = this.state.offset + 20;
+        let url = recommendUrl(1,index);
+        this.setState({isLoadingMore: true}, () => {
+            return fetch(url)
+                .then(res => res.json())
+                .then((res) => {
+                    let list = res.data;
+                    console.log(this.state.dataList.length);
+                    if (list.length < 20 && list.length > 0) {
+                        this.setState({
+                            dataList: [...this.state.dataList, ...list],
+                            isRefreshing: false,
+                            isLoadingMore: false,
+                            isEnd: true,
+                            offset: index,
+                        });
 
-    componentDidMount() {
-        this.requestRecommend();
+                    } else {
+                        this.setState({
+                            dataList: [...this.state.dataList, ...list],
+                            isRefreshing: false,
+                            isLoadingMore: false,
+                            isEnd: false,
+                            offset: index,
+                        });
+
+                    }
+                })
+                .catch(e => {
+                })
+                .done();
+        })
     }
 
     keyExtractor(item: Object, index: number) {
-        return item.id
+        return index;
     }
 }
 
