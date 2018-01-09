@@ -13,31 +13,36 @@ import FoodWeather from "./FoodWeather";
 import FoodSearch from "./FoodSearch";
 import api from "../../common/api";
 import FoodDiscount from "./FoodDiscount";
+
 export class FoodHeader extends Component {
     /*隐藏默认导航头，自定义*/
     static navigationOptions = ({navigation}) => ({
-        header:null,
+        header: null,
     })
 
     render() {
         return (
-                <View style={styles.container}>
-                    <FoodBanner  navigation={this.props.navigation}/>
-                    <FoodDiscount/>
-                    <FoodMenu menuInfos={api.menuInfo}/>
-                </View>
+            <View style={styles.container}>
+                <FoodBanner navigation={this.props.navigation}/>
+                <FoodMenu menuInfos={api.menuInfo}/>
+                <FoodDiscount/>
+                <Text style={styles.tv}> - 猜你喜欢 - </Text>
+            </View>
         )
     }
 
 
 }
+
 // define your styles
 const styles = StyleSheet.create({
     contentContainer: {
-        paddingVertical: 20
+
     },
     container: {
-       flex:1, backgroundColor:'white',
+        flex: 1, backgroundColor: 'white',
+        borderBottomWidth:screen.onePixel,
+        borderColor: color.border,
     },
 
     recommendHeader: {
@@ -48,6 +53,15 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingLeft: 20,
         backgroundColor: 'white'
+    },
+    tv: {
+        flexDirection:'row',
+        flex:1,
+        color: 'gray',
+        fontSize: 12,
+        padding:5,
+        alignSelf:'center',
+
     },
 
 });

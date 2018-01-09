@@ -14,14 +14,14 @@ import api from "../../common/api";
  * */
 export default class FoodDiscount extends Component {
     constructor(props: Object) {
-        super();
+        super(props);
         this.state = {
             dataSource: [],
         }
     }
 
     componentDidMount() {
-        this.getDiscount;
+        this.getDiscount();
     }
 
     render() {
@@ -30,12 +30,12 @@ export default class FoodDiscount extends Component {
             <View style={styles.container}>
                 {this.state.dataSource.map((item, key) => {
                     return (
-                        <TouchableOpacity key={key} style={styles.container} onPress={this.itemClick}>
-                            <View style={styles.left}>
+                        <TouchableOpacity key={key} style={styles.item} onPress={this.itemClick}>
+
                                 <Text style={styles.title}>{item.maintitle}</Text>
                                 <Text style={styles.content}>{item.deputytitle}</Text>
-                            </View>
-                            <Image style={styles.searchIcon} source={{uri: item.imageurl}}/>
+
+                            <Image style={styles.searchIcon} source={{uri: item.imageurl.replace('w.h', '160.0')}}/>
                         </TouchableOpacity>
                     )
                 })}
@@ -45,9 +45,7 @@ export default class FoodDiscount extends Component {
         )
     }
     itemClick=(item) =>{
-        let url = item.url;
-        let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
-        this.props.navigation.navigate('Web', {'url': urlStr,'userName': ''});
+       alert('点你大爷')
     };
     getDiscount = () => {
         return fetch(api.discount)
@@ -69,13 +67,26 @@ export default class FoodDiscount extends Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        height: 40,
+        flex:1,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: color.theme,
+        flexWrap:'wrap',
+        borderBottomWidth: 10,
+        borderColor: color.border,
+    },
+    item:{
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        width: screen.width / 3,
+        height: screen.width / 3,
+        borderWidth:screen.onePixel,
+        borderColor: color.border,
     },
     title: {
         fontSize: 15,
+        color:'black',
+        fontWeight: 'bold',
     },
     content: {
         fontSize: 13,
@@ -92,8 +103,8 @@ const styles = StyleSheet.create({
         marginLeft: 5,
     },
     searchIcon: {
-        width: 20,
-        height: 20,
+        width: 50,
+        height: 50,
         margin: 5,
     }
 });

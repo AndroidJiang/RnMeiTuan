@@ -17,7 +17,7 @@ import {
 import color from "../../common/color";
 import {screen, system} from '../../common/common'
 import {FoodHeader} from "./FoodHeader";
-import api, {recommendUrl}from "../../common/api";
+import api, {recommendUrl} from "../../common/api";
 import FoodBanner from "./FoodBanner";
 import FoodListItem from "./FoodListItem";
 import FoodSearch from "./FoodSearch";
@@ -70,12 +70,11 @@ export class FoodNewScene extends Component {
                         ListEmptyComponent={this.renderEmpty}
                         ListFooterComponent={this.renderFooter}
                     />
-                </View> )
+                </View>)
         }
 
     }
 
-    keyExtractor = (item) => item;
 
     renderHeader() {
         return (
@@ -84,11 +83,13 @@ export class FoodNewScene extends Component {
             </View>
         )
     }
+
     renderSeparator = () => {
         return (
             <View style={{height: 1, backgroundColor: '#cccccc', width: Dimensions.get('window').width}}></View>
         );
     };
+
     renderCell(info: Object) {
         return (<View>
                 <FoodListItem info={info.item}/>
@@ -121,16 +122,16 @@ export class FoodNewScene extends Component {
                 </View>
             );
         }
-        return (<View />);
+        return (<View/>);
     };
 
     requestRecommend = () => {
-        let url = recommendUrl(1,0);
-        this.setState({isRefreshing: true}, () => {
+        let url = recommendUrl(1, 0);
+        this.setState({isRefreshing: false}, () => {
             return fetch(url)
                 .then(res => res.json())
                 .then((res) => {
-                    let list = res.data;
+                    var list = res.data;
 
                     if (list.length < 20 && list.length > 0) {
                         this.setState({
@@ -162,31 +163,33 @@ export class FoodNewScene extends Component {
             return;
         }
         var index = this.state.offset + 20;
-        let url = recommendUrl(1,index);
+        let url = recommendUrl(1, index);
         this.setState({isLoadingMore: true}, () => {
             return fetch(url)
                 .then(res => res.json())
                 .then((res) => {
-                    let list = res.data;
+                    var list = res.data;
                     console.log(this.state.dataList.length);
-                    if (list.length < 20 && list.length > 0) {
-                        this.setState({
-                            dataList: [...this.state.dataList, ...list],
-                            isRefreshing: false,
-                            isLoadingMore: false,
-                            isEnd: true,
-                            offset: index,
-                        });
+                    if (list.length > 0) {
+                        if (list.length < 20) {
+                            this.setState({
+                                dataList: [...this.state.dataList, ...list],
+                                isRefreshing: false,
+                                isLoadingMore: false,
+                                isEnd: true,
+                                offset: index,
+                            });
 
-                    } else {
-                        this.setState({
-                            dataList: [...this.state.dataList, ...list],
-                            isRefreshing: false,
-                            isLoadingMore: false,
-                            isEnd: false,
-                            offset: index,
-                        });
+                        } else {
+                            this.setState({
+                                dataList: [...this.state.dataList, ...list],
+                                isRefreshing: false,
+                                isLoadingMore: false,
+                                isEnd: false,
+                                offset: index,
+                            });
 
+                        }
                     }
                 })
                 .catch(e => {
