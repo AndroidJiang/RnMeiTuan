@@ -54,9 +54,10 @@ export default class NearbyItemListView extends Component {
     renderCell = ({item, index}) => {
         let img = item.frontImg;
         let newImage = img.replace("w.h", '200.0');
-
+        let payAbstracts = item.payAbstracts;
+        let count = payAbstracts.length;
         return (
-            <View style={{
+            <View style={[{
                 borderTopWidth: screen.onePixel,
                 borderTopColor: '#888888',
                 borderBottomColor: '#888888',
@@ -66,12 +67,12 @@ export default class NearbyItemListView extends Component {
                 flexDirection: 'row',
                 paddingLeft: 10,
                 paddingRight: 10,
-                alignItems: 'center'
-            }}>
+                alignItems: 'center', paddingTop: 10, paddingBottom: 10
+            }]}>
 
-                <Image style={{width: 140, height: 120, alignSelf: 'flex-start', marginTop: 10}}
+                <Image style={{width: 140, height: 120, alignSelf: 'flex-start',}}
                        source={{uri: newImage}}/>
-                <View style={{flex: 1, marginTop: 10, marginLeft: 10, alignSelf: 'flex-start'}}>
+                <View style={{flex: 1, marginLeft: 10, alignSelf: 'flex-start'}}>
                     <View style={{flexDirection: 'row', alignItems: 'center', height: 30}}>
                         <Text style={{fontSize: 18, lineHeight: 30,}} numberOfLines={1}>{item.name}</Text>
                     </View>
@@ -82,9 +83,19 @@ export default class NearbyItemListView extends Component {
                             style={{lineHeight: 30, fontSize: 14, textAlign: 'center', marginLeft: 6}}>¥{item.avgPrice}/人</Text>
                     </View>
                     <Text style={{lineHeight: 30, fontSize: 14}}>{item.cateName} | {item.areaName}</Text>
-                    <View style={{height: 30, borderBottomColor: '#dddddd',
-                        borderBottomWidth: 1,
-                    }}></View>
+                    <View style={{
+                        height: 30, flexDirection: 'row', alignItems: 'flex-end',
+                    }}>
+                        <Image source={require('../../img/Common/icon_mark.png')} style={{width: 14, height: 14}}/>
+                        <Text style={{
+                            marginLeft: 3,
+                            fontSize: 12,
+                        }}>{item.markNumbers}人消费</Text>
+                    </View>
+                    {
+                        count === 0 ? <View></View> : count === 1 ?
+                            <View></View> : <View></View>
+                    }
 
                 </View>
             </View>

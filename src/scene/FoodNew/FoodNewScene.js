@@ -76,10 +76,10 @@ export class FoodNewScene extends Component {
     }
 
 
-    renderHeader() {
+    renderHeader = () => {
         return (
             <View>
-                <FoodHeader/>
+                <FoodHeader navigation={this.props.navigation}/>
             </View>
         )
     }

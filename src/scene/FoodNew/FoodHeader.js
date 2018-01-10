@@ -16,9 +16,10 @@ import FoodDiscount from "./FoodDiscount";
 
 export class FoodHeader extends Component {
     /*隐藏默认导航头，自定义*/
-    static navigationOptions = ({navigation}) => ({
-        header: null,
-    })
+
+    constructor(props){
+        super(props);
+    }
 
     render() {
         return (

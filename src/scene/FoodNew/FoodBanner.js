@@ -2,7 +2,7 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, TouchableOpacity} from "react-native";
+import {View, StyleSheet, Image, TouchableOpacity,Alert} from "react-native";
 
 import Swiper from 'react-native-swiper';
 import api from '../../common/api'
@@ -32,7 +32,7 @@ export default class FoodBanner extends Component {
                             activeDot={<View style={styles.activeDot}/>}>
                         {this.state.dataSource.map((item, key) => {
                             return (
-                                <TouchableOpacity key={key} style={styles.container} onPress={this._itemClick}>
+                                <TouchableOpacity key={key} style={styles.container} onPress={this._itemClick.bind(this,item)}>
                                     <Image  style={styles.img} source={{uri: item.imgUrl}}
                                            resizeMode={Image.resizeMode.stretch}/>
                                 </TouchableOpacity>
@@ -47,8 +47,9 @@ export default class FoodBanner extends Component {
     }
     _itemClick=(item) =>{
         let url = item.url;
-        let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
-        this.props.navigation.navigate('Web', {'url': urlStr,'userName': ''});
+         url = 'https://www.baidu/com';
+        // let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
+        this.props.navigation.navigate('Web', {'url': url,'userName': ''});
     };
     getBanner = () => {
         return fetch(api.banner)

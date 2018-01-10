@@ -7,7 +7,7 @@ import {TabNavigator} from 'react-navigation';
 import NewsScene from "../scene/News/NewsScene";
 import TabBarItem from "../widget/TabBarItem";
 import {FoodNewScene} from "../scene/FoodNew/FoodNewScene";
-// import NearbyScene from "../scene/nearby/NearbyScene";
+import NearbyScene from "../scene/nearby/NearbyScene";
 const Main = TabNavigator({
     Food: {
         screen: FoodNewScene,
@@ -23,20 +23,20 @@ const Main = TabNavigator({
             ),
         }),
     },
-    // NearBy: {
-    //     screen: NearbyScene,
-    //     navigationOptions: ({}) => ({
-    //         tabBarLabel: '附近',
-    //         tabBarIcon: ({tintColor, focused}) => (
-    //             <TabBarItem
-    //                 tintColor={tintColor}
-    //                 focused={focused}
-    //                 normalImage={require('../img/tabbar/icon_nearby.png')}
-    //                 selectedImage={require('../img/tabbar/icon_nearby_selected.png')}
-    //             />
-    //         )
-    //     }),
-    // },
+    NearBy: {
+        screen: NearbyScene,
+        navigationOptions: ({}) => ({
+            tabBarLabel: '附近',
+            tabBarIcon: ({tintColor, focused}) => (
+                <TabBarItem
+                    tintColor={tintColor}
+                    focused={focused}
+                    normalImage={require('../img/tabbar/icon_nearby.png')}
+                    selectedImage={require('../img/tabbar/icon_nearby_selected.png')}
+                />
+            )
+        }),
+    },
     NewsScene: {
         screen: NewsScene,
         navigationOptions: ({navigation, screenProps}) => ({
