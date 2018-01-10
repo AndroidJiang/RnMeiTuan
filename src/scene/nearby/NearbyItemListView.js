@@ -7,6 +7,7 @@ import {View, Image, Text, StyleSheet, Dimensions, StatusBar, FlatList} from 're
 import {screen, api} from '../../common/common';
 import NearbyHeaderView from "./NearbyHeaderView";
 import {recommendUrl} from "../../common/api";
+import {Heading1, Heading2, Paragraph} from '../../widget/Text'
 export default class NearbyItemListView extends Component {
 
     constructor(props) {
@@ -94,7 +95,40 @@ export default class NearbyItemListView extends Component {
                     </View>
                     {
                         count === 0 ? <View></View> : count === 1 ?
-                            <View></View> : <View></View>
+                            <View style={{
+                                height: 30, borderTopColor: '#f4f4f4',
+                                borderTopWidth: 1,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                            }}>
+                                <Image source={{uri: payAbstracts[0].icon_url}} style={{width: 12, height: 12}}/>
+                                <Text numberOfLines={1}
+                                      style={{fontSize: 14, marginLeft: 6,}}>{payAbstracts[0].abstract}</Text>
+                            </View> : <View
+                                style={{
+                                    height: 60, borderTopColor: '#f4f4f4',
+                                    borderTopWidth: 1,
+                                    justifyContent: 'center',
+                                }}>
+                                <View style={{
+                                    height: 30,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                }}>
+                                    <Image source={{uri: payAbstracts[0].icon_url}} style={{width: 12, height: 12}}/>
+                                    <Text numberOfLines={1}
+                                          style={{fontSize: 14, marginLeft: 6}}>{payAbstracts[0].abstract}</Text>
+                                </View>
+                                <View style={{
+                                    height: 30,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                }}>
+                                    <Image source={{uri: payAbstracts[1].icon_url}} style={{width: 12, height: 12}}/>
+                                    <Text numberOfLines={1}
+                                          style={{fontSize: 14, marginLeft: 6,}}>{payAbstracts[1].abstract}</Text>
+                                </View>
+                            </View>
                     }
 
                 </View>

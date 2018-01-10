@@ -47,9 +47,8 @@ export default class FoodBanner extends Component {
     }
     _itemClick=(item) =>{
         let url = item.url;
-         url = 'https://www.baidu/com';
-        // let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
-        this.props.navigation.navigate('Web', {'url': url,'userName': ''});
+        let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
+        this.props.navigation.navigate('Web', {'url': urlStr,'userName': ''});
     };
     getBanner = () => {
         return fetch(api.banner)
