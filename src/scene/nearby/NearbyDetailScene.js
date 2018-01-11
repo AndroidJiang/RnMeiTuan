@@ -8,6 +8,8 @@ import {
     PixelRatio, Linking,
 } from 'react-native';
 import {screen, api} from '../../common/common';
+import {recommendUrl} from "../../common/api";
+import StarRating from 'react-native-star-rating';
 export default class NearbyDetailScene extends Component {
     static navigationOptions = ({navigation}) => {
         const data = navigation.state.params.data;
@@ -35,6 +37,8 @@ export default class NearbyDetailScene extends Component {
         }
         console.log(imgUrl);
         let count = Math.ceil(Math.random() * 20);
+        let avgScore = item.avgScore;
+        let score = Math.round(avgScore);
         return (
             <ScrollView style={{flex: 1}}>
                 <ImageBackground style={{width: screen.width, height: screen.width * 0.6}} source={{uri: imgUrl}}
@@ -64,15 +68,23 @@ export default class NearbyDetailScene extends Component {
                     paddingLeft: 15,
 
                 }}>
-                    <Text style={{lineHeight: 40, fontSize: 20}} numberOfLines={1}>
+                    <Text style={{lineHeight: 40, fontSize: 20,color:'#4c4c4c'}} numberOfLines={1}>
                         {item.name}
                     </Text>
                     <View style={{flexDirection: 'row', alignItems: 'center', height: 40}}>
-                        <Image source={require('../../img/Common/icon_store.png')}
-                               style={{width: 96, height: 15,}}/>
+                        <StarRating
+                            disabled={true}
+                            emptyStar={require('../../img/Common/dp_ad_icon_star_small_gary.png')}
+                            fullStar={require('../../img/Common/dp_ad_icon_star_small.png')}
+                            maxStars={5}
+                            rating={score}
+                            starSize={18}
+                        />
+                        <Text style={{fontSize: 14, color: '#f1a13b', marginLeft: 8}}>{avgScore}分</Text>
                         <Text style={{
                             fontSize: 14,
-                            marginLeft: 6
+                            marginLeft: 12,
+                            color: 'gray'
                         }}>人均：¥{item.avgPrice}</Text>
                     </View>
                 </View>
@@ -85,15 +97,18 @@ export default class NearbyDetailScene extends Component {
                         paddingLeft: 8,
                         paddingTop: 10,
                         paddingBottom: 10,
-                        minHeight: 60
+                        minHeight: 60,
+                        borderBottomWidth: 1,
+                        borderBottomColor: '#f4f4f4',
                     }}>
                     <Image style={{width: 16, height: 16,}} source={require('../../img/Common/icon_location.png')}/>
 
                     <Text numberOfLines={2}
                           style={{
-                              fontSize: 14,
+                              fontSize: 16,
                               marginLeft: 8,
                               width: screen.width * 0.75,
+                              color:'#4c4c4c'
                           }}>{item.addr}</Text>
 
                     <View style={{backgroundColor: '#f4f4f4', height: 30, width: 1, marginLeft: 6}}></View>
@@ -112,8 +127,36 @@ export default class NearbyDetailScene extends Component {
                                source={require('../../img/Common/icon_call.png')}/>
                     </TouchableOpacity>
 
-
                 </View>
+                {
+                    item.isWaimai === 1 ? <View
+                        style={{
+                            height: 40,
+                            backgroundColor: 'white',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            paddingLeft: 8,
+                        }}
+                    >
+                        <Image style={{width: 20, height: 20}} source={require('../../img/Common/icon_waimai.png')}/>
+                        <Text style={{fontSize: 14, marginLeft: 8}}>外卖</Text>
+                        <Image style={{width: 9, height: 16, position: 'absolute', right: 15}}
+                               source={require('../../img/Common/buy_icon_arrow_right.png')}/>
+                    </View> : item.isQueuing === 1 ? <View style={{
+                        height: 40,
+                        backgroundColor: 'white',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        paddingLeft: 8,
+                    }}>
+
+                        <Image style={{width: 20, height: 20}} source={require('../../img/Common/icon_paidui.png')}/>
+                        <Text style={{fontSize: 14, marginLeft: 8}}>排队</Text>
+                        <Image style={{width: 9, height: 16, position: 'absolute', right: 15}}
+                               source={require('../../img/Common/buy_icon_arrow_right.png')}/>
+                    </View> : <View></View>
+
+                }
 
             </ScrollView>
         );

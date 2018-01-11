@@ -19,6 +19,7 @@ import {
 import {screen, api} from '../../common/common';
 import NearbyHeaderView from "./NearbyHeaderView";
 import {recommendUrl} from "../../common/api";
+import StarRating from 'react-native-star-rating';
 export default class NearbyItemListView extends Component {
 
     constructor(props) {
@@ -139,6 +140,8 @@ export default class NearbyItemListView extends Component {
         let newImage = img.replace("w.h", '200.0');
         let payAbstracts = item.payAbstracts;
         let count = payAbstracts.length;
+        let avgScore = item.avgScore;
+        let score = Math.round(avgScore);
         return (
             <TouchableOpacity activeOpacity={0.8} onPress={this.itemClick.bind(this, item)} style={[{
                 borderTopWidth: screen.onePixel,
@@ -161,13 +164,18 @@ export default class NearbyItemListView extends Component {
                             <Text style={{fontSize: 18, lineHeight: 30,}} numberOfLines={1}>{item.name}</Text>
                         </View>
                         <View style={{flexDirection: 'row', alignItems: 'center', height: 30}}>
-                            <Image source={require('../../img/Common/icon_store.png')}
-                                   style={{width: 96, height: 15, marginTop: 10}}/>
+                            <StarRating
+                                disabled={true}
+                                emptyStar={require('../../img/Common/dp_ad_icon_star_small_gary.png')}
+                                fullStar={require('../../img/Common/dp_ad_icon_star_small.png')}
+                                maxStars={5}
+                                rating={score}
+                                starSize={18}
+                            />
+
                             <Text
                                 style={{
-                                    lineHeight: 30,
                                     fontSize: 14,
-                                    textAlign: 'center',
                                     marginLeft: 6
                                 }}>¥{item.avgPrice}/人</Text>
                         </View>
@@ -176,7 +184,7 @@ export default class NearbyItemListView extends Component {
                             height: 30, flexDirection: 'row', alignItems: 'center'
                         }}>
                             <Image source={require('../../img/Common/icon_mark.png')}
-                                   style={{width: 14, height: 14}}/>
+                                   style={{width: 16, height: 16}}/>
                             <Text style={{
                                 marginLeft: 3,
                                 fontSize: 12,
