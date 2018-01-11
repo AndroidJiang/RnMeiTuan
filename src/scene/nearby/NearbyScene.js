@@ -70,7 +70,7 @@ export default class NearbyScene extends Component {
                 >
                     {
                         titles.map((item, i) => (
-                            <NearbyItemListView tabLabel={item} key={item} type={types[i]}/>
+                            <NearbyItemListView tabLabel={item} key={item} type={types[i]} navigation = {this.props.navigation}/>
                         ))
                     }
                 </ScrollableTabView>

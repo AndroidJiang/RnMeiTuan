@@ -50,8 +50,8 @@ export default {
  * @param offset 索引
  * @returns {string}
  */
-export function recommendUrl(cate,offset) {
-    return 'http://api.meituan.com/group/v1/poi/select/cate/'+cate+'?cityId=1&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
+export function recommendUrl(cate, offset) {
+    return 'http://api.meituan.com/group/v1/poi/select/cate/' + cate + '?cityId=1&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
 }
 
 

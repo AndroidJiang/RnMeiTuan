@@ -12,12 +12,13 @@ import {
     StatusBar,
     FlatList,
     ProgressBarAndroid,
-    ActivityIndicator
+    ActivityIndicator,
+    TouchableOpacity,
+    Alert
 } from 'react-native';
 import {screen, api} from '../../common/common';
 import NearbyHeaderView from "./NearbyHeaderView";
 import {recommendUrl} from "../../common/api";
-import {Heading1, Heading2, Paragraph} from '../../widget/Text'
 export default class NearbyItemListView extends Component {
 
     constructor(props) {
@@ -127,6 +128,11 @@ export default class NearbyItemListView extends Component {
         }
     };
 
+    itemClick = (item) => {
+        let itemStr = JSON.stringify(item);
+        this.props.navigation.navigate('NearDetail', {'data': itemStr});
+    };
+
 
     renderCell = ({item, index}) => {
         let img = item.frontImg;
@@ -134,7 +140,7 @@ export default class NearbyItemListView extends Component {
         let payAbstracts = item.payAbstracts;
         let count = payAbstracts.length;
         return (
-            <View style={[{
+            <TouchableOpacity activeOpacity={0.8} onPress={this.itemClick.bind(this, item)} style={[{
                 borderTopWidth: screen.onePixel,
                 borderTopColor: '#888888',
                 borderBottomColor: '#888888',
@@ -169,7 +175,8 @@ export default class NearbyItemListView extends Component {
                         <View style={{
                             height: 30, flexDirection: 'row', alignItems: 'center'
                         }}>
-                            <Image source={require('../../img/Common/icon_mark.png')} style={{width: 14, height: 14}}/>
+                            <Image source={require('../../img/Common/icon_mark.png')}
+                                   style={{width: 14, height: 14}}/>
                             <Text style={{
                                 marginLeft: 3,
                                 fontSize: 12,
@@ -199,7 +206,8 @@ export default class NearbyItemListView extends Component {
                                     flexDirection: 'row',
                                     alignItems: 'center',
                                 }}>
-                                    <Image source={{uri: payAbstracts[0].icon_url}} style={{width: 12, height: 12}}/>
+                                    <Image source={{uri: payAbstracts[0].icon_url}}
+                                           style={{width: 12, height: 12}}/>
                                     <Text numberOfLines={1}
                                           style={{fontSize: 14, marginLeft: 6}}>{payAbstracts[0].abstract}</Text>
                                 </View>
@@ -208,7 +216,8 @@ export default class NearbyItemListView extends Component {
                                     flexDirection: 'row',
                                     alignItems: 'center',
                                 }}>
-                                    <Image source={{uri: payAbstracts[1].icon_url}} style={{width: 12, height: 12}}/>
+                                    <Image source={{uri: payAbstracts[1].icon_url}}
+                                           style={{width: 12, height: 12}}/>
                                     <Text numberOfLines={1}
                                           style={{fontSize: 14, marginLeft: 6,}}>{payAbstracts[1].abstract}</Text>
                                 </View>
@@ -216,7 +225,7 @@ export default class NearbyItemListView extends Component {
                     }
 
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     };
 

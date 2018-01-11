@@ -9,6 +9,8 @@
   "dependencies": {
     "react": "16.0.0",
     "react-native": "0.51.0",
+    "react-native-parallax-scroll-view": "^0.20.1",
+    "react-native-parallax-view": "^2.0.6",
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-storage": "^0.2.2",
     "react-native-swiper": "^1.5.13",
