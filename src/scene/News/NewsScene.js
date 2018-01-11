@@ -7,6 +7,7 @@ import {View, Image, Text, StatusBar, AsyncStorage, DeviceEventEmitter} from 're
 import ScrollableTabView, {DefaultTabBar, ScrollableTabBar} from "react-native-scrollable-tab-view";
 import ItemListView from "./ItemListView";
 import TabBarItem from "../../widget/TabBarItem";
+import color from "../../common/color";
 var typeIds = [];
 var typeNames = [];
 
@@ -16,7 +17,7 @@ export default class NewsScene extends Component {
         return {
 
             headerTitle: '新闻',
-            headerStyle: {height: 48, backgroundColor: '#00aaf6'},
+            headerStyle: {height: 48, backgroundColor: color.theme},
             headerTitleStyle: {alignSelf: 'center', fontSize: 22, color: 'white', fontWeight: 'normal'},
             headerRight: <Text style={{width: 25, height: 25, marginRight: 10}}></Text>,
             headerLeft: <Text style={{width: 25, height: 25, marginLeft: 10}}></Text>,
@@ -76,11 +77,10 @@ export default class NewsScene extends Component {
         });
         return (
             <View style={{flex: 1}}>
-                <StatusBar backgroundColor='#0E99F6' translucent={false} hidden={false}/>
                 <ScrollableTabView renderTabBar={() => <ScrollableTabBar tabStyle={{paddingBottom: 0}}
                                                                          textStyle={{fontSize: 16}}/>}
                                    tabBarUnderlineStyle={{
-                                       backgroundColor: '#00aaf6',
+                                       backgroundColor: color.theme,
                                        height: 2,
                                    }}
                                    tabBarBackgroundColor="#fcfcfc"

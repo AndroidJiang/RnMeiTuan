@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         flex:1,
         color: 'gray',
-        fontSize: 12,
-        padding:5,
+        fontSize: 13,
+        padding:8,
         alignSelf:'center',
 
     },

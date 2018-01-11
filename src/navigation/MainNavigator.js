@@ -8,7 +8,10 @@ import NewsScene from "../scene/News/NewsScene";
 import TabBarItem from "../widget/TabBarItem";
 import {FoodNewScene} from "../scene/FoodNew/FoodNewScene";
 import NearbyScene from "../scene/nearby/NearbyScene";
+import color from "../common/color";
+import common from "../common/screen";
 const Main = TabNavigator({
+
     Food: {
         screen: FoodNewScene,
         navigationOptions: ({navigation, screenProps}) => ({
@@ -17,8 +20,8 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/icon_home.png')}
-                    selectedImage={require('../img/tabbar/icon_home_selected.png')}
+                    normalImage={require('../img/tabbar/ic_vector_home_normal.png')}
+                    selectedImage={require('../img/tabbar/ic_vector_home_pressed.png')}
                 />
             ),
         }),
@@ -31,8 +34,8 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/icon_nearby.png')}
-                    selectedImage={require('../img/tabbar/icon_nearby_selected.png')}
+                    normalImage={require('../img/tabbar/ic_vector_nearby_normal.png')}
+                    selectedImage={require('../img/tabbar/ic_vector_nearby_pressed.png')}
                 />
             )
         }),
@@ -45,20 +48,51 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/icon_news.png')}
-                    selectedImage={require('../img/tabbar/icon_news_selected.png')}
+                    normalImage={require('../img/tabbar/ic_vector_discover_normal.png')}
+                    selectedImage={require('../img/tabbar/ic_vector_discover_pressed.png')}
                 />
             ),
         }),
     },
+    OrderScene: {
+        screen: NewsScene,
+        navigationOptions: ({navigation, screenProps}) => ({
+            tabBarLabel: '订单',
+            tabBarIcon: ({tintColor, focused}) => (
+                <TabBarItem
+                    tintColor={tintColor}
+                    focused={focused}
+                    normalImage={require('../img/tabbar/ic_vector_order_normal.png')}
+                    selectedImage={require('../img/tabbar/ic_vector_order_pressed.png')}
+                />
+            ),
+        }),
+    },
+    MineScene: {
+        screen: NewsScene,
+        navigationOptions: ({navigation, screenProps}) => ({
+            tabBarLabel: '我的',
+            tabBarIcon: ({tintColor, focused}) => (
+                <TabBarItem
+                    tintColor={tintColor}
+                    focused={focused}
+                    normalImage={require('../img/tabbar/ic_vector_mine_normal.png')}
+                    selectedImage={require('../img/tabbar/ic_vector_mine_pressed.png')}
+                />
+            ),
+        }),
+    },
+
+
 }, {
+    borderTopWidth:common.onePixel,
     tabBarPosition: 'bottom',
     initialRouteName: 'Food',
     animationEnabled: true,
     swipeEnabled: false,
     lazy: true,
     tabBarOptions: {
-        activeTintColor: '#00aaf6', // 文字和图片选中颜色
+        activeTintColor: color.theme, // 文字和图片选中颜色
         inactiveTintColor: '#888888',
         showLabel: true,
         showIcon: true,

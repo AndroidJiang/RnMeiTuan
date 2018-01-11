@@ -4,13 +4,14 @@
 import React, {Component} from 'react';
 
 import {View, Text, Image, WebView, TouchableOpacity} from 'react-native';
+import color from "../../common/color";
 
 export default class WebPage extends Component {
     static navigationOptions = ({navigation}) => {
         let name = navigation.state.params.userName;
         return {
             headerTitle: `${name}`,
-            headerStyle: {backgroundColor: '#00aaf6', height: 48,},
+            headerStyle: {backgroundColor: color.theme, height: 48,},
             headerTitleStyle: {color: 'white', fontSize: 20},
             headerLeft: <TouchableOpacity activeOpacity={0.6} onPress={() => {
                 navigation.goBack()
