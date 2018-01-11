@@ -45,14 +45,12 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/icon_home.png')}
-                    selectedImage={require('../img/tabbar/icon_home_selected.png')}
+                    normalImage={require('../img/tabbar/icon_news.png')}
+                    selectedImage={require('../img/tabbar/icon_news_selected.png')}
                 />
             ),
         }),
     },
-
-
 }, {
     tabBarPosition: 'bottom',
     initialRouteName: 'Food',

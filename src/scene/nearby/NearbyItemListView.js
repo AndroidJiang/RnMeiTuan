@@ -53,7 +53,7 @@ export default class NearbyItemListView extends Component {
         if (this.state.isFirstLoading || this.state.isEnd || this.state.isLoadingMore) {
             return;
         }
-        this.setState({isLoadingMore: true}, () => {
+        this.setState({isLoadingMore: true, isEnd: false}, () => {
             let newOff = this.state.offset + 20;
             let url = recommendUrl(1, newOff);
             return fetch(url)
@@ -101,7 +101,7 @@ export default class NearbyItemListView extends Component {
                               keyExtractor={this.renderKey}
                               renderItem={this.renderCell}
                               extraData={this.state}
-                              onEndReachedThreshold={0.1}
+                              onEndReachedThreshold={0.5}
                               onEndReached={this.getMoreData}
                               ListHeaderComponent={this.renderHeader}
                               ListFooterComponent={this.renderFooter}
@@ -247,6 +247,6 @@ export default class NearbyItemListView extends Component {
         );
     };
 
-    renderKey = (item,index) => index;
+    renderKey = (item, index) => index + item.cateName;
 
 }
