@@ -18,6 +18,7 @@ import {screen, api} from '../../common/common';
 import NearbyHeaderView from "./NearbyHeaderView";
 import {recommendUrl} from "../../common/api";
 import {Heading1, Heading2, Paragraph} from '../../widget/Text'
+import color from "../../common/color";
 export default class NearbyItemListView extends Component {
 
     constructor(props) {
@@ -119,7 +120,7 @@ export default class NearbyItemListView extends Component {
         } else if (this.state.isLoadingMore) {
             return (<View
                 style={{height: 40, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
-                <ActivityIndicator size='small' color={'#899ef6'}/>
+                <ActivityIndicator size='small' color={color.theme}/>
                 <Text>加载中...</Text>
             </View>);
         } else {
