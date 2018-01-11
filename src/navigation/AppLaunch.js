@@ -12,6 +12,7 @@ import Main from './MainNavigator';
 
 import ChooseType from '../scene/Start/ChooseTypeScene';
 import WebScene from "../scene/Public/WebScene";
+import CityScene from "../scene/City/CityScene";
 
 const AppLaunch = StackNavigator({
 
@@ -21,6 +22,7 @@ const AppLaunch = StackNavigator({
         Main: {screen: Main},
         Choose: {screen: ChooseType},
         Web: {screen: WebScene},
+        CityScene: {screen: CityScene},
     },
     {
         initialRouteName: 'Main',

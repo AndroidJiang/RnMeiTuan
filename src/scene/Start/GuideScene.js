@@ -42,7 +42,7 @@ export default class Guide extends Component {
                 AsyncStorage.multiGet(['isFirst', 'hasChoose'])
                     .then((result) => {
                         if ("1" === result[1][1]) {
-                            NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Main')
                         } else {
                             NavigationDispatchUtil.reset(this.props.navigation, 'Choose')
                         }

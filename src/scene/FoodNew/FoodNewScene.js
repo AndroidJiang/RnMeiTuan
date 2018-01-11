@@ -11,7 +11,7 @@ import {
     ScrollView,
     FlatList,
     ActivityIndicator,
-    Dimensions
+    Dimensions, StatusBar
 } from "react-native";
 
 import color from "../../common/color";
@@ -55,7 +55,8 @@ export class FoodNewScene extends Component {
         } else {
             return (
                 <View style={styles.container}>
-                    <FoodSearch/>
+                    <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
+                    <FoodSearch navigation={this.props.navigation}/>
                     <FlatList
                         data={this.state.dataList}
                         keyExtractor={this.keyExtractor}

@@ -8,6 +8,7 @@ import NewsScene from "../scene/News/NewsScene";
 import TabBarItem from "../widget/TabBarItem";
 import {FoodNewScene} from "../scene/FoodNew/FoodNewScene";
 import NearbyScene from "../scene/nearby/NearbyScene";
+import color from "../common/color";
 const Main = TabNavigator({
     Food: {
         screen: FoodNewScene,
@@ -60,7 +61,7 @@ const Main = TabNavigator({
     swipeEnabled: false,
     lazy: true,
     tabBarOptions: {
-        activeTintColor: '#00aaf6', // 文字和图片选中颜色
+        activeTintColor: color.theme, // 文字和图片选中颜色
         inactiveTintColor: '#888888',
         showLabel: true,
         showIcon: true,

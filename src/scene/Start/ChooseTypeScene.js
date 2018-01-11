@@ -7,6 +7,7 @@ import {
     ActivityIndicator, StatusBar, Platform, StyleSheet, AsyncStorage
 } from 'react-native';
 import NavigationDispatchUtil from '../../navigation/NavigationDispatchUtil';
+import color from "../../common/color";
 
 var TypeIds = [];
 var typeNames = [];
@@ -53,7 +54,6 @@ export  default class ChooseType extends Component {
     render() {
         return (
             <View style={{flex: 1, alignItems: 'center'}}>
-                <StatusBar backgroundColor='#00aaf6'/>
                 <View style={{
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -118,7 +118,7 @@ export  default class ChooseType extends Component {
                     {
                         text: '确定', onPress: () => {
                         AsyncStorage.setItem("hasChoose", "1", (error) => {
-                            NavigationDispatchUtil.reset(this.props.navigation, 'Tab')
+                            NavigationDispatchUtil.reset(this.props.navigation, 'Main')
                         });
                     }
                     },
@@ -126,7 +126,7 @@ export  default class ChooseType extends Component {
             )
         } else {
             AsyncStorage.multiSet([["data", JSON.stringify(TypeIds)], ["name", JSON.stringify(typeNames)], ['hasChoose', '1']], (error) => {
-                NavigationDispatchUtil.reset(this.props.navigation, 'Tab');
+                NavigationDispatchUtil.reset(this.props.navigation, 'Main');
             });
         }
     };
