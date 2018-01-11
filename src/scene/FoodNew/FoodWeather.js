@@ -40,7 +40,6 @@ export default class FoodWeather extends Component {
         })
             .then((response) => response.json()) //把response转为json
             .then((responseData) => { // 上面的转好的json
-                debugger
                 this.setState({
                     weather: responseData.result.temp,
                 });

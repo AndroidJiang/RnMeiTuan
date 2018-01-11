@@ -30,7 +30,7 @@ export default class FoodDiscount extends Component {
             <View style={styles.container}>
                 {this.state.dataSource.map((item, key) => {
                     return (
-                        <TouchableOpacity key={key} style={styles.item} onPress={this.itemClick}>
+                        <TouchableOpacity key={key} style={styles.item} onPress={this.itemClick.bind(this,item)}>
 
                                 <Text style={styles.title}>{item.maintitle}</Text>
                                 <Text style={styles.content}>{item.deputytitle}</Text>
@@ -45,7 +45,9 @@ export default class FoodDiscount extends Component {
         )
     }
     itemClick=(item) =>{
-       alert('点你大爷')
+        let url = item.tplurl;
+        let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
+        this.props.navigation.navigate('Web', {'url': urlStr,'userName': item.title});
     };
     getDiscount = () => {
         return fetch(api.discount)
