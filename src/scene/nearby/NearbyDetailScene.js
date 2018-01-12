@@ -4,11 +4,11 @@
 import React, {Component} from 'react';
 
 import {
-    View, Image, Text, StyleSheet, Dimensions, StatusBar, ScrollView, ImageBackground, TouchableOpacity,
+    View, Image, Text, StyleSheet, Dimensions, StatusBar, ScrollView, ImageBackground, TouchableOpacity, Alert,
     PixelRatio, Linking, FlatList
 } from 'react-native';
 import {screen, api} from '../../common/common';
-import {recommendUrlWithId} from "../../common/api";
+import {nearbyRecommend} from "../../common/api";
 
 import StarRating from 'react-native-star-rating';
 
@@ -37,11 +37,22 @@ export default class NearbyDetailScene extends Component {
     }
 
     getRequestData = () => {
-        let brandId = item.brandId;
-        let url = recommendUrlWithId(brandId);
+        let poiid = item.poiid;
+        let url = nearbyRecommend(poiid);
 
         this.setState({isRefreshing: true}, () => {
-            
+            return fetch(url)
+                .then(res => res.json())
+                .then(res => {
+                    var deals = res.data.deals;
+                    if (deals !== null && deals.length > 0) {
+                        this.setState({isRefreshing: false, dataSource: deals});
+                    }
+                })
+                .catch(e => {
+
+                })
+                .done();
         });
     };
 
@@ -78,27 +89,50 @@ export default class NearbyDetailScene extends Component {
                 </View>
 
                 <FlatList data={this.state.dataSource}
-                          keyExtractor={(item) => item}
+                          keyExtractor={(item) => item.title + item.id}
                           renderItem={this.renderCell}
-                          ListHeaderComponent={this.renderHeader}/>
+                          ItemSeparatorComponent={this.renderItemSeparator}
+                          ListHeaderComponent={this.renderHeader}
+                ListFooterComponent={this.renderFooter}/>
 
             </View>
 
 
-
         );
     }
+
+    renderFooter = () => (
+        <View style={{height: 40}}></View>
+    )
+
+    renderItemSeparator = () => {
+        return (<View style={{height: 1, backgroundColor: '#dddddd'}}></View>);
+    }
+
 
     renderHeader = () => {
 
         return (
-            <DetailHeaderView data={item}/>
+            <DetailHeaderView data={item} navigation={this.props.navigation}/>
         );
     }
 
     renderCell = ({item, index}) => {
+        var squareimgurl = item.squareimgurl;
+        squareimgurl = squareimgurl.replace('w.h', '200.0');
         return (
-            <View></View>
+            <TouchableOpacity activeOpacity={0.8}
+                              style={{
+                                  backgroundColor: 'white',
+                                  flexDirection: 'row',
+                                  height: 120,
+                                  width: screen.width,
+                                  alignItems: "center",
+                                  paddingLeft: 8
+                              }}>
+
+                <Image style={{width: 110, height: 100}} source={{uri: squareimgurl}}/>
+            </TouchableOpacity>
         );
     }
 }

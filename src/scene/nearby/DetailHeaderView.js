@@ -3,7 +3,17 @@
  */
 import React, {Component, PureComponent} from 'react';
 
-import {View, Image, Text, StyleSheet, Dimensions, StatusBar, ImageBackground, TouchableOpacity,} from 'react-native';
+import {
+    View,
+    Image,
+    Text,
+    StyleSheet,
+    Dimensions,
+    StatusBar,
+    Alert,
+    ImageBackground,
+    TouchableOpacity,
+} from 'react-native';
 import StarRating from "react-native-star-rating/star-rating";
 import {screen, api} from '../../common/common';
 export default class DetailHeaderView extends PureComponent {
@@ -183,11 +193,17 @@ export default class DetailHeaderView extends PureComponent {
                     }}>
                         <Text>推荐菜</Text>
                     </View>
-                    <View style={{paddingLeft: 8, flexDirection: 'row', alignItems: 'center', paddingBottom: 6}}>
+
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => this.recomendItemClick()} style={{
+                        paddingLeft: 8,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        paddingBottom: 6
+                    }}>
                         <Text numberOfLines={3} style={{fontSize: 14, lineHeight: 26, flex: 1}}>{menus}</Text>
                         <Image source={require('../../img/Common/buy_icon_arrow_right.png')}
                                style={{width: 9, height: 16, marginRight: 15, marginLeft: 10}}/>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{
@@ -212,7 +228,18 @@ export default class DetailHeaderView extends PureComponent {
                         }
                     </View>
                 </View>
+                <View style={{
+                    height: 40, paddingLeft: 8, justifyContent: 'center', borderBottomWidth: 1,
+                    borderBottomColor: '#f4f4f4', backgroundColor: 'white', marginTop: 10,
+                }}>
+                    <Text>附近推荐</Text>
+                </View>
+
             </View>
         );
     }
+
+    recomendItemClick = () => {
+        this.props.navigation.navigate('Recomend');
+    };
 }

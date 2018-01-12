@@ -13,6 +13,7 @@ import NearDetail from '../scene/nearby/NearbyDetailScene';
 import ChooseType from '../scene/Start/ChooseTypeScene';
 import WebScene from "../scene/Public/WebScene";
 import CityScene from "../scene/City/CityScene";
+import Recomend from '../scene/nearby/RecomendFoodView';
 
 const AppLaunch = StackNavigator({
 
@@ -24,6 +25,7 @@ const AppLaunch = StackNavigator({
         Choose: {screen: ChooseType},
         Web: {screen: WebScene},
         CityScene: {screen: CityScene},
+        Recomend: {screen: Recomend},
     },
     {
         initialRouteName: 'Main',

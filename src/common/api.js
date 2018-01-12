@@ -16,7 +16,6 @@ export default {
     recommend: 'http://api.meituan.com/group/v1/recommend/homepage/City/1?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=mrUZYo7999nH8WgTicdfzaGjaSQ=&__skno=51156DC4-B59A-4108-8812-AD05BF227A47&__skts=1434530933.303717&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&client=iphone&limit=40&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-06-17-14-50363&offset=0&position=39.983497,116.318042&userId=10086&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_trip_yidizhoubianyou__b__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___ab_waimaizhanshi__b__b1___a20141120nanning__m1__leftflow___ab_pind',
 
 
-
     menuInfo: [
         {title: '美食', icon: require('../img/Food/icon_homepage_foodCategory.png')},
         {title: '电影', icon: require('../img/Food/icon_homepage_movieCategory.png')},
@@ -50,6 +49,14 @@ export default {
  */
 export function recommendUrl(cate, offset) {
     return 'http://api.meituan.com/group/v1/poi/select/cate/' + cate + '?cityId=1&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
+}
+
+export function recommendFood() {
+    return 'http://api.meituan.com/meishi/poi/v1/poi/featuredMenus/8215?userid=-1&poiid=8215&source_type=menu_text&__vhost=api.meishi.meituan.com&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=867628022896278&utm_campaign=AgroupBgroupC087752727810616611005006568171090911609_c4_e665d662fe265082142dae08085babc96E877070845972013056_c0Gmerchant&ci=1&msid=8676280228962781515719932720&uuid=16115CA3FA4CC61458848FED950AEFCAA505EA422CB6996429AF4BC6E6CB602F&__reqTraceID=881dbc4c-7323-424d-a248-dedfde9a90b5&__skck=6a375bce8c66a0dc293860dfa83833ef&__skts=1515742893465&__skua=f5faf35ad2961eb17246986096529469&__skno=c1a20107-1b8b-4eff-b13c-63aefba69192&__skcy=V1%2Bhcgg4DQVq11wlzf3nhPTAk3Q%3D';
+}
+
+export function nearbyRecommend(poiid) {
+    return 'http://api.meituan.com/group/v1/recommend/nearstoredeals/poi/'+poiid;
 }
 
 
