@@ -48,7 +48,7 @@ export default class FoodBanner extends Component {
     _itemClick=(item) =>{
         let url = item.url;
         let urlStr=url.replace('imeituan://www.meituan.com/web?url=',"");
-        this.props.navigation.navigate('Web', {'url': urlStr,'userName': ''});
+        this.props.navigation.navigate('Web', {'url': urlStr,'userName': item.title});
     };
     getBanner = () => {
         return fetch(api.banner)
