@@ -13,6 +13,8 @@ import {nearbyRecommend} from "../../common/api";
 import StarRating from 'react-native-star-rating';
 
 import DetailHeaderView from './DetailHeaderView';
+import ItemView from "./ItemView";
+
 var item = null;
 export default class NearbyDetailScene extends Component {
     static navigationOptions = ({navigation}) => {
@@ -93,11 +95,9 @@ export default class NearbyDetailScene extends Component {
                           renderItem={this.renderCell}
                           ItemSeparatorComponent={this.renderItemSeparator}
                           ListHeaderComponent={this.renderHeader}
-                ListFooterComponent={this.renderFooter}/>
+                          ListFooterComponent={this.renderFooter}/>
 
             </View>
-
-
         );
     }
 
@@ -106,7 +106,7 @@ export default class NearbyDetailScene extends Component {
     )
 
     renderItemSeparator = () => {
-        return (<View style={{height: 1, backgroundColor: '#dddddd'}}></View>);
+        return (<View style={{height: 1, backgroundColor: '#dddddd', }}></View>);
     }
 
 
@@ -118,21 +118,9 @@ export default class NearbyDetailScene extends Component {
     }
 
     renderCell = ({item, index}) => {
-        var squareimgurl = item.squareimgurl;
-        squareimgurl = squareimgurl.replace('w.h', '200.0');
-        return (
-            <TouchableOpacity activeOpacity={0.8}
-                              style={{
-                                  backgroundColor: 'white',
-                                  flexDirection: 'row',
-                                  height: 120,
-                                  width: screen.width,
-                                  alignItems: "center",
-                                  paddingLeft: 8
-                              }}>
 
-                <Image style={{width: 110, height: 100}} source={{uri: squareimgurl}}/>
-            </TouchableOpacity>
+        return (
+            <ItemView item={item}/>
         );
     }
 }
