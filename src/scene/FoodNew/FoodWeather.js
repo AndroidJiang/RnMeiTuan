@@ -2,7 +2,7 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from "react-native";
+import {Text, View, StyleSheet, Image, TouchableOpacity,DeviceEventEmitter} from "react-native";
 
 import api from '../../common/api'
 import CityScene from "../City/CityScene";
@@ -11,14 +11,14 @@ export default class FoodWeather extends Component {
         super(props);
         this.state = {
             weather: "",
-            cityName: '1231231'
+            cityName: '北京'
         }
     }
 
     render() {
         
         return (
-            <View >
+            <View>
                 <TouchableOpacity style={styles.container} onPress={() => {
                     this.props.navigation.navigate('CityScene',
                         {
@@ -62,7 +62,6 @@ export default class FoodWeather extends Component {
     }
 
     componentDidMount() {
-        console.log('1111')
         this.getWeather();
     }
 }
