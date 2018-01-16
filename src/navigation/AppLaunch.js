@@ -13,7 +13,11 @@ import NearDetail from '../scene/nearby/NearbyDetailScene';
 import ChooseType from '../scene/Start/ChooseTypeScene';
 import WebScene from "../scene/Public/WebScene";
 import CityScene from "../scene/City/CityScene";
+
 import FoodWeather from "../scene/FoodNew/FoodWeather";
+
+import Recomend from '../scene/nearby/RecomendFoodView';
+
 
 const AppLaunch = StackNavigator({
 
@@ -25,7 +29,11 @@ const AppLaunch = StackNavigator({
         Choose: {screen: ChooseType},
         Web: {screen: WebScene},*/
         CityScene: {screen: CityScene},
+
         FoodWeather: {screen: FoodWeather},
+
+        Recomend: {screen: Recomend},
+
     },
     {
         initialRouteName: 'FoodWeather',
