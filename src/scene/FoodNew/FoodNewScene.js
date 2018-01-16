@@ -35,7 +35,7 @@ export class FoodNewScene extends PureComponent {
         this.state = {
             discounts: [],
             dataList: [],
-            isRefreshing: false,
+            isRefreshing: true,
             offset: 0,
             isLoadingMore: false,
             isEnd: false,
@@ -67,7 +67,7 @@ export class FoodNewScene extends PureComponent {
                     <View style={styles.container}>
                         <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
                        <FoodSearch navigation={this.props.navigation} />
-                        {/*     <FlatList
+                             <FlatList
                          data={this.state.dataList}
                          keyExtractor={this.keyExtractor}
                          ItemSeparatorComponent={this.renderSeparator}
@@ -80,7 +80,7 @@ export class FoodNewScene extends PureComponent {
                          // onEndReached={this.getMoreData}
                          ListEmptyComponent={this.renderEmpty}
                          ListFooterComponent={this.renderFooter}
-                         />*/}
+                         />
                     </View>
                 )
             }

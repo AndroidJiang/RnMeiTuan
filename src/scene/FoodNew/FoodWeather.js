@@ -32,18 +32,18 @@ export default class FoodWeather extends Component {
 
 
                 }}>
-                    {/*<View style={styles.wrap}>*/}
-                        {/*<Image source={require('../../img/Food/weather.png')} style={styles.weatherIcon}/>*/}
-                        {/*<Text>{this.state.weather + '°'}</Text>*/}
-                    {/*</View>*/}
+                    <View style={styles.wrap}>
+                        <Image source={require('../../img/Food/weather.png')} style={styles.weatherIcon}/>
+                        <Text>{this.state.weather + '°'}</Text>
+                    </View>
                     <Text style={{marginLeft: -10, fontSize: 12,}}>{this.state.cityName}</Text>
-                    {/*<Image style={{width: 16, height: 16, marginLeft: 2}}*/}
-                           {/*source={require('../../img/Common/icon_down.png')}/>*/}
+                    <Image style={{width: 16, height: 16, marginLeft: 2}}
+                           source={require('../../img/Common/icon_down.png')}/>
                 </TouchableOpacity >
             </View >)
     }
 
-/*    getWeather = () => {
+    getWeather = () => {
         fetch(api.weather, {
             method: 'GET',
             headers: { //header
@@ -59,11 +59,11 @@ export default class FoodWeather extends Component {
             .catch((error) => {
                 alert('错误了' + error);
             })
-    }*/
+    }
 
     componentDidMount() {
         console.log('1111')
-        // this.getWeather();
+        this.getWeather();
     }
 }
 
