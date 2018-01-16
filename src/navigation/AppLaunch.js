@@ -13,22 +13,30 @@ import NearDetail from '../scene/nearby/NearbyDetailScene';
 import ChooseType from '../scene/Start/ChooseTypeScene';
 import WebScene from "../scene/Public/WebScene";
 import CityScene from "../scene/City/CityScene";
+
+import FoodWeather from "../scene/FoodNew/FoodWeather";
+
 import Recomend from '../scene/nearby/RecomendFoodView';
+
 
 const AppLaunch = StackNavigator({
 
-        Splash: {screen: Splash},
+     /*   Splash: {screen: Splash},
         Login: {screen: Login},
         Guide: {screen: Guide},
         Main: {screen: Main},
         NearDetail: {screen: NearDetail},
         Choose: {screen: ChooseType},
-        Web: {screen: WebScene},
+        Web: {screen: WebScene},*/
         CityScene: {screen: CityScene},
+
+        FoodWeather: {screen: FoodWeather},
+
         Recomend: {screen: Recomend},
+
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'FoodWeather',
         mode: 'card',
         headerMode: 'screen'
     });

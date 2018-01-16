@@ -6,40 +6,14 @@ import {Text, View, StyleSheet, Image, TouchableOpacity} from "react-native";
 
 import api from '../../common/api'
 import CityScene from "../City/CityScene";
-export default class FoodWeather extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            weather: "",
-            cityName: '1231231'
-        }
-    }
+export default class Test extends Component {
+
 
     render() {
         
         return (
             <View >
-                <TouchableOpacity style={styles.container} onPress={() => {
-                    this.props.navigation.navigate('CityScene',
-                        {
-                            // 跳转的时候携带一个参数去下个页面
-                            callback: (data) => {
-                               this.setState({
-                                   cityName:data,
-                               })
-                            }
-                        });
 
-
-                }}>
-                    {/*<View style={styles.wrap}>*/}
-                        {/*<Image source={require('../../img/Food/weather.png')} style={styles.weatherIcon}/>*/}
-                        {/*<Text>{this.state.weather + '°'}</Text>*/}
-                    {/*</View>*/}
-                    <Text style={{marginLeft: -10, fontSize: 12,}}>{this.state.cityName}</Text>
-                    {/*<Image style={{width: 16, height: 16, marginLeft: 2}}*/}
-                           {/*source={require('../../img/Common/icon_down.png')}/>*/}
-                </TouchableOpacity >
             </View >)
     }
 

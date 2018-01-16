@@ -1,7 +1,7 @@
 /**
  * Created by AJiang on 18/1/4.
  */
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {
     Image,
     Text,
@@ -11,7 +11,8 @@ import {
     ScrollView,
     FlatList,
     ActivityIndicator,
-    Dimensions, StatusBar
+    Dimensions, StatusBar, AsyncStorage,
+    DeviceEventEmitter
 } from "react-native";
 
 import color from "../../common/color";
@@ -22,7 +23,7 @@ import FoodBanner from "./FoodBanner";
 import FoodListItem from "./FoodListItem";
 import FoodSearch from "./FoodSearch";
 
-export class FoodNewScene extends Component {
+export class FoodNewScene extends PureComponent {
     /*隐藏默认导航头，自定义*/
     static navigationOptions = ({navigation}) => ({
         header: null,
@@ -34,16 +35,21 @@ export class FoodNewScene extends Component {
         this.state = {
             discounts: [],
             dataList: [],
-            isRefreshing: true,
+            isRefreshing: false,
             offset: 0,
             isLoadingMore: false,
             isEnd: false,
+            // cityId: 0,
+            // cityName: '北京',
         }
     }
 
     componentDidMount() {
-        this.requestRecommend();
+        // this.requestRecommend();
+
     }
+
+
 
     render() {
         if (this.state.isRefreshing && !this.state.isLoadingMore) {
@@ -53,25 +59,31 @@ export class FoodNewScene extends Component {
                 </View>
             );
         } else {
-            return (
-                <View style={styles.container}>
-                    <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
-                    <FoodSearch navigation={this.props.navigation}/>
-                    <FlatList
-                        data={this.state.dataList}
-                        keyExtractor={this.keyExtractor}
-                        ItemSeparatorComponent={this.renderSeparator}
-                        onRefresh={this.requestRecommend}
-                        refreshing={this.state.isRefreshing}
-                        ListHeaderComponent={this.renderHeader}
-                        extraData={this.state}
-                        renderItem={this.renderCell}
-                        onEndReachedThreshold={1}
-                        onEndReached={this.getMoreData}
-                        ListEmptyComponent={this.renderEmpty}
-                        ListFooterComponent={this.renderFooter}
-                    />
-                </View>)
+            if (this.state.cityName === '') {
+                return (
+                <View style={styles.container}></View>)
+            } else {
+                return (
+                    <View style={styles.container}>
+                        <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
+                       <FoodSearch navigation={this.props.navigation} />
+                        {/*     <FlatList
+                         data={this.state.dataList}
+                         keyExtractor={this.keyExtractor}
+                         ItemSeparatorComponent={this.renderSeparator}
+                         // onRefresh={this.requestRecommend}
+                         refreshing={this.state.isRefreshing}
+                         ListHeaderComponent={this.renderHeader}
+                         extraData={this.state}
+                         renderItem={this.renderCell}
+                         onEndReachedThreshold={1}
+                         // onEndReached={this.getMoreData}
+                         ListEmptyComponent={this.renderEmpty}
+                         ListFooterComponent={this.renderFooter}
+                         />*/}
+                    </View>
+                )
+            }
         }
 
     }
@@ -202,25 +214,28 @@ export class FoodNewScene extends Component {
     keyExtractor(item: Object, index: number) {
         return index;
     }
+
+
 }
 
 // define your styles
-const styles = StyleSheet.create({
-    contentContainer: {
-        paddingVertical: 20
-    },
-    container: {
-        flex: 1, backgroundColor: 'white',
-    },
+const
+    styles = StyleSheet.create({
+        contentContainer: {
+            paddingVertical: 20
+        },
+        container: {
+            flex: 1, backgroundColor: 'white',
+        },
 
-    recommendHeader: {
-        height: 35,
-        justifyContent: 'center',
-        borderWidth: screen.onePixel,
-        borderColor: color.border,
-        paddingVertical: 8,
-        paddingLeft: 20,
-        backgroundColor: 'white'
-    },
+        recommendHeader: {
+            height: 35,
+            justifyContent: 'center',
+            borderWidth: screen.onePixel,
+            borderColor: color.border,
+            paddingVertical: 8,
+            paddingLeft: 20,
+            backgroundColor: 'white'
+        },
 
-});
+    });
