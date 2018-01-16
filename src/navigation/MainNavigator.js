@@ -87,7 +87,7 @@ const Main = TabNavigator({
 }, {
     borderTopWidth:common.onePixel,
     tabBarPosition: 'bottom',
-    initialRouteName: 'NearBy',
+    initialRouteName: 'Food',
     animationEnabled: true,
     swipeEnabled: false,
     lazy: true,
