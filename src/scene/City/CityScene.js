@@ -90,7 +90,7 @@ export default class CityScene extends Component {
             this.setState({showSearchResult: false, keyword: ''});
         }
         this.props.navigation.state.params.callback(cityJson.cityName);
-        NavigationDispatchUtil.reset(this.props.navigation, 'FoodWeather')
+        this.props.navigation.goBack();
     }
 
     render() {

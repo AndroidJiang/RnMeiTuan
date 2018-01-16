@@ -21,13 +21,13 @@ import Recomend from '../scene/nearby/RecomendFoodView';
 
 const AppLaunch = StackNavigator({
 
-     /*   Splash: {screen: Splash},
+        Splash: {screen: Splash},
         Login: {screen: Login},
         Guide: {screen: Guide},
         Main: {screen: Main},
         NearDetail: {screen: NearDetail},
         Choose: {screen: ChooseType},
-        Web: {screen: WebScene},*/
+        Web: {screen: WebScene},
         CityScene: {screen: CityScene},
 
         FoodWeather: {screen: FoodWeather},
@@ -36,7 +36,7 @@ const AppLaunch = StackNavigator({
 
     },
     {
-        initialRouteName: 'FoodWeather',
+        initialRouteName: 'Main',
         mode: 'card',
         headerMode: 'screen'
     });
