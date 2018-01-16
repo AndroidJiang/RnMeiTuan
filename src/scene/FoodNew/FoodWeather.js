@@ -11,7 +11,7 @@ export default class FoodWeather extends Component {
         super(props);
         this.state = {
             weather: "",
-            cityName: '1231231'
+            cityName: '123123122'
         }
     }
 
