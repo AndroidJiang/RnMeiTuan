@@ -4,6 +4,7 @@ import {
     View,
     StyleSheet,
     AsyncStorage, TouchableOpacity, Image,
+    DeviceEventEmitter
 } from 'react-native';
 
 import SearchBox from './SearchBox';
@@ -88,9 +89,8 @@ export default class CityScene extends Component {
         if (this.state.showSearchResult) {
             this.setState({showSearchResult: false, keyword: ''});
         }
-        AsyncStorage.setItem('cityName', cityJson.cityName);
-        AsyncStorage.setItem('cityId', cityJson.cityId);
-        NavigationDispatchUtil.reset(this.props.navigation, 'Main')
+        this.props.navigation.state.params.callback(cityJson.cityName);
+        NavigationDispatchUtil.reset(this.props.navigation, 'FoodWeather')
     }
 
     render() {
