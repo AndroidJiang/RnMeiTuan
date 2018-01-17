@@ -89,6 +89,7 @@ export default class CityScene extends Component {
         if (this.state.showSearchResult) {
             this.setState({showSearchResult: false, keyword: ''});
         }
+        DeviceEventEmitter.emit('cityId',cityJson.cityId);
         this.props.navigation.state.params.callback(cityJson.cityName);
         this.props.navigation.goBack();
     }

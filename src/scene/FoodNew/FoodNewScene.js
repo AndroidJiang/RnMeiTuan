@@ -18,7 +18,7 @@ import {
 import color from "../../common/color";
 import {screen, system} from '../../common/common'
 import {FoodHeader} from "./FoodHeader";
-import api, {recommendUrl} from "../../common/api";
+import api, {recommendFoodUrl} from "../../common/api";
 import FoodBanner from "./FoodBanner";
 import FoodListItem from "./FoodListItem";
 import FoodSearch from "./FoodSearch";
@@ -39,16 +39,23 @@ export class FoodNewScene extends PureComponent {
             offset: 0,
             isLoadingMore: false,
             isEnd: false,
-            // cityId: 0,
-            // cityName: '北京',
+            cityId: 1,
         }
     }
 
     componentDidMount() {
-        // this.requestRecommend();
+        this.subscription = DeviceEventEmitter.addListener('cityId', (text) => {
+            this.setState({cityId: text}, () => {
+                this.requestRecommend()
+            });
+        });
+        this.requestRecommend();
 
     }
 
+    componentWillUnmount() {
+        this.subscription.remove();
+    }
 
     render() {
         if (this.state.isRefreshing && !this.state.isLoadingMore) {
@@ -66,17 +73,20 @@ export class FoodNewScene extends PureComponent {
                     <View style={styles.container}>
                         <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
                         <FoodSearch navigation={this.props.navigation}/>
+                        <FoodSearch ref='foodsearch' navigation={this.props.navigation}/>
                         <FlatList
                             data={this.state.dataList}
                             keyExtractor={this.keyExtractor}
                             ItemSeparatorComponent={this.renderSeparator}
                             // onRefresh={this.requestRecommend}
+                            onRefresh={this.requestRecommend}
                             refreshing={this.state.isRefreshing}
                             ListHeaderComponent={this.renderHeader}
                             extraData={this.state}
                             renderItem={this.renderCell}
                             onEndReachedThreshold={1}
                             // onEndReached={this.getMoreData}
+                            onEndReached={this.getMoreData}
                             ListEmptyComponent={this.renderEmpty}
                             ListFooterComponent={this.renderFooter}
                         />
@@ -102,9 +112,9 @@ export class FoodNewScene extends PureComponent {
         );
     };
 
-    renderCell(info: Object) {
+    renderCell = (info: Object) => {
         return (<View>
-                <FoodListItem info={info.item}/>
+                <FoodListItem info={info.item} navigation={this.props.navigation}/>
             </View>
         )
     }
@@ -138,7 +148,7 @@ export class FoodNewScene extends PureComponent {
     };
 
     requestRecommend = () => {
-        let url = recommendUrl(1, 0);
+        let url = recommendFoodUrl(1, this.state.cityId, 0);
         this.setState({isRefreshing: false}, () => {
             return fetch(url)
                 .then(res => res.json())
@@ -175,7 +185,7 @@ export class FoodNewScene extends PureComponent {
             return;
         }
         var index = this.state.offset + 20;
-        let url = recommendUrl(1, index);
+        let url = recommendFoodUrl(1, this.state.cityId, index);
         this.setState({isLoadingMore: true}, () => {
             return fetch(url)
                 .then(res => res.json())

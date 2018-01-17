@@ -22,7 +22,7 @@ export default class FoodListItem extends PureComponent {
         var info = this.props.info;
         let imageUrl = info.frontImg.replace('w.h', '160.0')
         return (
-            <TouchableOpacity style={styles.container} onPress={() => this.props.onPress(info)}>
+            <TouchableOpacity  activeOpacity={0.8} onPress={this.itemClick.bind(this, info)} style={styles.container}>
                 <Image source={{uri: imageUrl}} style={styles.icon}/>
                 <View style={styles.rightContainer}>
                     <Heading1>{info.name}</Heading1>
@@ -47,6 +47,10 @@ export default class FoodListItem extends PureComponent {
             </TouchableOpacity>
         );
     }
+    itemClick = (item) => {
+        let itemStr = JSON.stringify(item);
+        this.props.navigation.navigate('NearDetail', {'data': itemStr});
+    };
 }
 
 // define your styles

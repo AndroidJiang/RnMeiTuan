@@ -15,7 +15,7 @@ export default class FoodSearch extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <FoodWeather navigation={this.props.navigation}/>
+                <FoodWeather ref='cityId' navigation={this.props.navigation}/>
                 <TouchableOpacity style={styles.searchBar}>
                     <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
                     <Text style={styles.searchInput}>美食搜索</Text>

@@ -42,23 +42,32 @@ export default {
     ]
 }
 /**
- *
+ *推荐
  * @param cate 种类  1 美食   79酒店
  * @param offset 索引
  * @returns {string}
  */
-export function recommendUrl(cate, offset) {
-    return 'http://api.meituan.com/group/v1/poi/select/cate/' + cate + '?cityId=1&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
+export function recommendFoodUrl(cate, cityId, offset) {
+    return 'http://api.meituan.com/group/v1/poi/select/cate/' + cate + '?cityId=' + cityId + '&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
 }
 
-export function recommendFood() {
-    return 'http://api.meituan.com/meishi/poi/v1/poi/featuredMenus/8215?userid=-1&poiid=8215&source_type=menu_text&__vhost=api.meishi.meituan.com&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=867628022896278&utm_campaign=AgroupBgroupC087752727810616611005006568171090911609_c4_e665d662fe265082142dae08085babc96E877070845972013056_c0Gmerchant&ci=1&msid=8676280228962781515719932720&uuid=16115CA3FA4CC61458848FED950AEFCAA505EA422CB6996429AF4BC6E6CB602F&__reqTraceID=881dbc4c-7323-424d-a248-dedfde9a90b5&__skck=6a375bce8c66a0dc293860dfa83833ef&__skts=1515742893465&__skua=f5faf35ad2961eb17246986096529469&__skno=c1a20107-1b8b-4eff-b13c-63aefba69192&__skcy=V1%2Bhcgg4DQVq11wlzf3nhPTAk3Q%3D';
+export function recommendUrl(cate, offset) {
+    return 'http://api.meituan.com/group/v1/poi/select/cate/' + cate + '?cityId=' + 1 + '&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
 }
+
+
 
 export function nearbyRecommend(poiid) {
-    return 'http://api.meituan.com/group/v1/recommend/nearstoredeals/poi/'+poiid;
+    return 'http://api.meituan.com/group/v1/recommend/nearstoredeals/poi/' + poiid;
 }
-
+/**
+ * 首页搜索
+ * @param input
+ * @returns {string}
+ */
+export function search(input) {
+    return 'http://api.meituan.com/group/v1/deal/search/suggest/1?input='+input+'&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563';
+}
 
 export function recommendUrlWithId(id) {
     return 'http://api.meituan.com/group/v1/deal/recommend/collaborative?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=hWCwhGYpNTG7TjXWHOwPykgoKX0%3D&__skno=433ACF85-E134-4FEC-94B5-DA35D33AC753&__skts=1436343274.685593&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&cate=0&ci=1&cityId=1&client=iphone&did=' + id + '&district=-1&fields=id%2Cslug%2Cimgurl%2Cprice%2Ctitle%2Cbrandname%2Crange%2Cvalue%2Cmlls%2Csolds&hasbuy=0&latlng=0.000000%2C0.000000&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-08-15-36746&offset=0&scene=view-v4&userId=10086&userid=10086&utm_campaign=AgroupBgroupD100Fab_i550poi_ktv__d__j___ab_i_group_5_3_poidetaildeallist__a__b___ab_gxhceshi0202__b__a___ab_pindaoquxincelue0630__b__b1___ab_i_group_5_6_searchkuang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_i550poi_xxyl__b__leftflow___ab_b_food_57_purepoilist_extinfo__a__a___ab_waimaiwending__a__a___ab_waimaizhanshi__b__b1___ab_i550poi_lr__d__leftflow___ab_i_group_5_5_onsite__b__b___ab_xinkeceshi__b__leftflowGhomepage_guess_27774127&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7'
