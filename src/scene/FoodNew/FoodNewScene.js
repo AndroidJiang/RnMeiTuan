@@ -39,7 +39,6 @@ export class FoodNewScene extends PureComponent {
             offset: 0,
             isLoadingMore: false,
             isEnd: false,
-
             cityId: 1,
         }
     }
@@ -58,7 +57,6 @@ export class FoodNewScene extends PureComponent {
         this.subscription.remove();
     }
 
-
     render() {
         if (this.state.isRefreshing && !this.state.isLoadingMore) {
             return (
@@ -74,17 +72,20 @@ export class FoodNewScene extends PureComponent {
                 return (
                     <View style={styles.container}>
                         <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
+                        <FoodSearch navigation={this.props.navigation}/>
                         <FoodSearch ref='foodsearch' navigation={this.props.navigation}/>
                         <FlatList
                             data={this.state.dataList}
                             keyExtractor={this.keyExtractor}
                             ItemSeparatorComponent={this.renderSeparator}
+                            // onRefresh={this.requestRecommend}
                             onRefresh={this.requestRecommend}
                             refreshing={this.state.isRefreshing}
                             ListHeaderComponent={this.renderHeader}
                             extraData={this.state}
                             renderItem={this.renderCell}
                             onEndReachedThreshold={1}
+                            // onEndReached={this.getMoreData}
                             onEndReached={this.getMoreData}
                             ListEmptyComponent={this.renderEmpty}
                             ListFooterComponent={this.renderFooter}

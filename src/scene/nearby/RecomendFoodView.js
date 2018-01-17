@@ -11,10 +11,11 @@ export default class RecomendFoodView extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            headerTitle: '推荐菜',
+            headerTitle: `${navigation.state.params.title}`,
             headerStyle: {backgroundColor: 'white', height: 45,},
             headerTitleStyle: {color: '#444444', fontWeight: 'normal',},
             headerLeft: <TouchableOpacity activeOpacity={0.8} style={{marginLeft: 10}} onPress = {()=>{
+                navigation.state.params.callback('回调数据');
                 navigation.goBack();
             }}>
                 <Image source={require('../../img/Common/icon_back_dark.png')} style={{width: 26, height: 26}}/>

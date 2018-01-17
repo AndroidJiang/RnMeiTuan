@@ -179,7 +179,7 @@ export default class NearbyItemListView extends Component {
                                     marginLeft: 6
                                 }}>¥{item.avgPrice}/人</Text>
                         </View>
-                        <Text style={{lineHeight: 30, fontSize: 14}}>{item.cateName} | {item.areaName}</Text>
+                        <Text style={{lineHeight: 30, fontSize: 14}} numberOfLines={1}>{item.cateName} | {item.areaName}</Text>
                         <View style={{
                             height: 30, flexDirection: 'row', alignItems: 'center'
                         }}>
