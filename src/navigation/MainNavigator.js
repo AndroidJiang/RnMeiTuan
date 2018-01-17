@@ -10,6 +10,7 @@ import {FoodNewScene} from "../scene/FoodNew/FoodNewScene";
 import NearbyScene from "../scene/nearby/NearbyScene";
 import color from "../common/color";
 import common from "../common/screen";
+import MineScene from '../scene/Mine/MineScene';
 const Main = TabNavigator({
 
     Food: {
@@ -69,7 +70,7 @@ const Main = TabNavigator({
         }),
     },
     MineScene: {
-        screen: NewsScene,
+        screen: MineScene,
         navigationOptions: ({navigation, screenProps}) => ({
             tabBarLabel: '我的',
             tabBarIcon: ({tintColor, focused}) => (

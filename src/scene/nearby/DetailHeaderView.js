@@ -194,7 +194,8 @@ export default class DetailHeaderView extends PureComponent {
                         <Text>推荐菜</Text>
                     </View>
 
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => this.recomendItemClick()} style={{
+                    <TouchableOpacity activeOpacity={0.8} onPress={
+                        () => this.recomendItemClick()} style={{
                         paddingLeft: 8,
                         flexDirection: 'row',
                         alignItems: 'center',
@@ -240,6 +241,9 @@ export default class DetailHeaderView extends PureComponent {
     }
 
     recomendItemClick = () => {
-        this.props.navigation.navigate('Recomend');
+        // this.props.navigation.navigate('Recomend');
+        this.props.navigation.navigate('Recomend',{'title':'推荐菜',callback:(data) =>{
+                    Alert.alert(data);
+            }})
     };
 }

@@ -50,7 +50,6 @@ export class FoodNewScene extends PureComponent {
     }
 
 
-
     render() {
         if (this.state.isRefreshing && !this.state.isLoadingMore) {
             return (
@@ -61,26 +60,26 @@ export class FoodNewScene extends PureComponent {
         } else {
             if (this.state.cityName === '') {
                 return (
-                <View style={styles.container}></View>)
+                    <View style={styles.container}></View>)
             } else {
                 return (
                     <View style={styles.container}>
                         <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
-                       <FoodSearch navigation={this.props.navigation} />
-                             <FlatList
-                         data={this.state.dataList}
-                         keyExtractor={this.keyExtractor}
-                         ItemSeparatorComponent={this.renderSeparator}
-                         // onRefresh={this.requestRecommend}
-                         refreshing={this.state.isRefreshing}
-                         ListHeaderComponent={this.renderHeader}
-                         extraData={this.state}
-                         renderItem={this.renderCell}
-                         onEndReachedThreshold={1}
-                         // onEndReached={this.getMoreData}
-                         ListEmptyComponent={this.renderEmpty}
-                         ListFooterComponent={this.renderFooter}
-                         />
+                        <FoodSearch navigation={this.props.navigation}/>
+                        <FlatList
+                            data={this.state.dataList}
+                            keyExtractor={this.keyExtractor}
+                            ItemSeparatorComponent={this.renderSeparator}
+                            // onRefresh={this.requestRecommend}
+                            refreshing={this.state.isRefreshing}
+                            ListHeaderComponent={this.renderHeader}
+                            extraData={this.state}
+                            renderItem={this.renderCell}
+                            onEndReachedThreshold={1}
+                            // onEndReached={this.getMoreData}
+                            ListEmptyComponent={this.renderEmpty}
+                            ListFooterComponent={this.renderFooter}
+                        />
                     </View>
                 )
             }
