@@ -9,16 +9,16 @@ import {screen, system} from '../../common/common'
 import FoodWeather from "./FoodWeather";
 import NavigationItem from "../../widget/NavigationItem";
 /*
-* 自定义首页的导航头
-* */
+ * 自定义首页的导航头
+ * */
 export default class FoodSearch extends Component {
     render() {
         return (
             <View style={styles.container}>
                 <FoodWeather ref='cityId' navigation={this.props.navigation}/>
-                <TouchableOpacity style={styles.searchBar}>
+                <TouchableOpacity style={styles.searchBar} onPress={this.searchClick}>
                     <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
-                    <Text style={styles.searchInput}>美食搜索</Text>
+                    <Text>美食搜索</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
                     alert('右标题')
@@ -30,6 +30,9 @@ export default class FoodSearch extends Component {
         )
     }
 
+    searchClick = () => {
+        this.props.navigation.navigate('SearchScene');
+    }
 
 }
 // define your styles
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'white',
         alignSelf: 'center',
-        marginLeft:5,
+        marginLeft: 5,
     },
     searchIcon: {
         width: 20,
