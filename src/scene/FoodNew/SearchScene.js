@@ -27,7 +27,20 @@ export default class SearchScene extends Component {
     render() {
         var views = [];
         this.state.recommend.map((item, index) => {
-            views.push(this.renderRecommendItem(item,index));
+            views.push(this.renderRecommendItem(item, index));
+            // views.push(
+            //     <TouchableOpacity style={{
+            //         margin: 5,
+            //         padding: 6,
+            //         backgroundColor: '#eeeeee',
+            //         borderRadius: 5,
+            //         // height:30,
+            //         alignItems:'center',
+            //         justifyContent:'center'
+            //     }} key={index} onPress={() => alert(item.word)}>
+            //         <Text style={styles.recommendtv}>{item.word}</Text>
+            //     </TouchableOpacity>
+            // );
         });
 
 
@@ -76,11 +89,19 @@ export default class SearchScene extends Component {
             </View>)
 
     };
-    renderRecommendItem = (item,index) => {
+    renderRecommendItem = (item, index) => {
         return (
-
+            <TouchableOpacity style={{
+                margin: 5,
+                padding: 6,
+                backgroundColor: '#eeeeee',
+                borderRadius: 5,
+                height: 30,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }} key={index} onPress={() => alert(item.word)}>
                 <Text key={index} style={styles.recommendtv}>{item.word}</Text>
-
+            </TouchableOpacity>
         );
     }
     renderRow = (item) => {
@@ -153,10 +174,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     recommendtv: {
-        margin: 5,
-        padding: 6,
-        backgroundColor: '#eeeeee',
-        borderRadius: 5,
+        // margin: 5,
+        // padding: 6,
+        // backgroundColor: '#eeeeee',
+        // borderRadius: 5,
         color: '#111111',
         fontSize: 12,
     },
