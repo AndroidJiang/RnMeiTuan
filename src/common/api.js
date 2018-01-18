@@ -14,32 +14,32 @@ export default {
 
 
     recommend: 'http://api.meituan.com/group/v1/recommend/homepage/City/1?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=mrUZYo7999nH8WgTicdfzaGjaSQ=&__skno=51156DC4-B59A-4108-8812-AD05BF227A47&__skts=1434530933.303717&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&client=iphone&limit=40&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-06-17-14-50363&offset=0&position=39.983497,116.318042&userId=10086&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_trip_yidizhoubianyou__b__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___ab_waimaizhanshi__b__b1___a20141120nanning__m1__leftflow___ab_pind',
+    searchremmond: 'http://api.meituan.com/group/v1/deal/search/hotword/city/1?mypos=39.984345%2C116.308368&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563',
+
+menuInfo: [
+    {title: '美食', icon: require('../img/Food/icon_homepage_foodCategory.png')},
+    {title: '电影', icon: require('../img/Food/icon_homepage_movieCategory.png')},
+    {title: '酒店', icon: require('../img/Food/icon_homepage_hotelCategory.png')},
+    {title: '休闲娱乐', icon: require('../img/Food/icon_homepage_entertainmentCategory.png')},
+    {title: '测试5', icon: require('../img/Food/icon_homepage_hotelCategory.png')},
 
 
-    menuInfo: [
-        {title: '美食', icon: require('../img/Food/icon_homepage_foodCategory.png')},
-        {title: '电影', icon: require('../img/Food/icon_homepage_movieCategory.png')},
-        {title: '酒店', icon: require('../img/Food/icon_homepage_hotelCategory.png')},
-        {title: '休闲娱乐', icon: require('../img/Food/icon_homepage_entertainmentCategory.png')},
-        {title: '测试5', icon: require('../img/Food/icon_homepage_hotelCategory.png')},
+    {title: 'KTV', icon: require('../img/Food/icon_homepage_KTVCategory.png')},
+    {title: '丽人/美发', icon: require('../img/Food/icon_homepage_beautyCategory.png')},
 
+    {title: '优惠买单', icon: require('../img/Food/icon_homepage_default.png')},
+    {title: '周边游', icon: require('../img/Food/icon_homepage_foottreatCategory.png')},
+    {title: '生活服务', icon: require('../img/Food/icon_homepage_lifeServiceCategory.png')},
 
-        {title: 'KTV', icon: require('../img/Food/icon_homepage_KTVCategory.png')},
-        {title: '丽人/美发', icon: require('../img/Food/icon_homepage_beautyCategory.png')},
+    {title: '购物', icon: require('../img/Food/icon_homepage_shoppingCategory.png')},
 
-        {title: '优惠买单', icon: require('../img/Food/icon_homepage_default.png')},
-        {title: '周边游', icon: require('../img/Food/icon_homepage_foottreatCategory.png')},
-        {title: '生活服务', icon: require('../img/Food/icon_homepage_lifeServiceCategory.png')},
-
-        {title: '购物', icon: require('../img/Food/icon_homepage_shoppingCategory.png')},
-
-        {title: '测试1', icon: require('../img/Food/icon_homepage_beautyCategory.png')},
-        {title: '测试2', icon: require('../img/Food/icon_homepage_movieCategory.png')},
-        {title: '测试3', icon: require('../img/Food/icon_homepage_foottreatCategory.png')},
-        {title: '测试4', icon: require('../img/Food/icon_homepage_default.png')},
-        /*{title: '休闲娱乐', icon: require('../img/Food/icon_homepage_entertainmentCategory.png')},
-         {title: 'KTV', icon: require('../img/Food/icon_homepage_KTVCategory.png')},*/
-    ]
+    {title: '测试1', icon: require('../img/Food/icon_homepage_beautyCategory.png')},
+    {title: '测试2', icon: require('../img/Food/icon_homepage_movieCategory.png')},
+    {title: '测试3', icon: require('../img/Food/icon_homepage_foottreatCategory.png')},
+    {title: '测试4', icon: require('../img/Food/icon_homepage_default.png')},
+    /*{title: '休闲娱乐', icon: require('../img/Food/icon_homepage_entertainmentCategory.png')},
+     {title: 'KTV', icon: require('../img/Food/icon_homepage_KTVCategory.png')},*/
+]
 }
 /**
  *推荐
@@ -56,7 +56,6 @@ export function recommendUrl(cate, offset) {
 }
 
 
-
 export function nearbyRecommend(poiid) {
     return 'http://api.meituan.com/group/v1/recommend/nearstoredeals/poi/' + poiid;
 }
@@ -65,8 +64,8 @@ export function nearbyRecommend(poiid) {
  * @param input
  * @returns {string}
  */
-export function search(input) {
-    return 'http://api.meituan.com/group/v1/deal/search/suggest/1?input='+input+'&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563';
+export function foodSearch(input) {
+    return 'http://api.meituan.com/group/v1/deal/search/suggest/1?input=' + input + '&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563';
 }
 
 export function recommendUrlWithId(id) {

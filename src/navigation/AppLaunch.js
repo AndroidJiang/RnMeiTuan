@@ -17,6 +17,7 @@ import CityScene from "../scene/City/CityScene";
 import FoodWeather from "../scene/FoodNew/FoodWeather";
 
 import Recomend from '../scene/nearby/RecomendFoodView';
+import SearchScene from "../scene/FoodNew/SearchScene";
 
 
 const AppLaunch = StackNavigator({
@@ -33,6 +34,7 @@ const AppLaunch = StackNavigator({
         FoodWeather: {screen: FoodWeather},
 
         Recomend: {screen: Recomend},
+        SearchScene: {screen: SearchScene},
 
     },
     {

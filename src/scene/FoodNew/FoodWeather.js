@@ -2,7 +2,7 @@
  * Created by AJiang on 18/1/4.
  */
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity,DeviceEventEmitter} from "react-native";
+import {Text, View, StyleSheet, Image, TouchableOpacity, DeviceEventEmitter} from "react-native";
 
 import api from '../../common/api'
 import CityScene from "../City/CityScene";
@@ -16,7 +16,7 @@ export default class FoodWeather extends Component {
     }
 
     render() {
-        
+
         return (
             <View>
                 <TouchableOpacity style={styles.container} onPress={() => {
@@ -24,9 +24,9 @@ export default class FoodWeather extends Component {
                         {
                             // 跳转的时候携带一个参数去下个页面
                             callback: (data) => {
-                               this.setState({
-                                   cityName:data,
-                               })
+                                this.setState({
+                                    cityName: data,
+                                })
                             }
                         });
 
@@ -50,11 +50,19 @@ export default class FoodWeather extends Component {
                 'Authorization': 'APPCODE bb4dd71cd14a4c7aa7ba5175971344b2'
             },
         })
-            .then((response) => response.json()) //把response转为json
+            .then((response) => {
+                response.json()
+            }) //把response转为json
             .then((responseData) => { // 上面的转好的json
-                this.setState({
-                    weather: responseData.result.temp,
-                });
+                debugger
+                if (responseData != null)
+                    this.setState({
+                        weather: responseData.result.temp,
+                    });
+                else
+                    this.setState({
+                        weather: '--',
+                    });
             })
             .catch((error) => {
                 alert('错误了' + error);
