@@ -73,7 +73,6 @@ export class FoodNewScene extends PureComponent {
                     <View style={styles.container}>
                         <StatusBar backgroundColor={color.theme} translucent={false} hidden={false}/>
                         <FoodSearch navigation={this.props.navigation}/>
-                        <FoodSearch ref='foodsearch' navigation={this.props.navigation}/>
                         <FlatList
                             data={this.state.dataList}
                             keyExtractor={this.keyExtractor}

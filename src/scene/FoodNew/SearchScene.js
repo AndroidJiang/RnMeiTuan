@@ -78,7 +78,9 @@ export default class SearchScene extends Component {
     };
     renderRecommendItem = (item,index) => {
         return (
-                <Text style={styles.recommendtv}>{item.word}</Text>
+
+                <Text key={index} style={styles.recommendtv}>{item.word}</Text>
+
         );
     }
     renderRow = (item) => {
