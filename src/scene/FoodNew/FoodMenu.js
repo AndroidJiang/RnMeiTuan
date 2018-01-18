@@ -24,12 +24,12 @@ export default class FoodMenu extends Component {
                     />
                 )
                 menuViews.push(item);
-            }else{
+            } else {
                 var info = menuInfos[i];
                 var item = (
                     <FoodMenuItemSmall key={info.title}
-                                  title={info.title}
-                                  icon={info.icon}
+                                       info={info}
+                                       navigation={this.props.navigation}
                     />
                 )
                 menuViewsSmall.push(item);
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
     },
     menu: {
         flexDirection: 'row',
-        flexWrap:'wrap',
+        flexWrap: 'wrap',
         borderBottomWidth: screen.onePixel,
         borderColor: color.border,
-        paddingBottom:3,
+        paddingBottom: 3,
     },
     menuSmall: {
         flexDirection: 'row',
-        flexWrap:'wrap',
+        flexWrap: 'wrap',
         borderBottomWidth: 10,
         borderColor: color.border
     },

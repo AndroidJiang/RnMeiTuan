@@ -25,7 +25,7 @@ export class FoodHeader extends Component {
         return (
             <View style={styles.container}>
                 <FoodBanner navigation={this.props.navigation}/>
-                <FoodMenu menuInfos={api.menuInfo}/>
+                <FoodMenu menuInfos={api.menuInfo} navigation={this.props.navigation}/>
                 <FoodDiscount navigation={this.props.navigation}/>
                 <Text style={styles.tv}> - 猜你喜欢 - </Text>
             </View>

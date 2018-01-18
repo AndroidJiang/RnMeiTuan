@@ -12,7 +12,7 @@ export default class WebPage extends Component {
         return {
             headerTitle: `${name}`,
             headerStyle: {backgroundColor: color.theme, height: 48,},
-            headerTitleStyle: {color: 'white', fontSize: 20},
+            headerTitleStyle: {color: 'white', fontSize: 20,alignSelf:'center'},
             headerLeft: <TouchableOpacity activeOpacity={0.6} onPress={() => {
                 navigation.goBack()
             }}>

@@ -16,16 +16,21 @@ import { screen, system, tool } from '../../common/common'
 // create a component
 export  default  class FoodMenuItemSmall extends PureComponent {
     render() {
+        var info=this.props.info;
         return (
             <TouchableOpacity style={styles.container}
-                onPress={this.props.onPress}>
-                <Image source={this.props.icon} resizeMode='contain' style={styles.icon} />
+                onPress={this.itemClick.bind(this,info)}>
+                <Image source={info.icon} resizeMode='contain' style={styles.icon} />
                 <Paragraph>
-                    {this.props.title}
+                    {info.title}
                 </Paragraph>
             </TouchableOpacity>
         );
     }
+    itemClick=(info) =>{
+        let url = info.url;
+        this.props.navigation.navigate('Web', {'url': url,'userName': info.title});
+    };
 }
 
 // define your styles
