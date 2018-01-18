@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
         height: screen.width / 5,
     },
     icon: {
-        width: screen.width / 9,
-        height: screen.width / 9,
+        width: screen.width / 8,
+        height: screen.width / 8,
         margin: 5,
     }
 });

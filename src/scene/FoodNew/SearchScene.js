@@ -28,19 +28,6 @@ export default class SearchScene extends Component {
         var views = [];
         this.state.recommend.map((item, index) => {
             views.push(this.renderRecommendItem(item, index));
-            // views.push(
-            //     <TouchableOpacity style={{
-            //         margin: 5,
-            //         padding: 6,
-            //         backgroundColor: '#eeeeee',
-            //         borderRadius: 5,
-            //         // height:30,
-            //         alignItems:'center',
-            //         justifyContent:'center'
-            //     }} key={index} onPress={() => alert(item.word)}>
-            //         <Text style={styles.recommendtv}>{item.word}</Text>
-            //     </TouchableOpacity>
-            // );
         });
 
 
@@ -50,6 +37,7 @@ export default class SearchScene extends Component {
                     <View style={styles.search}>
                         <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
                         <TextInput
+                            ref="textInput"
                             style={styles.input}
                             underlineColorAndroid='transparent'
                             returnKeyType="search"
@@ -92,14 +80,12 @@ export default class SearchScene extends Component {
     renderRecommendItem = (item, index) => {
         return (
             <TouchableOpacity style={{
-                margin: 5,
-                padding: 6,
-                backgroundColor: '#eeeeee',
-                borderRadius: 5,
                 height: 30,
+                margin:5,
+                padding:3,
                 alignItems: 'center',
                 justifyContent: 'center'
-            }} key={index} onPress={() => alert(item.word)}>
+            }} key={index} onPress={this.recommendClick.bind(this,item)}>
                 <Text key={index} style={styles.recommendtv}>{item.word}</Text>
             </TouchableOpacity>
         );
@@ -129,9 +115,9 @@ export default class SearchScene extends Component {
 
     textChange = (text) => {
         this.getSearch(text);
+
     }
     getRecommend = () => {
-        debugger;
         fetch(api.searchremmond)
             .then((response) => response.json()) //把response转为json
             .then((responseData) => { // 上面的转好的json
@@ -157,7 +143,8 @@ export default class SearchScene extends Component {
             })
     }
     recommendClick = (item) => {
-        alert('点击');
+        debugger;
+        alert('点击'+item.word);
     }
     cancleClick = () => {
         this.props.navigation.goBack();
@@ -174,10 +161,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     recommendtv: {
-        // margin: 5,
-        // padding: 6,
-        // backgroundColor: '#eeeeee',
-        // borderRadius: 5,
+        margin: 4,
+        padding: 6,
+        backgroundColor: '#eeeeee',
+        borderRadius: 5,
         color: '#111111',
         fontSize: 12,
     },
@@ -207,7 +194,7 @@ const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 5,
+        padding: 8,
     },
     content: {
         color: '#222222',
@@ -224,9 +211,9 @@ const styles = StyleSheet.create({
         marginRight: 5,
     },
     searchIcon: {
-        width: 18,
-        height: 18,
+        width: 16,
+        height: 16,
         margin: 5,
-        tintColor: '#aaaaaa'
+        tintColor: '#bbbbbb'
     }
 });
