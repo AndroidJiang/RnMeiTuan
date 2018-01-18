@@ -28,21 +28,7 @@ export default class SearchScene extends Component {
         var views = [];
         this.state.recommend.map((item, index) => {
             views.push(this.renderRecommendItem(item, index));
-            // views.push(
-            //     <TouchableOpacity style={{
-            //         margin: 5,
-            //         padding: 6,
-            //         backgroundColor: '#eeeeee',
-            //         borderRadius: 5,
-            //         // height:30,
-            //         alignItems:'center',
-            //         justifyContent:'center'
-            //     }} key={index} onPress={() => alert(item.word)}>
-            //         <Text style={styles.recommendtv}>{item.word}</Text>
-            //     </TouchableOpacity>
-            // );
         });
-
 
         return (
             <View style={styles.container}>
@@ -106,12 +92,10 @@ export default class SearchScene extends Component {
     }
     renderRow = (item) => {
         return (
-            <TouchableOpacity activeOpacity={0.5} onPress={this.onItemClick}>
-                <View style={styles.item}>
+            <TouchableOpacity style={styles.item} activeOpacity={0.5} onPress={this.onItemClick}>
                     <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
                     <Text style={styles.content}>{item.keyword}</Text>
                     <Text style={styles.right}>约{item.total}个结果</Text>
-                </View>
             </TouchableOpacity>
         );
     }

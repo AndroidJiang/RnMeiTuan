@@ -13,6 +13,7 @@ import {
     Alert,
     ImageBackground,
     TouchableOpacity,
+    Linking
 } from 'react-native';
 import StarRating from "react-native-star-rating/star-rating";
 import {screen, api} from '../../common/common';
