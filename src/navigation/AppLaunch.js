@@ -20,7 +20,7 @@ import Recomend from '../scene/nearby/RecomendFoodView';
 import SearchScene from "../scene/FoodNew/SearchScene";
 
 
-const AppLaunch = StackNavigator({
+export default AppLaunch = StackNavigator({
 
         Splash: {screen: Splash},
         Login: {screen: Login},
@@ -38,10 +38,9 @@ const AppLaunch = StackNavigator({
 
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Splash',
         mode: 'card',
         headerMode: 'screen'
     });
 
-export default AppLaunch;
 

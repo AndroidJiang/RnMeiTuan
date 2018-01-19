@@ -18,7 +18,7 @@ export default class RecomendFoodView extends Component {
                 navigation.state.params.callback('回调数据');
                 navigation.goBack();
             }}>
-                <Image source={require('../../img/Common/icon_back_dark.png')} style={{width: 26, height: 26}}/>
+                <Image source={require('../../img/icon_back_dark.png')} style={{width: 26, height: 26}}/>
             </TouchableOpacity>,
             headerRight: <View activeOpacity={0.8} style={{marginRight: 10, width: 26, height: 26}}>
             </View>

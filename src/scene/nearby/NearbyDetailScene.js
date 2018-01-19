@@ -80,7 +80,7 @@ export default class NearbyDetailScene extends Component {
                         height: 45,
                     }}>
                         <Image
-                            source={require('../../img/Common/icon_back_dark.png')}
+                            source={require('../../img/icon_back_dark.png')}
                             style={{width: 26, height: 26}}
                         />
 

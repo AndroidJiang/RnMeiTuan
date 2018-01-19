@@ -17,13 +17,13 @@ export default class FoodSearch extends Component {
             <View style={styles.container}>
                 <FoodWeather ref='cityId' navigation={this.props.navigation}/>
                 <TouchableOpacity style={styles.searchBar} onPress={this.searchClick}>
-                    <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
+                    <Image source={require('../../img/search_icon.png')} style={styles.searchIcon}/>
                     <Text>美食搜索</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
                     alert('右标题')
                 }}>
-                    <Image source={require('../../img/Food/icon_navigationItem_message_white.png')}
+                    <Image source={require('../../img/icon_navigationItem_message_white.png')}
                            style={styles.searchIcon}/>
                 </TouchableOpacity>
             </View>

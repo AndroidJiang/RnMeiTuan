@@ -9,65 +9,65 @@ export default {
 
 
     menuInfo: [
-        {title: '美食', icon: require('../img/Food/homepage_icon_light_food_b.png')},
-        {title: '电影', icon: require('../img/Food/homepage_icon_light_movie_b.png')},
-        {title: '酒店', icon: require('../img/Food/homepage_icon_light_hotel_b.png')},
-        {title: '休闲娱乐', icon: require('../img/Food/homepage_icon_light_amusement_b.png')},
-        {title: '外卖', icon: require('../img/Food/homepage_icon_light_takeout_b.png')},
+        {title: '美食', icon: require('../img/homepage_icon_light_food_b.png')},
+        {title: '电影', icon: require('../img/homepage_icon_light_movie_b.png')},
+        {title: '酒店', icon: require('../img/homepage_icon_light_hotel_b.png')},
+        {title: '休闲娱乐', icon: require('../img/homepage_icon_light_amusement_b.png')},
+        {title: '外卖', icon: require('../img/homepage_icon_light_takeout_b.png')},
 
         {
             title: '休闲娱乐',
-            icon: require('../img/Food/ic_category_10.png'),
+            icon: require('../img/ic_category_two.png'),
             url: 'https://i.meituan.com/specir?dest=https://h5.dianping.com/tuan/fun/play-mt/index.html&f=android&lat=39.9844&lng=116.308434&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category4_2__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '丽人/美发',
-            icon: require('../img/Food/icon_homepage_beautyCategory.png'),
+            icon: require('../img/icon_homepage_beautyCategory.png'),
             url: 'https://i.meituan.com/beauty/node/html/mtindex.html?source=newusercoupon&f=android&lat=39.984311&lng=116.308302&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category9_22__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
       /*  {
             title: '旅游',
-            icon: require('../img/Food/ic_category_25.png'),
+            icon: require('../img/Food/ic_category_five.png'),
             url: 'http://i.meituan.com/journey?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category10_20513__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },*/
         {
             title: '健身',
-            icon: require('../img/Food/ic_category_35.png'),
+            icon: require('../img/ic_category_eight.png'),
             url: 'http://m.dianping.com/fitness/node/html/mtindex.html?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category12_20252__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '医疗',
-            icon: require('../img/Food/ic_category_2.png'),
+            icon: require('../img/ic_category_one.png'),
             url: 'https://m.dianping.com/easylife/node/html/medicalmtindex.html?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category13_20274__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '生活服务',
-            icon: require('../img/Food/icon_homepage_lifeServiceCategory.png'),
+            icon: require('../img/icon_homepage_lifeServiceCategory.png'),
             url: 'https://m.dianping.com/easylife/node/html/mtindex.html?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category14_3__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '结婚/摄影',
-            icon: require('../img/Food/ic_category_28.png'),
+            icon: require('../img/ic_category_seven.png'),
             url: 'https://i.meituan.com/app/app-m-wedding-product-peon/index.html?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category15_20178__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '母婴亲子',
-            icon: require('../img/Food/ic_category_37.png'),
+            icon: require('../img/ic_category_nine.png'),
             url: 'https://i.meituan.com/baby/mobile/mt/index?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category16_20007__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '时尚购',
-            icon: require('../img/Food/ic_category_14.png'),
+            icon: require('../img/ic_category_three.png'),
             url: 'http://m.dianping.com/shopping/meituan/home?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category17_20383__a1__c20070&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '学习培训',
-            icon: require('../img/Food/ic_category_16.png'),
+            icon: require('../img/ic_category_four.png'),
             url: 'https://i.meituan.com/education/node/html/mtchannel.html?f=android&lat=39.9844&lng=116.308434&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category18_20285__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
         {
             title: '家装',
-            icon: require('../img/Food/ic_category_27.png'),
+            icon: require('../img/ic_category_six.png'),
             url: 'https://i.meituan.com/mtdp/jiazhuang/?f=android&lat=39.9844&lng=116.308434&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category19_20179__a1__b1244&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
 

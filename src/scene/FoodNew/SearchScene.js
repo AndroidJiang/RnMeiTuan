@@ -35,7 +35,7 @@ export default class SearchScene extends Component {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <View style={styles.search}>
-                        <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
+                        <Image source={require('../../img/search_icon.png')} style={styles.searchIcon}/>
                         <TextInput
                             ref="textInput"
                             style={styles.input}
@@ -94,7 +94,7 @@ export default class SearchScene extends Component {
         return (
             <TouchableOpacity activeOpacity={0.5} onPress={this.onItemClick}>
                 <View style={styles.item}>
-                    <Image source={require('../../img/Food/search_icon.png')} style={styles.searchIcon}/>
+                    <Image source={require('../../img/search_icon.png')} style={styles.searchIcon}/>
                     <Text style={styles.content}>{item.keyword}</Text>
                     <Text style={styles.right}>约{item.total}个结果</Text>
                 </View>

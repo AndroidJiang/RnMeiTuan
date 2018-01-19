@@ -1,7 +1,7 @@
 /**
  * Created by liuyan on 2017/12/26.
  */
-import React from 'react';
+import React ,{Component}from 'react';
 import {TabNavigator} from 'react-navigation';
 
 import NewsScene from "../scene/News/NewsScene";
@@ -21,22 +21,22 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/ic_vector_home_normal.png')}
-                    selectedImage={require('../img/tabbar/ic_vector_home_pressed.png')}
+                    normalImage={require('../img/ic_vector_home_normal.png')}
+                    selectedImage={require('../img/ic_vector_home_pressed.png')}
                 />
             ),
         }),
     },
     NearBy: {
         screen: NearbyScene,
-        navigationOptions: ({}) => ({
+        navigationOptions: () => ({
             tabBarLabel: '附近',
             tabBarIcon: ({tintColor, focused}) => (
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/ic_vector_nearby_normal.png')}
-                    selectedImage={require('../img/tabbar/ic_vector_nearby_pressed.png')}
+                    normalImage={require('../img/ic_vector_nearby_normal.png')}
+                    selectedImage={require('../img/ic_vector_nearby_pressed.png')}
                 />
             )
         }),
@@ -49,8 +49,8 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/ic_vector_discover_normal.png')}
-                    selectedImage={require('../img/tabbar/ic_vector_discover_pressed.png')}
+                    normalImage={require('../img/ic_vector_discover_normal.png')}
+                    selectedImage={require('../img/ic_vector_discover_pressed.png')}
                 />
             ),
         }),
@@ -63,8 +63,8 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/ic_vector_order_normal.png')}
-                    selectedImage={require('../img/tabbar/ic_vector_order_pressed.png')}
+                    normalImage={require('../img/ic_vector_order_normal.png')}
+                    selectedImage={require('../img/ic_vector_order_pressed.png')}
                 />
             ),
         }),
@@ -77,8 +77,8 @@ const Main = TabNavigator({
                 <TabBarItem
                     tintColor={tintColor}
                     focused={focused}
-                    normalImage={require('../img/tabbar/ic_vector_mine_normal.png')}
-                    selectedImage={require('../img/tabbar/ic_vector_mine_pressed.png')}
+                    normalImage={require('../img/ic_vector_mine_normal.png')}
+                    selectedImage={require('../img/ic_vector_mine_pressed.png')}
                 />
             ),
         }),

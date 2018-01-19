@@ -74,18 +74,18 @@ export default class MineScene extends Component {
                                 <TouchableOpacity onPress={() => {
                                     Alert.alert('点击设置')
                                 }} activeOpacity={0.8}>
-                                    <Image style={styles.img} source={require('../../img/Mine/icon_setting.png')}/>
+                                    <Image style={styles.img} source={require('../../img/icon_setting.png')}/>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {
                                     Alert.alert('点击消息')
                                 }} activeOpacity={0.8}>
-                                    <Image style={styles.img} source={require('../../img/Mine/icon_message.png')}/>
+                                    <Image style={styles.img} source={require('../../img/icon_message.png')}/>
                                 </TouchableOpacity>
                             </View>
 
                         </View>
                         <Image style={{position: 'relative', top: -25, width: 50, height: 50, alignSelf: 'center'}}
-                               source={require('../../img/Mine/icon_userreview_defaultavatar.png')}/>
+                               source={require('../../img/icon_userreview_defaultavatar.png')}/>
                     </View>
                     <View style={{flex: 1, alignItems: 'center'}}>
                         <Text style={{fontWeight: 'bold', color: 'black'}}>请点击登录</Text>
@@ -97,9 +97,9 @@ export default class MineScene extends Component {
                             width: screen.width,
                             justifyContent: 'space-around',
                         }}>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_collection.png')} title='收藏'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_comment.png')} title='评价'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_zuji.png')} title='足迹'/>
+                            <MyItemView icon={require('../../img/icon_mine_collection.png')} title='收藏'/>
+                            <MyItemView icon={require('../../img/icon_mine_comment.png')} title='评价'/>
+                            <MyItemView icon={require('../../img/icon_mine_zuji.png')} title='足迹'/>
                         </View>
 
                         <SepratorView/>
@@ -120,10 +120,10 @@ export default class MineScene extends Component {
                             width: screen.width,
                             justifyContent: 'space-around',
                         }}>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_wallet.png')} title='钱包'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_balance.png')} title='余额'/>
-                            <MyItemView icon={require('../../img/Mine/icon_red_pack.png')} title='红包/卡券'/>
-                            <MyItemView icon={require('../../img/Mine/icon_bank_card.png')} title='银行卡'/>
+                            <MyItemView icon={require('../../img/icon_mine_wallet.png')} title='钱包'/>
+                            <MyItemView icon={require('../../img/icon_mine_balance.png')} title='余额'/>
+                            <MyItemView icon={require('../../img/icon_red_pack.png')} title='红包/卡券'/>
+                            <MyItemView icon={require('../../img/icon_bank_card.png')} title='银行卡'/>
                         </View>
 
                         <SepratorView/>
@@ -144,10 +144,10 @@ export default class MineScene extends Component {
                             width: screen.width,
                             justifyContent: 'space-around',
                         }}>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_membercenter.png')} title='会员中心'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_chongzhi.png')} title='手机充值'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_xinyong.png')} title='信用卡还款'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_fapiao.png')} title='发票助手'/>
+                            <MyItemView icon={require('../../img/icon_mine_membercenter.png')} title='会员中心'/>
+                            <MyItemView icon={require('../../img/icon_mine_chongzhi.png')} title='手机充值'/>
+                            <MyItemView icon={require('../../img/icon_mine_xinyong.png')} title='信用卡还款'/>
+                            <MyItemView icon={require('../../img/icon_mine_fapiao.png')} title='发票助手'/>
                         </View>
 
                         <View style={{
@@ -157,10 +157,10 @@ export default class MineScene extends Component {
                             width: screen.width,
                             justifyContent: 'space-around',
                         }}>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_friends.png')} title='好友去哪'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_customerService.png')} title='客服中心'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_coll.png')} title='我要合作'/>
-                            <MyItemView icon={require('../../img/Mine/icon_mine_aboutmeituan.png')} title='关于美团'/>
+                            <MyItemView icon={require('../../img/icon_mine_friends.png')} title='好友去哪'/>
+                            <MyItemView icon={require('../../img/icon_mine_customerService.png')} title='客服中心'/>
+                            <MyItemView icon={require('../../img/icon_mine_coll.png')} title='我要合作'/>
+                            <MyItemView icon={require('../../img/icon_mine_aboutmeituan.png')} title='关于美团'/>
                         </View>
                     </View>
                 </View>

@@ -17,12 +17,12 @@ export default class WebPage extends Component {
                 navigation.goBack()
             }}>
                 <Image style={{width: 22, height: 22, marginLeft: 6}}
-                       source={require('../../img/Common/icon_back1.png')}/>
+                       source={require('../../img/icon_back_one.png')}/>
             </TouchableOpacity>,
             headerRight: <TouchableOpacity activeOpacity={0.6} onPress={() => {
             }}>
                 <Image style={{width: 22, height: 22, marginRight: 6}}
-                       source={require('../../img/News/icon_share.png')}/>
+                       source={require('../../img/icon_share.png')}/>
             </TouchableOpacity>
         };
     };

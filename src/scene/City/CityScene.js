@@ -41,7 +41,7 @@ export default class CityScene extends Component {
                 navigation.goBack()
             }}>
                 <Image style={{width: 22, height: 22, marginLeft: 6}}
-                       source={require('../../img/Common/icon_back1.png')}/>
+                       source={require('../../img/icon_back_one.png')}/>
             </TouchableOpacity>
         };
     };

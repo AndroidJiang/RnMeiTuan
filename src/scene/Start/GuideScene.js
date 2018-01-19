@@ -28,9 +28,9 @@ export default class Guide extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            imgOne: require('../../img/Start/icon_point_selected.png'),
-            imgSec: require('../../img/Start/icon_point.png'),
-            imgThird: require('../../img/Start/icon_point.png'),
+            imgOne: require('../../img/icon_point_selected.png'),
+            imgSec: require('../../img/icon_point.png'),
+            imgThird: require('../../img/icon_point.png'),
         }
     }
 
@@ -66,21 +66,21 @@ export default class Guide extends Component {
                                       onPageSelected={(event) => {
                                           if (event.nativeEvent.position == 0) {
                                               this.setState({
-                                                  imgOne: require('../../img/Start/icon_point_selected.png'),
-                                                  imgSec: require('../../img/Start/icon_point.png'),
-                                                  imgThird: require('../../img/Start/icon_point.png'),
+                                                  imgOne: require('../../img/icon_point_selected.png'),
+                                                  imgSec: require('../../img/icon_point.png'),
+                                                  imgThird: require('../../img/icon_point.png'),
                                               });
                                           } else if (event.nativeEvent.position == 1) {
                                               this.setState({
-                                                  imgOne: require('../../img/Start/icon_point.png'),
-                                                  imgSec: require('../../img/Start/icon_point_selected.png'),
-                                                  imgThird: require('../../img/Start/icon_point.png'),
+                                                  imgOne: require('../../img/icon_point.png'),
+                                                  imgSec: require('../../img/icon_point_selected.png'),
+                                                  imgThird: require('../../img/icon_point.png'),
                                               });
                                           } else {
                                               this.setState({
-                                                  imgOne: require('../../img/Start/icon_point.png'),
-                                                  imgSec: require('../../img/Start/icon_point.png'),
-                                                  imgThird: require('../../img/Start/icon_point_selected.png'),
+                                                  imgOne: require('../../img/icon_point.png'),
+                                                  imgSec: require('../../img/icon_point.png'),
+                                                  imgThird: require('../../img/icon_point_selected.png'),
                                               });
                                           }
 
@@ -88,13 +88,13 @@ export default class Guide extends Component {
                         <View >
                             <Image
                                 style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-                                source={require('../../img/Start/icon_guide1.jpg')}
+                                source={require('../../img/icon_guide_one.png')}
                                 resizeMode={Image.resizeMode.cover}/>
                         </View>
                         <View >
                             <Image
                                 style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-                                source={require('../../img/Start/icon_guide2.png')}
+                                source={require('../../img/icon_guide_two.png')}
                                 resizeMode={Image.resizeMode.cover}/>
                         </View>
                         <View>
@@ -106,7 +106,7 @@ export default class Guide extends Component {
                                     alignItems: 'center',
                                     paddingBottom: 50,
                                 }}
-                                source={require('../../img/Start/icon_guide3.jpg')}
+                                source={require('../../img/icon_guide_three.png')}
                                 resizeMode={Image.resizeMode.cover}>
                                 <TouchableOpacity onPress={this.onButtonPress} activeOpacity={0.6}>
                                     <Text style={{

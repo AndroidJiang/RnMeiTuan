@@ -166,8 +166,8 @@ export default class NearbyItemListView extends Component {
                         <View style={{flexDirection: 'row', alignItems: 'center', height: 30}}>
                             <StarRating
                                 disabled={true}
-                                emptyStar={require('../../img/Common/dp_ad_icon_star_small_gary.png')}
-                                fullStar={require('../../img/Common/dp_ad_icon_star_small.png')}
+                                emptyStar={require('../../img/dp_ad_icon_star_small_gary.png')}
+                                fullStar={require('../../img/dp_ad_icon_star_small.png')}
                                 maxStars={5}
                                 rating={score}
                                 starSize={18}
@@ -183,7 +183,7 @@ export default class NearbyItemListView extends Component {
                         <View style={{
                             height: 30, flexDirection: 'row', alignItems: 'center'
                         }}>
-                            <Image source={require('../../img/Common/icon_mark.png')}
+                            <Image source={require('../../img/icon_mark.png')}
                                    style={{width: 16, height: 16}}/>
                             <Text style={{
                                 marginLeft: 3,

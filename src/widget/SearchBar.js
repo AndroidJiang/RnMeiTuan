@@ -63,7 +63,7 @@ class SearchBar extends PureComponent {
                 <View style={styles.inputContainer}>
                     <Image
                         style={styles.icon}
-                        source={require('../img/Food/search_icon.png')}
+                        source={require('../img/search_icon.png')}
                     />
 
                     <TextInput

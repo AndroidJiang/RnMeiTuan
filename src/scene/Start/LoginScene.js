@@ -25,7 +25,7 @@ export default class Login extends Component<{}> {
     render() {
         return (
             <View style={styles.container}>
-                <Image source={require('../../img/tabbar/ic_vector_mine_pressed.png')} style={styles.img}/>
+                <Image source={require('../../img/ic_vector_mine_pressed.png')} style={styles.img}/>
                 <TextInput style={styles.nameInput}
                            underlineColorAndroid={'transparent'}
                            placeholder="请输入用户名">

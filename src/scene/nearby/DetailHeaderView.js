@@ -51,7 +51,7 @@ export default class DetailHeaderView extends PureComponent {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        <Image source={require('../../img/Common/icon_image.png')} style={{width: 20, height: 20}}/>
+                        <Image source={require('../../img/icon_image.png')} style={{width: 20, height: 20}}/>
                         <Text style={{fontSize: 16, color: 'white', marginTop: 4}}>{count}张</Text>
                     </View>
                 </ImageBackground>
@@ -70,8 +70,8 @@ export default class DetailHeaderView extends PureComponent {
                     <View style={{flexDirection: 'row', alignItems: 'center', height: 40}}>
                         <StarRating
                             disabled={true}
-                            emptyStar={require('../../img/Common/dp_ad_icon_star_small_gary.png')}
-                            fullStar={require('../../img/Common/dp_ad_icon_star_small.png')}
+                            emptyStar={require('../../img/dp_ad_icon_star_small_gary.png')}
+                            fullStar={require('../../img/dp_ad_icon_star_small.png')}
                             maxStars={5}
                             rating={score}
                             starSize={18}
@@ -97,7 +97,7 @@ export default class DetailHeaderView extends PureComponent {
                         borderBottomWidth: 1,
                         borderBottomColor: '#f4f4f4',
                     }}>
-                    <Image style={{width: 16, height: 16,}} source={require('../../img/Common/icon_location.png')}/>
+                    <Image style={{width: 16, height: 16,}} source={require('../../img/icon_location.png')}/>
 
                     <Text numberOfLines={2}
                           style={{
@@ -120,7 +120,7 @@ export default class DetailHeaderView extends PureComponent {
                                           justifyContent: 'center'
                                       }}>
                         <Image style={{width: 20, height: 20}}
-                               source={require('../../img/Common/icon_call.png')}/>
+                               source={require('../../img/icon_call.png')}/>
                     </TouchableOpacity>
 
                 </View>
@@ -135,10 +135,10 @@ export default class DetailHeaderView extends PureComponent {
                         }}
                     >
                         <Image style={{width: 20, height: 20}}
-                               source={require('../../img/Common/icon_waimai.png')}/>
+                               source={require('../../img/icon_waimai.png')}/>
                         <Text style={{fontSize: 14, marginLeft: 8}}>外卖</Text>
                         <Image style={{width: 9, height: 16, position: 'absolute', right: 15}}
-                               source={require('../../img/Common/buy_icon_arrow_right.png')}/>
+                               source={require('../../img/buy_icon_arrow_right.png')}/>
                     </View> : item.isQueuing === 1 ? <View style={{
                         height: 40,
                         backgroundColor: 'white',
@@ -148,10 +148,10 @@ export default class DetailHeaderView extends PureComponent {
                     }}>
 
                         <Image style={{width: 20, height: 20}}
-                               source={require('../../img/Common/icon_paidui.png')}/>
+                               source={require('../../img/icon_paidui.png')}/>
                         <Text style={{fontSize: 14, marginLeft: 8}}>排队</Text>
                         <Image style={{width: 9, height: 16, position: 'absolute', right: 15}}
-                               source={require('../../img/Common/buy_icon_arrow_right.png')}/>
+                               source={require('../../img/buy_icon_arrow_right.png')}/>
                     </View> : <View></View>
 
                 }
@@ -168,14 +168,14 @@ export default class DetailHeaderView extends PureComponent {
                     borderTopColor: '#f4f4f4',
                     backgroundColor: 'white',
                 }}>
-                    <Image style={{width: 24, height: 24}} source={require('../../img/Common/icon_remark.png')}/>
+                    <Image style={{width: 24, height: 24}} source={require('../../img/icon_remark.png')}/>
                     <Text style={{color: '#4c4c4c', fontSize: 16, marginLeft: 8}}>大众点评网友评分：
                         <Text style={{color: '#f1a13b', fontSize: 14}}>{avgScore}</Text>
                     </Text>
 
                     <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end'}}>
                         <Text style={{fontSize: 14, color: '#dddddd', marginRight: 6}}>共4326条评价</Text>
-                        <Image source={require('../../img/Common/buy_icon_arrow_right.png')}
+                        <Image source={require('../../img/buy_icon_arrow_right.png')}
                                style={{width: 9, height: 16, marginRight: 15}}/>
                     </View>
                 </View>
@@ -202,7 +202,7 @@ export default class DetailHeaderView extends PureComponent {
                         paddingBottom: 6
                     }}>
                         <Text numberOfLines={3} style={{fontSize: 14, lineHeight: 26, flex: 1}}>{menus}</Text>
-                        <Image source={require('../../img/Common/buy_icon_arrow_right.png')}
+                        <Image source={require('../../img/buy_icon_arrow_right.png')}
                                style={{width: 9, height: 16, marginRight: 15, marginLeft: 10}}/>
                     </TouchableOpacity>
                 </View>

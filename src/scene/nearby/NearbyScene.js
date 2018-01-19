@@ -24,7 +24,7 @@ export default class NearbyScene extends Component {
                 }}>
                 <Text style={{fontSize: 18, color: '#515151',}}>彭浦科技园</Text>
                 <Image style={{width: 16, height: 16, marginLeft: 2}}
-                       source={require('../../img/Common/icon_down.png')}/>
+                       source={require('../../img/icon_down.png')}/>
                 <TouchableOpacity style={{
                     flex: 1,
                     flexDirection: 'row',
@@ -35,7 +35,7 @@ export default class NearbyScene extends Component {
                     height: 36,
                     marginLeft: 10,
                 }} activeOpacity={1.0}>
-                    <Image source={require('../../img/Common/icon_search.png')} style={{width: 16, height: 16}}/>
+                    <Image source={require('../../img/icon_search.png')} style={{width: 16, height: 16}}/>
                     <Text style={{fontSize: 14, marginLeft: 8}}>找附近的吃喝玩乐</Text>
                 </TouchableOpacity>
             </View>,
