@@ -88,13 +88,13 @@ export default class Guide extends Component {
                         <View >
                             <Image
                                 style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-                                source={require('../../img/icon_guide_one.png')}
+                                source={require('../../img/ic_category_one.png')}
                                 resizeMode={Image.resizeMode.cover}/>
                         </View>
                         <View >
                             <Image
                                 style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-                                source={require('../../img/icon_guide_two.png')}
+                                source={require('../../img/ic_category_two.png')}
                                 resizeMode={Image.resizeMode.cover}/>
                         </View>
                         <View>
@@ -106,7 +106,7 @@ export default class Guide extends Component {
                                     alignItems: 'center',
                                     paddingBottom: 50,
                                 }}
-                                source={require('../../img/icon_guide_three.png')}
+                                source={require('../../img/ic_category_three.png')}
                                 resizeMode={Image.resizeMode.cover}>
                                 <TouchableOpacity onPress={this.onButtonPress} activeOpacity={0.6}>
                                     <Text style={{
