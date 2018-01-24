@@ -38,7 +38,7 @@ export default AppLaunch = StackNavigator({
 
     },
     {
-        initialRouteName: 'Splash',
+        initialRouteName: 'Main',
         mode: 'card',
         headerMode: 'screen'
     });

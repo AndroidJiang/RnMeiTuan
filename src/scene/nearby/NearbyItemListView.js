@@ -11,7 +11,6 @@ import {
     Dimensions,
     StatusBar,
     FlatList,
-    ProgressBarAndroid,
     ActivityIndicator,
     TouchableOpacity,
     Alert
@@ -93,7 +92,7 @@ export default class NearbyItemListView extends Component {
         if (this.state.isFirstLoading && !this.state.isLoadingMore) {
             return (
                 <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <ProgressBarAndroid color={'#7c9ff6'}/>
+                    <ActivityIndicator color='blue' size='large'/>
                 </View>
             );
         } else {

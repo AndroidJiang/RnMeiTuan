@@ -88,13 +88,13 @@ export default class Guide extends Component {
                         <View >
                             <Image
                                 style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-                                source={require('../../img/ic_category_one.png')}
+                                source={require('../../img/ic_guide_pic_one.png')}
                                 resizeMode={Image.resizeMode.cover}/>
                         </View>
                         <View >
                             <Image
                                 style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-                                source={require('../../img/ic_category_two.png')}
+                                source={require('../../img/ic_guide_pic_two.png')}
                                 resizeMode={Image.resizeMode.cover}/>
                         </View>
                         <View>
@@ -106,20 +106,21 @@ export default class Guide extends Component {
                                     alignItems: 'center',
                                     paddingBottom: 50,
                                 }}
-                                source={require('../../img/ic_category_three.png')}
+                                source={require('../../img/ic_guide_pic_three.png')}
                                 resizeMode={Image.resizeMode.cover}>
                                 <TouchableOpacity onPress={this.onButtonPress} activeOpacity={0.6}>
                                     <Text style={{
                                         width: 120,
                                         height: 36,
+                                        padding:5,
                                         borderRadius: 5,
                                         borderWidth: 1,
                                         textAlign: 'center',
                                         textAlignVertical: 'center',
                                         borderColor: "deepskyblue",
-                                        fontSize: 20,
+                                        fontSize: 15,
                                         color: "deepskyblue",
-                                    }}>立即体验</Text>
+                                    }}>开启好友去哪</Text>
                                 </TouchableOpacity>
                             </ImageBackground>
                         </View>
@@ -137,11 +138,11 @@ export default class Guide extends Component {
                     bottom: 5,
                 }}>
                     <Image source={this.state.imgOne}
-                           style={{width: 20, height: 20}}/>
+                           style={{width: 15, height: 15}}/>
                     <Image source={this.state.imgSec}
-                           style={{width: 20, height: 20, marginLeft: 5}}/>
+                           style={{width: 15, height: 15, marginLeft: 5}}/>
                     <Image source={this.state.imgThird}
-                           style={{width: 20, height: 20, marginLeft: 5}}/>
+                           style={{width: 15, height: 15, marginLeft: 5}}/>
                 </View>
             </View>
         );

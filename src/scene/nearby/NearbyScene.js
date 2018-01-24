@@ -25,25 +25,21 @@ export default class NearbyScene extends Component {
                 <Text style={{fontSize: 18, color: '#515151',}}>彭浦科技园</Text>
                 <Image style={{width: 16, height: 16, marginLeft: 2}}
                        source={require('../../img/icon_down.png')}/>
-                <TouchableOpacity style={{
-                    flex: 1,
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: '#dedede',
-                    borderRadius: 3,
-                    height: 36,
-                    marginLeft: 10,
-                }} activeOpacity={1.0}>
-                    <Image source={require('../../img/icon_search.png')} style={{width: 16, height: 16}}/>
-                    <Text style={{fontSize: 14, marginLeft: 8}}>找附近的吃喝玩乐</Text>
+                <TouchableOpacity style={styles.searchBar} onPress={()=>navigation.state.params.navigatePress()}>
+                    <Image source={require('../../img/search_icon.png')} style={styles.searchIcon}/>
+                    <Text>找附近的吃喝玩乐</Text>
                 </TouchableOpacity>
             </View>,
             headerStyle: {height: 48, backgroundColor: 'white'},
 
         };
     }
-
+    componentDidMount(){
+        this.props.navigation.setParams({navigatePress:this.searchClick})
+    }
+    searchClick = () => {
+        this.props.navigation.navigate('SearchScene');
+    }
 
     render() {
         let titles = ['享美食', '住酒店', '爱玩乐', '全部'];
@@ -70,11 +66,33 @@ export default class NearbyScene extends Component {
                 >
                     {
                         titles.map((item, i) => (
-                            <NearbyItemListView tabLabel={item} key={item} type={types[i]} navigation = {this.props.navigation}/>
+                            <NearbyItemListView tabLabel={item} key={item} type={types[i]}
+                                                navigation={this.props.navigation}/>
                         ))
                     }
                 </ScrollableTabView>
             </View>
         );
     }
+
 }
+// define your styles
+const styles = StyleSheet.create({
+
+    searchBar: {
+        flex: 1,
+        height: 30,
+        borderRadius: 19,
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignSelf: 'center',
+        marginLeft: 5,
+        backgroundColor: '#eeeeee',
+        justifyContent:'center',
+    },
+    searchIcon: {
+        width: 20,
+        height: 20,
+        margin: 5,
+    }
+});

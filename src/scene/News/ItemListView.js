@@ -30,10 +30,10 @@ export default class ItemListView extends PureComponent {
     }
 
     componentDidMount() {
-        this._getLatestData();
+        this.getLatestData();
     }
 
-    _getLatestData = () => {
+    getLatestData = () => {
         var id = this.props.id;
         this.setState({isRefreshing: true}, () => {
             return fetch('http://route.showapi.com/582-2?typeId=' + id + '&page=1&showapi_appid=29400&showapi_sign=e7977541307547beab3e4aa033adb78f')
@@ -70,32 +70,32 @@ export default class ItemListView extends PureComponent {
 
         if (this.state.isRefreshing && !this.state.isLoadingMore) {
             return (
-                <View style={{flex: 1 ,justifyContent:'center'}}>
-                    <ActivityIndicator  color='blue' size='large' />
+                <View style={{flex: 1, justifyContent: 'center'}}>
+                    <ActivityIndicator color='blue' size='large'/>
                 </View>
             );
         } else {
             return (
                 <View style={styles.container}>
                     <FlatList data={this.state.dataSource}
-                              keyExtractor={this._renderKey}
-                              ItemSeparatorComponent={this._renderSeparator}
-                              renderItem={this._renderItem}
+                              keyExtractor={this.renderKey}
+                              ItemSeparatorComponent={this.renderSeparator}
+                              renderItem={this.renderItem}
                               refreshing={this.state.isRefreshing}
-                              onRefresh={this._getLatestData}
+                              onRefresh={this.getLatestData}
                               onEndReachedThreshold={1}
                               extraData={this.state}
-                              onEndReached={this._getMoreData}
+                              onEndReached={this.getMoreData}
                               getItemLayout={(data, index) => ( {length: 101, offset: 101 * index, index} )}
-                              ListEmptyComponent={this._renderEmpty}
-                              ListFooterComponent={this._renderFooter}
+                              ListEmptyComponent={this.renderEmpty}
+                              ListFooterComponent={this.renderFooter}
                     />
                 </View>
             );
         }
     }
 
-    _getMoreData = () => {
+    getMoreData = () => {
         if (this.state.isRefreshing || this.state.isLoadingMore || this.state.isEnd) {
             return;
         }
@@ -131,7 +131,7 @@ export default class ItemListView extends PureComponent {
                 }).done();
         });
     };
-    _renderEmpty = () => {
+    renderEmpty = () => {
 
         return (<View style={{
             flex: 1, height: 500, alignItems: 'center',
@@ -141,8 +141,12 @@ export default class ItemListView extends PureComponent {
         </View>)
 
     };
-    _renderFooter = () => {
-        if (this.state.isLoadingMore) {
+    renderFooter = () => {
+        if (this.state.isEnd) {
+            return (<View style={{height: 40, alignItems: 'center', justifyContent: 'center'}}>
+                我是有底线的~
+            </View>);
+        } else if (this.state.isLoadingMore) {
             return (
                 <View style={{
                     height: 40,
@@ -221,22 +225,22 @@ export default class ItemListView extends PureComponent {
         }
     }
 
-    _itemClick(item) {
+    itemClick(item) {
         let url = item.url;
         let userName = item.userName;
         this.props.navigation.navigate('Web', {'url': url, 'userName': userName});
     };
 
-    _renderSeparator = () => {
+    renderSeparator = () => {
         return (
             <View style={{height: 1, backgroundColor: '#cccccc', width: Dimensions.get('window').width}}></View>
         );
     };
 
-    _renderItem = ({item, index}) => {
+    renderItem = ({item, index}) => {
         let time = item.date;
         let cur = this.getDateDiff(time);
-        return ( <TouchableOpacity activeOpacity={0.6} onPress={ this._itemClick.bind(this, item)}>
+        return ( <TouchableOpacity activeOpacity={0.6} onPress={ this.itemClick.bind(this, item)}>
             <View style={{
                 width: Dimensions.get('window').width,
                 height: 100,
@@ -265,7 +269,7 @@ export default class ItemListView extends PureComponent {
     };
 
 
-    _renderKey = (item) => item.url + item.id;
+    renderKey = (item) => item.url + item.id;
 }
 
 const styles = StyleSheet.create({

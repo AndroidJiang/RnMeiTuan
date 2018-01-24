@@ -129,7 +129,11 @@ export class FoodNewScene extends PureComponent {
 
     };
     renderFooter = () => {
-        if (this.state.isLoadingMore) {
+        if (this.state.isEnd) {
+            return (<View style={{height: 40, alignItems: 'center', justifyContent: 'center'}}>
+                我是有底线的~
+            </View>);
+        } else if (this.state.isLoadingMore) {
             return (
                 <View style={{
                     height: 40,

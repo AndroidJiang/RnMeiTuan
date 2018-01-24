@@ -101,22 +101,7 @@
       "name": "安溪",
       "cityAcronym": "anxi"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 873,
-      "cityName": "安宁",
-      "name": "安宁",
-      "cityAcronym": "anning"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1008,
-      "cityName": "安化",
-      "name": "安化",
-      "cityAcronym": "anhua"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -141,78 +126,7 @@
       "name": "保定",
       "cityAcronym": "bd"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 88,
-      "cityName": "蚌埠",
-      "name": "蚌埠",
-      "cityAcronym": "bengbu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 165,
-      "cityName": "白山",
-      "name": "白山",
-      "cityAcronym": "baishan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 167,
-      "cityName": "白城",
-      "name": "白城",
-      "cityAcronym": "bc"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 204,
-      "cityName": "亳州",
-      "name": "亳州",
-      "cityAcronym": "bozhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 233,
-      "cityName": "滨州",
-      "name": "滨州",
-      "cityAcronym": "bz"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1102,
-      "cityName": "博白县",
-      "name": "博白县",
-      "cityAcronym": "bobaixian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1141,
-      "cityName": "北镇市",
-      "name": "北镇市",
-      "cityAcronym": "beizhenshi"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1165,
-      "cityName": "北安市",
-      "name": "北安市",
-      "cityAcronym": "beianshi"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1193,
-      "cityName": "巴彦县",
-      "name": "巴彦县",
-      "cityAcronym": "bayanxian"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -245,78 +159,7 @@
       "name": "昌吉",
       "cityAcronym": "changji"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 767,
-      "cityName": "磁县",
-      "name": "磁县",
-      "cityAcronym": "cixian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 795,
-      "cityName": "长垣",
-      "name": "长垣",
-      "cityAcronym": "changyuan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1078,
-      "cityName": "慈利",
-      "name": "慈利",
-      "cityAcronym": "cili"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1092,
-      "cityName": "常宁市",
-      "name": "常宁市",
-      "cityAcronym": "changningshi"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1097,
-      "cityName": "茶陵",
-      "name": "茶陵",
-      "cityAcronym": "chalingxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1100,
-      "cityName": "长丰县",
-      "name": "长丰县",
-      "cityAcronym": "changfengxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1150,
-      "cityName": "苍溪县",
-      "name": "苍溪县",
-      "cityAcronym": "cangxixian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1157,
-      "cityName": "长清区",
-      "name": "长清区",
-      "cityAcronym": "changqingqu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1164,
-      "cityName": "崇明区",
-      "name": "崇明区",
-      "cityAcronym": "chongmingqu"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -341,166 +184,7 @@
       "name": "大连",
       "cityAcronym": "dl"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 90,
-      "cityName": "大庆",
-      "name": "大庆",
-      "cityAcronym": "dq"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 91,
-      "cityName": "东莞",
-      "name": "东莞",
-      "cityAcronym": "dg"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 129,
-      "cityName": "大同",
-      "name": "大同",
-      "cityAcronym": "dt"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 154,
-      "cityName": "丹东",
-      "name": "丹东",
-      "cityAcronym": "dandong"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 178,
-      "cityName": "大兴安岭",
-      "name": "大兴安岭",
-      "cityAcronym": "dxal"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 223,
-      "cityName": "东营",
-      "name": "东营",
-      "cityAcronym": "dy"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 231,
-      "cityName": "德州",
-      "name": "德州",
-      "cityAcronym": "dz"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 686,
-      "cityName": "东方",
-      "name": "东方",
-      "cityAcronym": "dongfang"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 738,
-      "cityName": "东平",
-      "name": "东平",
-      "cityAcronym": "dongping"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 750,
-      "cityName": "电白",
-      "name": "电白",
-      "cityAcronym": "dianbai"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 754,
-      "cityName": "东海",
-      "name": "东海",
-      "cityAcronym": "donghai"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 765,
-      "cityName": "定州",
-      "name": "定州",
-      "cityAcronym": "dingzhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1035,
-      "cityName": "道县",
-      "name": "道县",
-      "cityAcronym": "daoxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1076,
-      "cityName": "大安市",
-      "name": "大安市",
-      "cityAcronym": "daanshi"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1168,
-      "cityName": "定安县",
-      "name": "定安县",
-      "cityAcronym": "dinganxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1177,
-      "cityName": "垫江",
-      "name": "垫江",
-      "cityAcronym": "dianjiang"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1203,
-      "cityName": "东明县",
-      "name": "东明县",
-      "cityAcronym": "dongmingxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1204,
-      "cityName": "定陶区",
-      "name": "定陶区",
-      "cityAcronym": "dingtaoqu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1208,
-      "cityName": "定边县",
-      "name": "定边县",
-      "cityAcronym": "dingbianxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1233,
-      "cityName": "大厂回族自治县",
-      "name": "大厂回族自治县",
-      "cityAcronym": "dachangzizhixian"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -557,22 +241,7 @@
       "name": "额尔古纳",
       "cityAcronym": "eegn"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 989,
-      "cityName": "恩平",
-      "name": "恩平",
-      "cityAcronym": "enping"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1172,
-      "cityName": "额敏县",
-      "name": "额敏县",
-      "cityAcronym": "eminxian"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -597,47 +266,7 @@
       "name": "抚顺",
       "cityAcronym": "fushun"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 540,
-      "cityName": "奉化",
-      "name": "奉化",
-      "cityAcronym": "fenghua"
-    },
 
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 827,
-      "cityName": "封丘",
-      "name": "封丘",
-      "cityAcronym": "fengqiu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 861,
-      "cityName": "扶风",
-      "name": "扶风",
-      "cityAcronym": "fufeng"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1209,
-      "cityName": "府谷县",
-      "name": "府谷县",
-      "cityAcronym": "fuguxian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1230,
-      "cityName": "奉节",
-      "name": "奉节",
-      "cityAcronym": "fengjie"
-    },
     {
       "districtName": "",
       "districtId": 0,
@@ -798,182 +427,8 @@
       "name": "高密",
       "cityAcronym": "gm"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 593,
-      "cityName": "广汉",
-      "name": "广汉",
-      "cityAcronym": "gh"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 595,
-      "cityName": "藁城",
-      "name": "藁城",
-      "cityAcronym": "gc"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 601,
-      "cityName": "高平",
-      "name": "高平",
-      "cityAcronym": "gaoping"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 629,
-      "cityName": "高碑店",
-      "name": "高碑店",
-      "cityAcronym": "gbd"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 630,
-      "cityName": "个旧",
-      "name": "个旧",
-      "cityAcronym": "gj"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 631,
-      "cityName": "高州",
-      "name": "高州",
-      "cityAcronym": "gaozhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 638,
-      "cityName": "盖州",
-      "name": "盖州",
-      "cityAcronym": "gaizhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 691,
-      "cityName": "古交",
-      "name": "古交",
-      "cityAcronym": "gujiao"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 702,
-      "cityName": "格尔木",
-      "name": "格尔木",
-      "cityAcronym": "geermu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 707,
-      "cityName": "高雄",
-      "name": "高雄",
-      "cityAcronym": "gaoxiong"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 751,
-      "cityName": "灌云",
-      "name": "灌云",
-      "cityAcronym": "guanyun"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 752,
-      "cityName": "灌南",
-      "name": "灌南",
-      "cityAcronym": "guannan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 753,
-      "cityName": "赣榆",
-      "name": "赣榆",
-      "cityAcronym": "ganyu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 771,
-      "cityName": "高安",
-      "name": "高安",
-      "cityAcronym": "gaoan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 780,
-      "cityName": "广德",
-      "name": "广德",
-      "cityAcronym": "guangde"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 787,
-      "cityName": "共青城",
-      "name": "共青城",
-      "cityAcronym": "gongqingcheng"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 854,
-      "cityName": "高阳",
-      "name": "高阳",
-      "cityAcronym": "gaoyang"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 866,
-      "cityName": "高陵",
-      "name": "高陵",
-      "cityAcronym": "gaoling"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 911,
-      "cityName": "公安",
-      "name": "公安",
-      "cityAcronym": "gongan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 933,
-      "cityName": "鼓浪屿",
-      "name": "鼓浪屿",
-      "cityAcronym": "gulangyu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1104,
-      "cityName": "固始县",
-      "name": "固始县",
-      "cityAcronym": "gushixian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1174,
-      "cityName": "光泽",
-      "name": "光泽",
-      "cityAcronym": "guangze"
-    },
+
+
     {
       "districtName": "",
       "districtId": 0,
@@ -1078,190 +533,7 @@
       "name": "淮安",
       "cityAcronym": "ha"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 186,
-      "cityName": "湖州",
-      "name": "湖州",
-      "cityAcronym": "huzhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 193,
-      "cityName": "淮南",
-      "name": "淮南",
-      "cityAcronym": "hn"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 195,
-      "cityName": "淮北",
-      "name": "淮北",
-      "cityAcronym": "huaibei"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 198,
-      "cityName": "黄山",
-      "name": "黄山",
-      "cityAcronym": "huangshan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 234,
-      "cityName": "菏泽",
-      "name": "菏泽",
-      "cityAcronym": "heze"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 239,
-      "cityName": "鹤壁",
-      "name": "鹤壁",
-      "cityAcronym": "hb"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 250,
-      "cityName": "黄石",
-      "name": "黄石",
-      "cityAcronym": "hshi"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 258,
-      "cityName": "黄冈",
-      "name": "黄冈",
-      "cityAcronym": "hg"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 265,
-      "cityName": "衡阳",
-      "name": "衡阳",
-      "cityAcronym": "hy"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 273,
-      "cityName": "怀化",
-      "name": "怀化",
-      "cityAcronym": "hh"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 281,
-      "cityName": "惠州",
-      "name": "惠州",
-      "cityAcronym": "huizhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 284,
-      "cityName": "河源",
-      "name": "河源",
-      "cityAcronym": "heyuan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 298,
-      "cityName": "贺州",
-      "name": "贺州",
-      "cityAcronym": "hezhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 519,
-      "cityName": "海门",
-      "name": "海门",
-      "cityAcronym": "hm"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 564,
-      "cityName": "华阴",
-      "name": "华阴",
-      "cityAcronym": "huayin"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 573,
-      "cityName": "海阳",
-      "name": "海阳",
-      "cityAcronym": "haiyang"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 772,
-      "cityName": "汉阴",
-      "name": "汉阴",
-      "cityAcronym": "hanyin"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 793,
-      "cityName": "含山",
-      "name": "含山",
-      "cityAcronym": "hanshan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 794,
-      "cityName": "和县",
-      "name": "和县",
-      "cityAcronym": "hexian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1124,
-      "cityName": "汉南区",
-      "name": "汉南区",
-      "cityAcronym": "hannanqu"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 8001,
-      "cityName": "华容",
-      "name": "华容",
-      "cityAcronym": "huarong"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 96,
-      "cityName": "济南",
-      "name": "济南",
-      "cityAcronym": "jn"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 97,
-      "cityName": "焦作",
-      "name": "焦作",
-      "cityAcronym": "jiaozuo"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -1342,46 +614,7 @@
       "name": "昆明",
       "cityAcronym": "km"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 235,
-      "cityName": "开封",
-      "name": "开封",
-      "cityAcronym": "kaifeng"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 388,
-      "cityName": "克拉玛依",
-      "name": "克拉玛依",
-      "cityAcronym": "klmy"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 395,
-      "cityName": "克州",
-      "name": "克州",
-      "cityAcronym": "kz"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 396,
-      "cityName": "喀什地区",
-      "name": "喀什地区",
-      "cityAcronym": "ks"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 1002,
-      "cityName": "开阳",
-      "name": "开阳",
-      "cityAcronym": "kaiyang"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -1406,38 +639,7 @@
       "name": "开发区，库尔勒",
       "cityAcronym": "krl"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 106,
-      "cityName": "廊坊",
-      "name": "廊坊",
-      "cityAcronym": "lf"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 137,
-      "cityName": "临汾",
-      "name": "临汾",
-      "cityAcronym": "linfen"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 138,
-      "cityName": "吕梁",
-      "name": "吕梁",
-      "cityAcronym": "lvliang"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 157,
-      "cityName": "辽阳",
-      "name": "辽阳",
-      "cityAcronym": "liaoyang"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -1494,78 +696,7 @@
       "name": "南宁",
       "cityAcronym": "nn"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 210,
-      "cityName": "南平",
-      "name": "南平",
-      "cityAcronym": "np"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 212,
-      "cityName": "宁德",
-      "name": "宁德",
-      "cityAcronym": "nd"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 244,
-      "cityName": "南阳",
-      "name": "南阳",
-      "cityAcronym": "ny"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 311,
-      "cityName": "南充",
-      "name": "南充",
-      "cityAcronym": "nanchong"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 343,
-      "cityName": "怒江",
-      "name": "怒江",
-      "cityAcronym": "nujiang"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 349,
-      "cityName": "那曲",
-      "name": "那曲",
-      "cityAcronym": "nq"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 512,
-      "cityName": "宁海",
-      "name": "宁海",
-      "cityAcronym": "nh"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 520,
-      "cityName": "宁乡",
-      "name": "宁乡",
-      "cityAcronym": "nx"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 547,
-      "cityName": "南沙",
-      "name": "南沙",
-      "cityAcronym": "ns"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -1722,46 +853,6 @@
     {
       "districtName": "",
       "districtId": 0,
-      "cityId": 469,
-      "cityName": "瑞安",
-      "name": "瑞安",
-      "cityAcronym": "ruian"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 475,
-      "cityName": "仁怀",
-      "name": "仁怀",
-      "cityAcronym": "rh"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 497,
-      "cityName": "荣成",
-      "name": "荣成",
-      "cityAcronym": "rc"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 499,
-      "cityName": "乳山",
-      "name": "乳山",
-      "cityAcronym": "rs"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 501,
-      "cityName": "如皋",
-      "name": "如皋",
-      "cityAcronym": "rg"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
       "cityId": 616,
       "cityName": "汝州",
       "name": "汝州",
@@ -1783,22 +874,7 @@
       "name": "瑞昌",
       "cityAcronym": "ruichang"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 749,
-      "cityName": "仁寿",
-      "name": "仁寿",
-      "cityAcronym": "renshou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 917,
-      "cityName": "任丘",
-      "name": "任丘",
-      "cityAcronym": "renqiu"
-    },
+
     {
       "districtName": "",
       "districtId": 0,
@@ -2126,38 +1202,7 @@
       "name": "淄博",
       "cityAcronym": "zb"
     },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 182,
-      "cityName": "镇江",
-      "name": "镇江",
-      "cityAcronym": "zj"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 190,
-      "cityName": "舟山",
-      "name": "舟山",
-      "cityAcronym": "zhoushan"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 209,
-      "cityName": "漳州",
-      "name": "漳州",
-      "cityAcronym": "zhangzhou"
-    },
-    {
-      "districtName": "",
-      "districtId": 0,
-      "cityId": 222,
-      "cityName": "枣庄",
-      "name": "枣庄",
-      "cityAcronym": "zaozhuang"
-    }
+
   ],
   "bcode": 0
 }
