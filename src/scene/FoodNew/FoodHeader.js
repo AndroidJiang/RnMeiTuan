@@ -31,8 +31,6 @@ export class FoodHeader extends Component {
             </View>
         )
     }
-
-
 }
 
 // define your styles

@@ -8,3 +8,5 @@ rm ./android/app/src/main/assets/index.android.jsbundle.meta
 
 
 #https://github.com/facebook/react-native/issues/4831
+#https://github.com/facebook/react-native/issues/17348
+#https://github.com/facebook/react-native/issues/13439

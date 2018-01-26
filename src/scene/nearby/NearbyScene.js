@@ -7,6 +7,7 @@ import {View, Image, Text, StyleSheet, Dimensions, StatusBar, TouchableOpacity} 
 import {screen, system} from '../../common/common';
 import ScrollableTabView, {ScrollableTabBar, DefaultTabBar} from 'react-native-scrollable-tab-view';
 import NearbyItemListView from "./NearbyItemListView";
+import color from "../../common/color";
 export default class NearbyScene extends Component {
 
     static navigationOptions = ({navigation}) => {
@@ -14,7 +15,7 @@ export default class NearbyScene extends Component {
             headerTitle: <View
                 style={{
                     width: screen.width,
-                    backgroundColor: 'white',
+                    backgroundColor: color.theme,
                     flexDirection: 'row',
                     height: 48,
                     alignItems: 'center',
@@ -25,7 +26,7 @@ export default class NearbyScene extends Component {
                 <Text style={{fontSize: 18, color: '#515151',}}>彭浦科技园</Text>
                 <Image style={{width: 16, height: 16, marginLeft: 2}}
                        source={require('../../img/icon_down.png')}/>
-                <TouchableOpacity style={styles.searchBar} onPress={()=>navigation.state.params.navigatePress()}>
+                <TouchableOpacity style={styles.searchBar} onPress={() => navigation.state.params.navigatePress()}>
                     <Image source={require('../../img/search_icon.png')} style={styles.searchIcon}/>
                     <Text>找附近的吃喝玩乐</Text>
                 </TouchableOpacity>
@@ -34,9 +35,11 @@ export default class NearbyScene extends Component {
 
         };
     }
-    componentDidMount(){
-        this.props.navigation.setParams({navigatePress:this.searchClick})
+
+    componentDidMount() {
+        this.props.navigation.setParams({navigatePress: this.searchClick})
     }
+
     searchClick = () => {
         this.props.navigation.navigate('SearchScene');
     }
@@ -44,9 +47,9 @@ export default class NearbyScene extends Component {
     render() {
         let titles = ['享美食', '住酒店', '爱玩乐', '全部'];
         let types = [
-            ['热门', '面包甜点', '小吃快餐', '川菜', '日本料理', '韩国料理', '台湾菜', '东北菜'],
-            ['热门', '商务出行', '公寓民宿', '情侣专享', '高星特惠', '成人情趣'],
-            ['热门', 'KTV', '足疗按摩', '洗浴汗蒸', '大宝剑', '电影院', '美发', '美甲'],
+            ['全部', '面包甜点', '小吃快餐', '川湘菜', '日韩料理',  '台湾菜',],
+            ['全部', '青年旅社', '经济酒店', '豪华酒店', '主题酒店', '公寓型酒店'],
+            ['全部', 'KTV', '足疗按摩', '洗浴/汗蒸', '其他娱乐', '运动健身', '桌游/电玩'],
             []
         ];
         return (
@@ -66,7 +69,7 @@ export default class NearbyScene extends Component {
                 >
                     {
                         titles.map((item, i) => (
-                            <NearbyItemListView tabLabel={item} key={item} type={types[i]}
+                            <NearbyItemListView tabLabel={item} title = {item} key={item} type={types[i]}
                                                 navigation={this.props.navigation}/>
                         ))
                     }
@@ -87,8 +90,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         marginLeft: 5,
-        backgroundColor: '#eeeeee',
-        justifyContent:'center',
+        backgroundColor: '#f9f9f9',
+        justifyContent: 'center',
     },
     searchIcon: {
         width: 20,
