@@ -17,6 +17,8 @@ import {
 } from 'react-native';
 import StarRating from "react-native-star-rating/star-rating";
 import {screen, api} from '../../common/common';
+import CouponView from "./CouponView";
+import GroupView from "./GroupView";
 export default class DetailHeaderView extends PureComponent {
 
 
@@ -36,6 +38,18 @@ export default class DetailHeaderView extends PureComponent {
         let avgScore = item.avgScore;
         let score = Math.round(avgScore);
         let menus = item.featureMenus.replace(/,/g, ' ');
+        let data = this.props.detail;
+        let coupon = [];
+        let group = [];
+        data.map((item, index) => {
+            let mealcount = item.mealcount;
+            console.log(mealcount);
+            if ('[]' === mealcount) {
+                coupon.push(item);
+            } else {
+                group.push(item);
+            }
+        });
         return (
             <View>
                 <ImageBackground style={{width: screen.width, height: screen.width * 0.6}} source={{uri: imgUrl}}
@@ -133,6 +147,7 @@ export default class DetailHeaderView extends PureComponent {
                             flexDirection: 'row',
                             alignItems: 'center',
                             paddingLeft: 8,
+                            marginBottom: 10
                         }}
                     >
                         <Image style={{width: 20, height: 20}}
@@ -146,6 +161,7 @@ export default class DetailHeaderView extends PureComponent {
                         flexDirection: 'row',
                         alignItems: 'center',
                         paddingLeft: 8,
+                        marginBottom: 10
                     }}>
 
                         <Image style={{width: 20, height: 20}}
@@ -153,22 +169,30 @@ export default class DetailHeaderView extends PureComponent {
                         <Text style={{fontSize: 14, marginLeft: 8}}>排队</Text>
                         <Image style={{width: 9, height: 16, position: 'absolute', right: 15}}
                                source={require('../../img/buy_icon_arrow_right.png')}/>
-                    </View> : <View></View>
+                    </View> : <View style={{marginBottom: 10}}></View>
 
                 }
 
-                <View style={{
+                {
+                    coupon.length !== 0 ?
+                        <CouponView data={coupon}/> : <View></View>
+                }
+
+                {
+                    group.length !== 0 ? <GroupView data={group}/> : <View></View>
+                }
+
+                <View style={[{
                     flexDirection: 'row',
                     alignItems: 'center',
                     height: 40,
-                    marginTop: 10,
                     paddingLeft: 8,
                     borderBottomWidth: 1,
                     borderBottomColor: '#f4f4f4',
                     borderTopWidth: 1,
                     borderTopColor: '#f4f4f4',
                     backgroundColor: 'white',
-                }}>
+                }, coupon.length !== 0 || group.length !== 0 ? {marginTop: 10} : {marginTop: 0}]}>
                     <Image style={{width: 24, height: 24}} source={require('../../img/icon_remark.png')}/>
                     <Text style={{color: '#4c4c4c', fontSize: 16, marginLeft: 8}}>大众点评网友评分：
                         <Text style={{color: '#f1a13b', fontSize: 14}}>{avgScore}</Text>
@@ -243,8 +267,10 @@ export default class DetailHeaderView extends PureComponent {
 
     recomendItemClick = () => {
         // this.props.navigation.navigate('Recomend');
-        this.props.navigation.navigate('Recomend',{'title':'推荐菜',callback:(data) =>{
-                    Alert.alert(data);
-            }})
+        this.props.navigation.navigate('Recomend', {
+            'title': '推荐菜', callback: (data) => {
+                Alert.alert(data);
+            }
+        })
     };
 }

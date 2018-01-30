@@ -7,11 +7,13 @@ import android.view.KeyEvent;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+
 /*
 * http://hanhailong.com/2016/04/23/React-Native%E7%A7%BB%E6%A4%8D-Android/
 * */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
     private ReactRootView react_root_view;
     private ReactInstanceManager mReactInstanceManager;
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     /**
      * 解决android返回键返回到桌面bug
      */
@@ -49,8 +52,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostPause(this);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostResume(this, this);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostDestroy(this);
+        }
+    }
+
     /**
      * 移植之后跳不出调试菜单解决
+     *
      * @param keyCode
      * @param event
      * @return
@@ -62,5 +93,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        super.onBackPressed();
     }
 }

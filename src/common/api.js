@@ -25,11 +25,11 @@ export default {
             icon: require('../img/icon_homepage_beautyCategory.png'),
             url: 'https://i.meituan.com/beauty/node/html/mtindex.html?source=newusercoupon&f=android&lat=39.984311&lng=116.308302&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category9_22__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
         },
-      /*  {
-            title: '旅游',
-            icon: require('../img/Food/ic_category_five.png'),
-            url: 'http://i.meituan.com/journey?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category10_20513__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
-        },*/
+        /*  {
+         title: '旅游',
+         icon: require('../img/Food/ic_category_five.png'),
+         url: 'http://i.meituan.com/journey?f=android&lat=39.984322&lng=116.308408&utm_source=aiwen4&utm_medium=android&utm_term=431&version_name=7.3.1&utm_content=866693026442025&utm_campaign=AgroupBgroupC0E0Ghomepage_category10_20513__a1&ci=1&msid=8666930264420251516244317271&uuid=DA135E22256C4D0430739F927D2EB231BA824FD037AC393C5FE3A8C3C2A1D563&userid=-1',
+         },*/
         {
             title: '健身',
             icon: require('../img/ic_category_eight.png'),
@@ -81,6 +81,10 @@ export default {
  */
 export function recommendFoodUrl(cate, cityId, offset) {
     return 'http://api.meituan.com/group/v1/poi/select/cate/' + cate + '?cityId=' + cityId + '&sort=smart&coupon=all&mpt_cate1=20&mpt_cate2=79&offset=' + offset + '&limit=20';
+}
+
+export function mealDetail(poiid) {
+    return 'http://api.meituan.com/meishi/poi/v1/poi/deallist/' + poiid + '?poiid=' + poiid + '&ci=1&__vhost=api.meishi.meituan.com';
 }
 
 export function recommendUrl(cate, offset) {

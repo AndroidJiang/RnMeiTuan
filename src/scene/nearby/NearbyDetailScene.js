@@ -8,7 +8,7 @@ import {
     PixelRatio, Linking, FlatList
 } from 'react-native';
 import {screen, api} from '../../common/common';
-import {nearbyRecommend} from "../../common/api";
+import {nearbyRecommend, mealDetail} from "../../common/api";
 
 import StarRating from 'react-native-star-rating';
 
@@ -31,17 +31,39 @@ export default class NearbyDetailScene extends Component {
         this.state = {
             dataSource: [],
             isRefreshing: false,
+            mealDetails: [],
         }
     }
 
     componentDidMount() {
+        this.getMealDetailData();
         this.getRequestData();
     }
+
+    getMealDetailData = () => {
+        let poiid = item.poiid;
+        console.log(poiid);
+        let url = mealDetail(poiid);
+        this.setState({mealDetails: []}, () => {
+            return fetch(url)
+                .then(res => res.json())
+                .then(res => {
+                    let count = res.count;
+                    if (count >= 0) {
+                        console.log(res.data);
+                        this.setState({mealDetails: res.data});
+                    }
+                })
+                .catch(e => {
+                    console.log(e)
+                })
+                .done();
+        })
+    };
 
     getRequestData = () => {
         let poiid = item.poiid;
         let url = nearbyRecommend(poiid);
-
         this.setState({isRefreshing: true}, () => {
             return fetch(url)
                 .then(res => res.json())
@@ -52,7 +74,6 @@ export default class NearbyDetailScene extends Component {
                     }
                 })
                 .catch(e => {
-
                 })
                 .done();
         });
@@ -62,7 +83,6 @@ export default class NearbyDetailScene extends Component {
         const {state} = this.props.navigation;
         const data = state.params.data;
         let item = JSON.parse(data);
-
 
         return (
             <View style={{flex: 1}}>
@@ -91,6 +111,7 @@ export default class NearbyDetailScene extends Component {
                 </View>
 
                 <FlatList data={this.state.dataSource}
+                          extraData={this.state}
                           keyExtractor={(item) => item.title + item.id}
                           renderItem={this.renderCell}
                           ItemSeparatorComponent={this.renderItemSeparator}
@@ -106,14 +127,14 @@ export default class NearbyDetailScene extends Component {
     )
 
     renderItemSeparator = () => {
-        return (<View style={{height: 1, backgroundColor: '#dddddd', }}></View>);
+        return (<View style={{height: 1, backgroundColor: '#dddddd',}}></View>);
     }
 
 
     renderHeader = () => {
 
         return (
-            <DetailHeaderView data={item} navigation={this.props.navigation}/>
+            <DetailHeaderView data={item} navigation={this.props.navigation} detail={this.state.mealDetails}/>
         );
     }
 
