@@ -33,8 +33,8 @@ export default class NearbyItemCellView extends PureComponent {
         return (
             <TouchableOpacity activeOpacity={0.8} onPress={this.itemClick.bind(this, item)} style={[{
                 borderTopWidth: screen.onePixel,
-                borderTopColor: '#888888',
-                borderBottomColor: '#888888',
+                borderTopColor: '#bbbbbb',
+                borderBottomColor: '#bbbbbb',
                 borderBottomWidth: screen.onePixel,
                 width: screen.width,
                 backgroundColor: 'white',
@@ -55,9 +55,9 @@ export default class NearbyItemCellView extends PureComponent {
                             paddingRight: 14
                         }}>
                             <Text style={{
-                                fontSize: 18,
+                                fontSize: 17,
                                 lineHeight: 25,
-                                color: '#4d4d4d',
+                                color: '#000000',
                                 paddingRight: 4,
                             }}
                                   numberOfLines={1}>{item.name}</Text>

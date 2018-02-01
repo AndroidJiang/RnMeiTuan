@@ -106,15 +106,9 @@ export default class NearbyItemListView extends PureComponent {
     };
 
     render() {
-        if (this.state.isFirstLoading && !this.state.isLoadingMore) {
+
             return (
-                <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <ActivityIndicator color={color.theme} size='small'/>
-                </View>
-            );
-        } else {
-            return (
-                <View style={{flex: 1}}>
+                <View style={{flex: 1,backgroundColor:'#F1F1F1'}}>
                     <FlatList data={this.state.dataSource}
                               keyExtractor={this.renderKey}
                               renderItem={this.renderCell}
@@ -123,10 +117,11 @@ export default class NearbyItemListView extends PureComponent {
                         // onEndReached={this.getMoreData}
                               ListHeaderComponent={this.renderHeader}
                               ListFooterComponent={this.renderFooter}
+                              // ListEmptyComponent={this.renderEmpty}
                               ItemSeparatorComponent={this.renderSeparator}/>
                 </View>
             );
-        }
+
     }
 
     renderFooter = () => {
@@ -174,7 +169,16 @@ export default class NearbyItemListView extends PureComponent {
         }
 
     };
+    renderEmpty = () => {
 
+        return (<View style={{
+            flex: 1, height: 500, alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <Text>暂无数据</Text>
+        </View>)
+
+    };
     getRequestDataWithType = () => {
         let index = this.state.selectedIndex;
         const types = this.props.type;
@@ -249,6 +253,7 @@ export default class NearbyItemListView extends PureComponent {
         return fetch(url)
             .then(res => res.json())
             .then(res => {
+                debugger
                 const datas = res.data;
                 this.setState({dataSource: datas, isFirstLoading: false});
             })

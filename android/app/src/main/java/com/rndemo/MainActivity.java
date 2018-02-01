@@ -3,6 +3,7 @@ package com.rndemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.widget.Toast;
 
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
@@ -16,6 +17,7 @@ import com.facebook.react.shell.MainReactPackage;
 public class MainActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
     private ReactRootView react_root_view;
     private ReactInstanceManager mReactInstanceManager;
+    private long startTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +99,12 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
 
     @Override
     public void invokeDefaultOnBackPressed() {
-        super.onBackPressed();
+        long currentTime = System.currentTimeMillis();
+        if ((currentTime - startTime) >= 2000) {
+            Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
+            startTime = currentTime;
+        } else {
+            super.onBackPressed();
+        }
     }
 }

@@ -55,16 +55,17 @@ export default class NearbyScene extends Component {
         return (
             <View style={{flex: 1}}>
                 <ScrollableTabView
-                    renderTabBar={() => <DefaultTabBar tabStyle={{paddingBottom: 0}}
-                                                       textStyle={{fontSize: 16}}/>}
+                    renderTabBar={() => <DefaultTabBar
+                        style={{height: 45}}
+                        tabStyle={{paddingBottom: 0}}
+                                                       textStyle={{fontSize: 15}}/>}
                     tabBarUnderlineStyle={{
-                        backgroundColor: '#ea7762',
+                        backgroundColor: '#F63E58',
                         height: 2,
                     }}
-
-                    tabBarBackgroundColor="#fcfcfc"
-                    tabBarActiveTextColor="#ea7762"
-                    tabBarInactiveTextColor="#777777"
+                    tabBarBackgroundColor="#FFFFFF"
+                    tabBarActiveTextColor="#E14561"
+                    tabBarInactiveTextColor="#696969"
                     initialPage={0}
                 >
                     {
