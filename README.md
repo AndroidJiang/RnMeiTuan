@@ -11,4 +11,4 @@
 
 
 
-**本项目使用React Native编写，利用业余时间和[朋友](https://github.com/lrain-lv/RnDemo)一块开发，高度还原美团app，抓取部分接口以及app资源图片，如有侵权，请联系我删除！**
+**本项目使用React Native编写，利用业余时间和[朋友](https://github.com/lrain-lv/RnDemo)（来自腾讯的技术大牛）一块开发，高度还原美团app，抓取部分接口以及app资源图片，如有侵权，请联系我删除！**
